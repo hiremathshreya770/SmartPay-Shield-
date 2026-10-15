@@ -1,0 +1,588 @@
+{% extends 'base.html' %}
+
+{% block title %}Smart Payment Assistant — Verify Before You Pay | EASY PAY — SAFE PAY{% endblock %}
+
+{% block content %}
+<div class="simulator-wrapper" style="max-width: 960px; margin: 0 auto; padding-bottom: 50px;">
+
+  <!-- Prominent Demo Safety Banner -->
+  <div class="demo-safety-banner" data-i18n="sim_badge_demo" style="background: #FFFBEB; border: 2px dashed #F59E0B; color: #92400E; padding: 14px 18px; border-radius: var(--radius-md); font-weight: 800; font-size: 1.05rem; text-align: center; margin-bottom: 20px;">
+    ⚠️ DEMO MODE ONLY — EDUCATIONAL SIMULATOR. NO REAL MONEY TRANSFERRED. NO REAL CREDENTIALS COLLECTED.
+  </div>
+
+  <!-- Main Heading -->
+  <header style="text-align: center; margin-bottom: 24px;">
+    <div class="assistant-badge-pill" style="display: inline-block; margin-bottom: 8px;">
+      <span>Practice Safe UPI Payments</span>
+    </div>
+    <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 8px;" data-i18n="sim_heading">
+      SMART PAYMENT ASSISTANT — VERIFY BEFORE YOU PAY
+    </h1>
+    <p class="section-subtitle voice-readable" style="font-size: 1.15rem; max-width: 720px; margin: 0 auto;" data-i18n="sim_subheading">
+      A step-by-step payment safety simulator for senior citizens. Check recipient details, evaluate fraud risks, and practice cancelling before money moves.
+    </p>
+
+    <!-- Audio Guidance Bar -->
+    <div class="helpers-audio-bar" style="margin-top: 14px; justify-content: center;">
+      <button type="button" class="btn-helpers-audio" id="btnReadSimPage" title="Read instructions aloud">
+        🔊 <span data-i18n="btn_read_section">Read Instructions Aloud</span>
+      </button>
+      <button type="button" class="btn-helpers-audio" id="btnStopSimAudio" style="display:none;" title="Stop audio">
+        ⏹️ <span data-i18n="btn_stop_reading">Stop Speaking</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Feature Navigation Tabs -->
+  <div class="simulator-tabs" role="tablist" style="margin-bottom: 24px;">
+    <button type="button" class="simulator-tab-btn active" id="tabSmartAssistant" role="tab" aria-selected="true">
+      🛡️ <span>Smart Payment Assistant (4-Step Guided)</span>
+    </button>
+    <button type="button" class="simulator-tab-btn" id="tabInteractiveScenarios" role="tab" aria-selected="false">
+      📲 <span>Interactive Trap Scenarios</span>
+    </button>
+    <button type="button" class="simulator-tab-btn" id="tabQuickHistory" role="tab" aria-selected="false">
+      📊 <span>Demo Transaction Records</span>
+    </button>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- TAB 1: SMART PAYMENT ASSISTANT (4-STEP GUIDED WORKFLOW) -->
+  <!-- ======================================================== -->
+  <div id="contentSmartAssistant" class="simulator-content-tab" style="display: block;">
+
+    <!-- Stepper Progress Indicator -->
+    <nav class="payment-stepper-bar" aria-label="Payment Steps" style="display: flex; justify-content: space-between; margin-bottom: 24px; background: #FFFFFF; padding: 14px 20px; border-radius: var(--radius-lg); border: 2px solid var(--border-light); box-shadow: var(--shadow-sm);">
+      <div class="step-indicator active" id="stepIndicator1" style="font-weight: 800; color: var(--accent-teal-dark);">
+        <span class="step-badge" style="background: var(--accent-teal); color: #FFFFFF; padding: 4px 10px; border-radius: 999px; margin-right: 6px;">1</span>
+        <span>Enter Details</span>
+      </div>
+      <div class="step-indicator" id="stepIndicator2" style="font-weight: 700; color: #94A3B8;">
+        <span class="step-badge" style="background: #E2E8F0; color: #64748B; padding: 4px 10px; border-radius: 999px; margin-right: 6px;">2</span>
+        <span>Safety Assessment</span>
+      </div>
+      <div class="step-indicator" id="stepIndicator3" style="font-weight: 700; color: #94A3B8;">
+        <span class="step-badge" style="background: #E2E8F0; color: #64748B; padding: 4px 10px; border-radius: 999px; margin-right: 6px;">3</span>
+        <span>Final Review</span>
+      </div>
+      <div class="step-indicator" id="stepIndicator4" style="font-weight: 700; color: #94A3B8;">
+        <span class="step-badge" style="background: #E2E8F0; color: #64748B; padding: 4px 10px; border-radius: 999px; margin-right: 6px;">4</span>
+        <span>Demonstration Result</span>
+      </div>
+    </nav>
+
+    <!-- STEP 1: ENTER PAYMENT DETAILS -->
+    <section id="paymentStep1Card" class="scenario-card" style="background: #FFFFFF; border: 2px solid var(--border-light); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-sm);">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+        <span style="font-size: 1.8rem;">✍️</span>
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin: 0;">
+            STEP 1: Enter Payment Details
+          </h2>
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 2px;">
+            Enter the payment you want to evaluate, or choose a common senior situation:
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Preset Examples -->
+      <div style="background: #F8FAFC; border-radius: var(--radius-md); padding: 14px 16px; margin-bottom: 20px;">
+        <span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 8px;">
+          💡 Click a preset situation to test safety assessment:
+        </span>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <button type="button" class="btn-control-chip btn-preset-pay" data-name="Shri Manjunath Vegetables" data-upi="manjunath.groceries@okhdfcbank" data-amt="150" data-purpose="Fresh vegetables & milk">
+            🛒 Safe Grocery Payment (₹150)
+          </button>
+          <button type="button" class="btn-control-chip btn-preset-pay" data-name="Electricity BillDesk Officer" data-upi="bescom-billdesk@fakebank" data-amt="2500" data-purpose="Urgent unpaid electricity bill payment tonight to avoid power disconnection">
+            ⚠️ Urgent Bill Threat (₹2,500)
+          </button>
+          <button type="button" class="btn-control-chip btn-preset-pay" data-name="Cyber Crime Police Dept" data-upi="police-settlement@customs" data-amt="15000" data-purpose="Urgent bail settlement fee to prevent immediate digital arrest. Send OTP.">
+            🚨 Digital Arrest Threat (₹15,000)
+          </button>
+          <button type="button" class="btn-control-chip btn-preset-pay" data-name="KBC Lottery Refund Office" data-upi="refund-agent@lottery" data-amt="5000" data-purpose="Registration fee to unlock ₹25 Lakh lottery prize cashback">
+            🚨 Lottery Refund Trap (₹5,000)
+          </button>
+        </div>
+      </div>
+
+      <!-- Form Inputs -->
+      <form id="paymentDetailsForm" onsubmit="return false;" style="display: flex; flex-direction: column; gap: 16px;">
+        <div>
+          <label for="payRecipientName" style="display: block; font-weight: 800; font-size: 1.05rem; margin-bottom: 6px; color: var(--primary-navy);">
+            Recipient Name:
+          </label>
+          <input
+            type="text"
+            id="payRecipientName"
+            class="assistant-textarea"
+            style="width: 100%; height: 50px; min-height: 50px; padding: 10px 14px; font-size: 1.1rem; border: 2px solid var(--border-light); border-radius: var(--radius-md);"
+            placeholder="e.g. Shri Manjunath Vegetables or BESCOM BillDesk"
+            required>
+        </div>
+
+        <div>
+          <label for="payUpiId" style="display: block; font-weight: 800; font-size: 1.05rem; margin-bottom: 6px; color: var(--primary-navy);">
+            Recipient UPI ID:
+          </label>
+          <input
+            type="text"
+            id="payUpiId"
+            class="assistant-textarea"
+            style="width: 100%; height: 50px; min-height: 50px; padding: 10px 14px; font-size: 1.1rem; border: 2px solid var(--border-light); border-radius: var(--radius-md); font-family: monospace;"
+            placeholder="e.g. name@bank or merchant@okaxis"
+            required>
+          <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 4px;">
+            Format: username@bankhandle (Always double-check before paying)
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+          <div>
+            <label for="payAmount" style="display: block; font-weight: 800; font-size: 1.05rem; margin-bottom: 6px; color: var(--primary-navy);">
+              Amount (₹):
+            </label>
+            <input
+              type="number"
+              id="payAmount"
+              min="1"
+              step="any"
+              class="assistant-textarea"
+              style="width: 100%; height: 50px; min-height: 50px; padding: 10px 14px; font-size: 1.2rem; font-weight: 800; color: var(--primary-navy); border: 2px solid var(--border-light); border-radius: var(--radius-md);"
+              placeholder="e.g. 150"
+              required>
+          </div>
+
+          <div>
+            <label for="payPurpose" style="display: block; font-weight: 800; font-size: 1.05rem; margin-bottom: 6px; color: var(--primary-navy);">
+              Payment Purpose:
+            </label>
+            <input
+              type="text"
+              id="payPurpose"
+              class="assistant-textarea"
+              style="width: 100%; height: 50px; min-height: 50px; padding: 10px 14px; font-size: 1.1rem; border: 2px solid var(--border-light); border-radius: var(--radius-md);"
+              placeholder="e.g. Groceries, Electricity Bill, Lottery Fee"
+              required>
+          </div>
+        </div>
+
+        <div style="margin-top: 10px;">
+          <button type="button" class="btn-large btn-teal" id="btnVerifyPayment" style="width: 100%; font-size: 1.2rem;">
+            🔍 Check Safety & Verify Details →
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- STEP 2: SAFETY ASSESSMENT -->
+    <section id="paymentStep2Card" class="scenario-card" style="display: none; background: #FFFFFF; border: 2px solid var(--border-light); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-sm);">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 18px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.8rem;">🛡️</span>
+          <div>
+            <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin: 0;">
+              STEP 2: Safety Assessment
+            </h2>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 2px;">
+              Our fraud safety engine evaluated this payment:
+            </p>
+          </div>
+        </div>
+        <div>
+          <span id="assessmentRiskBadge" class="warning-badge-pill" style="font-size: 1.05rem; padding: 6px 16px;">
+            EVALUATING...
+          </span>
+        </div>
+      </div>
+
+      <!-- Recipient Verification Status Box (Strictly never claims verified without genuine authority) -->
+      <div style="background: #FFFBEB; border: 1px solid #FCD34D; border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 18px;">
+        <span style="font-weight: 800; color: #92400E; display: block; margin-bottom: 2px;">
+          🔍 Recipient Verification Status:
+        </span>
+        <span id="assessmentVerificationText" style="font-size: 0.95rem; color: #78350F; font-weight: 600;">
+          Unverified Demo UPI ID — Always confirm recipient in person
+        </span>
+      </div>
+
+      <!-- Warning Signs Detected -->
+      <div style="margin-bottom: 18px;">
+        <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 8px;">
+          ⚠️ Detected Warning Signs:
+        </h3>
+        <ul id="assessmentWarningsList" class="assistant-bullet-list" style="margin: 0; padding-left: 20px;">
+          <!-- Populated dynamically -->
+        </ul>
+      </div>
+
+      <!-- Recommended Precautions -->
+      <div style="margin-bottom: 22px;">
+        <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 8px;">
+          🛡️ Recommended Precautions:
+        </h3>
+        <ul id="assessmentPrecautionsList" class="assistant-bullet-list action-bullets" style="margin: 0; padding-left: 20px;">
+          <!-- Populated dynamically -->
+        </ul>
+      </div>
+
+      <!-- Contextual Learning Link -->
+      <div id="assessmentLearnLinkBox" style="background: #EEF2FF; border-left: 4px solid #4F46E5; padding: 12px 16px; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: 24px;">
+        <a id="assessmentLearnLink" href="/learn#lesson-2" style="font-weight: 700; color: #4F46E5; text-decoration: none; font-size: 1rem;">
+          📖 Learn how to avoid this scam in our UPI Learning Centre →
+        </a>
+      </div>
+
+      <!-- Step 2 Actions -->
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <button type="button" class="btn-large btn-secondary" id="btnBackToStep1" style="flex: 1;">
+          ← Edit Details
+        </button>
+        <button type="button" class="btn-large btn-teal" id="btnProceedToStep3" style="flex: 2;">
+          Proceed to Final Review →
+        </button>
+      </div>
+    </section>
+
+    <!-- STEP 3: FINAL REVIEW -->
+    <section id="paymentStep3Card" class="scenario-card" style="display: none; background: #FFFFFF; border: 2px solid var(--border-light); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-sm);">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+        <span style="font-size: 1.8rem;">👀</span>
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin: 0;">
+            STEP 3: Final Review Before Sending
+          </h2>
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 2px;">
+            Carefully inspect all payment parameters. You can cancel at any time.
+          </p>
+        </div>
+      </div>
+
+      <!-- Payment Summary Review Card -->
+      <div style="border: 2px solid var(--border-light); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px;">
+        <div style="background: var(--primary-navy); color: #FFFFFF; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 800; font-size: 1.1rem;">DEMONSTRATION PAYMENT REVIEW</span>
+          <span style="background: #38BDF8; color: #082F49; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;">DEMO</span>
+        </div>
+
+        <div style="padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; background: #FFFFFF;">
+          <div>
+            <span style="color: var(--text-muted); font-size: 0.9rem; display: block;">Recipient:</span>
+            <strong id="reviewRecipient" style="font-size: 1.2rem; color: var(--primary-navy); display: block;">-</strong>
+          </div>
+          <div>
+            <span style="color: var(--text-muted); font-size: 0.9rem; display: block;">UPI ID:</span>
+            <span id="reviewUpiId" style="font-size: 1.1rem; font-family: monospace; font-weight: 700; color: var(--text-main);">-</span>
+          </div>
+          <div>
+            <span style="color: var(--text-muted); font-size: 0.9rem; display: block;">Amount to Pay:</span>
+            <span id="reviewAmount" style="font-size: 1.6rem; font-weight: 900; color: var(--status-success);">-</span>
+          </div>
+          <div>
+            <span style="color: var(--text-muted); font-size: 0.9rem; display: block;">Payment Purpose:</span>
+            <strong id="reviewPurpose" style="font-size: 1.1rem; color: var(--text-main);">-</strong>
+          </div>
+          <div>
+            <span style="color: var(--text-muted); font-size: 0.9rem; display: block;">Risk Classification:</span>
+            <span id="reviewRiskBadge" class="warning-badge-pill" style="font-size: 0.9rem; padding: 4px 10px;">-</span>
+          </div>
+          <div>
+            <span style="color: var(--text-muted); font-size: 0.9rem; display: block;">Recipient Verification:</span>
+            <span style="font-weight: 700; color: #D97706; font-size: 0.95rem;">Unverified Demo UPI ID</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- High Risk Explicit Acknowledgment Box (Only shown if HIGH RISK) -->
+      <div id="highRiskAlertBox" style="display: none; background: #FEF2F2; border: 2px solid #EF4444; border-radius: var(--radius-md); padding: 18px; margin-bottom: 22px;" role="alert">
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <span style="font-size: 2rem;">🚨</span>
+          <div>
+            <strong style="color: #991B1B; font-size: 1.15rem; display: block; margin-bottom: 6px;">
+              CRITICAL WARNING: HIGH RISK DETECTED
+            </strong>
+            <p style="color: #7F1D1D; font-size: 0.98rem; margin-bottom: 12px;">
+              This payment displays strong signs of financial fraud (urgency, threats, credential requests, or advance fees). In a real app, you should <strong>CANCEL IMMEDIATELY</strong> and never send money.
+            </p>
+            <label style="display: flex; align-items: center; gap: 10px; font-weight: 700; color: #991B1B; font-size: 1.05rem; cursor: pointer;">
+              <input type="checkbox" id="chkHighRiskAck" style="width: 22px; height: 22px; cursor: pointer;">
+              <span>I understand that this is only an educational demonstration, and this payment has high risk signs.</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <button type="button" class="btn-large btn-danger" id="btnCancelPayment" style="flex: 1; font-size: 1.15rem;">
+          ❌ CANCEL PAYMENT (Safe)
+        </button>
+        <button type="button" class="btn-large btn-primary" id="btnConfirmDemoPayment" style="flex: 1; font-size: 1.15rem; background: var(--status-success); border-color: var(--status-success);">
+          ✔ CONFIRM DEMO PAYMENT
+        </button>
+      </div>
+    </section>
+
+    <!-- STEP 4: DEMONSTRATION RESULT -->
+    <section id="paymentStep4Card" class="scenario-card" style="display: none; background: #FFFFFF; border: 2px solid var(--border-light); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); text-align: center;">
+      
+      <!-- Result Status Icon & Message -->
+      <div id="resultSuccessView">
+        <div style="font-size: 4rem; color: var(--status-success); margin-bottom: 12px;">✅</div>
+        
+        <div style="background: #ECFDF5; border: 2px solid #10B981; border-radius: var(--radius-md); padding: 14px 20px; display: inline-block; margin-bottom: 18px;">
+          <span style="font-size: 1.25rem; font-weight: 900; color: #065F46; text-transform: uppercase;">
+            DEMO PAYMENT COMPLETED — NO REAL MONEY TRANSFERRED.
+          </span>
+        </div>
+
+        <h3 id="resultAmountRecipient" style="font-size: 1.6rem; font-weight: 900; color: var(--primary-navy); margin-bottom: 8px;">
+          ₹0.00 Paid in Demonstration
+        </h3>
+
+        <div style="background: #F8FAFC; border: 1px solid var(--border-light); border-radius: var(--radius-md); max-width: 540px; margin: 0 auto 24px auto; padding: 16px; text-align: left; font-size: 0.95rem;">
+          <div style="margin-bottom: 6px;">
+            <span style="color: var(--text-muted);">Unique Demo Reference: </span>
+            <strong id="resultTxnRef" style="font-family: monospace; color: var(--primary-navy);">-</strong>
+          </div>
+          <div style="margin-bottom: 6px;">
+            <span style="color: var(--text-muted);">Date & Time: </span>
+            <span id="resultDateTime" style="font-weight: 600;">-</span>
+          </div>
+          <div style="margin-bottom: 6px;">
+            <span style="color: var(--text-muted);">Recipient: </span>
+            <strong id="resultRecipientName">-</strong>
+          </div>
+          <div>
+            <span style="color: var(--text-muted);">Status: </span>
+            <span style="color: var(--status-success); font-weight: 800;">Saved in Simulated Transaction Database</span>
+          </div>
+        </div>
+
+        <!-- Takeaway Box -->
+        <div class="rules-banner" style="max-width: 540px; margin: 0 auto 24px auto; text-align: left; padding: 16px;">
+          <div style="font-weight: 800; color: #92400E; margin-bottom: 4px;">⭐ Safety Takeaway:</div>
+          <p style="font-size: 0.95rem; color: #78350F; margin: 0;">
+            You just safely verified all details before money could move. In real life, always verify the recipient's name in person before typing your secret UPI PIN.
+          </p>
+        </div>
+      </div>
+
+      <!-- Cancelled Result View -->
+      <div id="resultCancelledView" style="display: none;">
+        <div style="font-size: 4rem; color: #10B981; margin-bottom: 12px;">🛡️</div>
+        
+        <div style="background: #ECFDF5; border: 2px solid #10B981; border-radius: var(--radius-md); padding: 14px 20px; display: inline-block; margin-bottom: 18px;">
+          <span style="font-size: 1.25rem; font-weight: 900; color: #065F46; text-transform: uppercase;">
+            PAYMENT CANCELLED SAFELY — ZERO MONEY MOVED.
+          </span>
+        </div>
+
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 8px;">
+          You Made the Safe Choice!
+        </h3>
+        <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 500px; margin: 0 auto 24px auto;">
+          When in doubt, cancelling a payment protects your hard-earned savings. Real banks and merchants will never penalize you for taking time to verify independently.
+        </p>
+      </div>
+
+      <!-- Result Next Step Actions -->
+      <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+        <button type="button" class="btn-large btn-secondary" id="btnRestartPayment">
+          ↺ Practice Another Payment
+        </button>
+        <a href="{{ url_for('transactions_page') }}" class="btn-large btn-teal" style="text-decoration: none;">
+          📊 View in Transaction History →
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- TAB 2: INTERACTIVE SCENARIOS & QR TRAP TRAINING         -->
+  <!-- ======================================================== -->
+  <div id="contentInteractiveScenarios" class="simulator-content-tab" style="display: none;">
+    
+    <div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+      <button type="button" class="btn-control-chip active" id="subTabGrocery">
+        🛒 Scenario 1: Grocery Store Payment
+      </button>
+      <button type="button" class="btn-control-chip" id="subTabCollect">
+        ⚠️ Scenario 2: Collect Request Trap
+      </button>
+      <button type="button" class="btn-control-chip" id="subTabQr">
+        📷 Scenario 3: QR Code Safety
+      </button>
+    </div>
+
+    <!-- Scenario 1: Grocery Store -->
+    <div id="scenarioGroceryView">
+      <div class="simulator-phone-frame">
+        <div class="phone-top-bar">
+          <span>9:41 AM</span>
+          <span>📶 5G 🔋 98%</span>
+        </div>
+        <div class="phone-app-header">
+          <span>← SafePay UPI</span>
+          <span style="font-weight: 700; font-size: 0.9rem; color: #6EE7B7;">DEMO MODE</span>
+        </div>
+        <div class="phone-app-body">
+          <div class="payment-recipient-card">
+            <div style="font-size: 2.2rem; margin-bottom: 6px;">🏪</div>
+            <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--primary-navy);">
+              Sharma Kirana & Provisions
+            </h3>
+            <div class="verified-badge">✔ Verified Demo Merchant</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">
+              UPI ID: sharmakiranastore@okbank
+            </p>
+          </div>
+          <div style="text-align: center; margin: 20px 0;">
+            <span style="font-size: 0.95rem; color: var(--text-muted);">Paying Amount:</span>
+            <div class="payment-amount-display">₹150.00</div>
+          </div>
+          <div class="simulator-side-guide" style="margin-top: 0; margin-bottom: 20px;">
+            <div class="guide-step-title">👀 Golden Rule: Check the Merchant Name!</div>
+            <p style="font-size: 0.9rem; color: #78350F;">
+              Before paying, always verify the registered merchant name matches the shop's physical board.
+            </p>
+          </div>
+          <button type="button" class="btn-large btn-teal" id="btnSimGroceryPay" style="width: 100%;">
+            Simulate Safe Payment of ₹150 →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scenario 2: Collect Request Trap -->
+    <div id="scenarioCollectView" style="display: none;">
+      <div class="simulator-phone-frame">
+        <div class="phone-top-bar">
+          <span>2:15 PM</span>
+          <span>📶 5G 🔋 85%</span>
+        </div>
+        <div class="phone-app-header" style="background: #991B1B;">
+          <span>⚠️ Incoming Payment Request</span>
+          <span style="font-weight: 700; font-size: 0.9rem; color: #FCA5A5;">SIMULATION</span>
+        </div>
+        <div class="phone-app-body">
+          <div style="background: #FEF2F2; border: 2px dashed #EF4444; border-radius: var(--radius-md); padding: 18px; text-align: center; margin-bottom: 20px;">
+            <div style="font-size: 1.8rem; margin-bottom: 6px;">🚨</div>
+            <span style="color: #991B1B; font-weight: 800; font-size: 1.1rem; text-transform: uppercase;">
+              COLLECT REQUEST RECEIVED
+            </span>
+            <div style="margin: 12px 0;">
+              <span style="font-size: 0.9rem; color: var(--text-muted);">From: Unknown Buyer (9820011111)</span>
+              <div style="font-size: 2.2rem; font-weight: 900; color: #991B1B;">₹3,500.00</div>
+            </div>
+            <p style="font-size: 0.88rem; color: #7F1D1D; font-weight: 600;">
+              Note: "Advance payment for old sofa table. Enter PIN to accept cash."
+            </p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <button type="button" class="btn-large btn-danger" id="btnDeclineCollectTrap" style="width: 100%;">
+              ❌ DECLINE REQUEST (Safe)
+            </button>
+            <button type="button" class="btn-large btn-secondary" id="btnAcceptCollectTrap" style="width: 100%; border-color: #EF4444; color: #991B1B;">
+              ⚠️ Accept Request (Trap)
+            </button>
+          </div>
+          <div id="collectFeedbackBox" style="margin-top: 18px; display: none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scenario 3: QR Code Safety -->
+    <div id="scenarioQrView" style="display: none;">
+      <div class="scenario-card" style="background: #FFFFFF; border: 2px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px;">
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 12px;">
+          Understanding QR Codes: The Truth About Receiving Money
+        </h2>
+        <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 20px;">
+          Many senior citizens are tricked into scanning QR codes by fraudsters claiming it will credit a pension, refund, or prize. Here is the golden truth:
+        </p>
+        <div class="dos-donts-grid">
+          <div class="dos-column">
+            <div class="column-header">✔ GENUINE USAGE</div>
+            <ul class="checklist-list">
+              <li><strong>You scan a QR at a shop</strong> to PAY for items you bought.</li>
+              <li>You see the registered merchant name on your screen.</li>
+              <li>Money leaves your account with your knowledge.</li>
+            </ul>
+          </div>
+          <div class="donts-column">
+            <div class="column-header">✖ FRAUDULENT TRAP</div>
+            <ul class="checklist-list">
+              <li><strong>Someone on WhatsApp sends a QR</strong> saying: "Scan this to receive ₹5,000 refund/pension".</li>
+              <li>They claim entering your PIN will credit money.</li>
+              <li><strong>TRUTH:</strong> Scanning and entering your PIN will DEDUCT money instantly!</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rules-banner" style="margin-top: 20px;">
+          <div style="font-weight: 800; color: #92400E; font-size: 1.15rem; margin-bottom: 4px;">
+            ⭐ The Unbreakable Rule of QR Codes:
+          </div>
+          <p style="font-size: 1.05rem; color: #78350F; margin: 0 0 16px 0;">
+            You <strong>NEVER</strong> need to scan a QR code to receive money. If someone tells you to scan a QR code to get money, they are trying to steal from you.
+          </p>
+          <button type="button" class="btn-large btn-teal" id="btnSimQrPay" style="width: 100%;">
+            📷 Simulate Safe QR Merchant Payment of ₹80 at Fruit Stall →
+          </button>
+          <div id="qrFeedbackBox" style="display: none;"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- TAB 3: ALL PRACTICE DEMO TRANSACTIONS                   -->
+  <!-- ======================================================== -->
+  <div id="contentQuickHistory" class="simulator-content-tab" style="display: none;">
+    <div style="background: #FFFFFF; border: 2px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px;">
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin: 0;">
+            All Practice UPI Demonstration Transactions
+          </h2>
+          <span style="font-size: 0.92rem; color: var(--text-muted);">
+            Showing {{ transactions|length }} practice transactions performed in this simulator
+          </span>
+        </div>
+        <a href="{{ url_for('transactions_page') }}" class="btn-large btn-teal" style="font-weight: 700; text-decoration: none; padding: 10px 20px;">
+          📊 Open Full Feature 4: Transaction History & Search →
+        </a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; max-height: 520px; overflow-y: auto; padding-right: 6px;">
+        {% for txn in transactions %}
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; background: #F8FAFC; border-radius: var(--radius-md); border: 1px solid var(--border-light); flex-wrap: wrap; gap: 8px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 0.75rem; font-weight: 800; padding: 2px 8px; border-radius: 999px; background: #EEF2FF; color: #4338CA;">
+                PRACTICE UPI
+              </span>
+              <strong style="font-size: 1.1rem; color: var(--primary-navy);">{{ txn.recipient_name }}</strong>
+            </div>
+            <span style="font-size: 0.88rem; color: var(--text-muted); display: block; margin-top: 2px;">
+              {{ txn.date_time }} • {{ txn.purpose }} • <code style="font-weight: 600;">{{ txn.txn_ref }}</code>
+            </span>
+          </div>
+          <div style="text-align: right;">
+            <strong style="font-size: 1.25rem; color: {% if txn.status == 'Completed' %}var(--primary-navy){% else %}#64748B{% endif %};">{{ txn.amount }}</strong>
+            <span style="display: block; font-size: 0.82rem; font-weight: 800; color: {% if txn.status == 'Completed' %}#059669{% else %}#DC2626{% endif %};">{{ txn.status }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/simulator.js') }}"></script>
+{% endblock %}

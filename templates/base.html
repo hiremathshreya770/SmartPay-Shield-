@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EASY PAY — SAFE PAY: Helping senior citizens and beginners use digital payment services safely, recognize online scams, and protect their money before it moves. Built for HACKURITY 2026.">
+  <meta name="theme-color" content="#0A2540">
+  <title>{% block title %}EASY PAY — SAFE PAY | Senior Citizen Cyber Safety Shield{% endblock %}</title>
+
+  <!-- Clean Vanilla CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+  <!-- Top Accessibility & Emergency Bar -->
+  <div class="top-accessibility-bar" role="region" aria-label="Accessibility and Emergency Controls">
+    <div class="container top-bar-inner">
+      <div class="accessibility-controls">
+        <span class="accessibility-label" data-i18n="text_size">Text Size:</span>
+        <button type="button" class="btn-control-chip btn-font-size" data-size="sm" aria-label="Small Font">A-</button>
+        <button type="button" class="btn-control-chip btn-font-size active" data-size="md" aria-label="Default Font">A</button>
+        <button type="button" class="btn-control-chip btn-font-size" data-size="lg" aria-label="Large Font">A+</button>
+        <button type="button" class="btn-control-chip btn-font-size" data-size="xl" aria-label="Extra Large Font">A++</button>
+        <button type="button" class="btn-control-chip" id="toggleHighContrast" style="margin-left: 8px;">
+          🌓 <span data-i18n="high_contrast">High Contrast</span>
+        </button>
+      </div>
+
+      <div class="top-actions">
+        <a href="tel:1930" class="emergency-chip-link" title="Call National Cyber Crime Helpline 1930" id="topEmergencyLink">
+          <span data-i18n="emergency_call">🚨 Emergency: 1930</span>
+        </a>
+        <div class="header-lang-wrapper" role="region" aria-label="Website Language Selector">
+          <span class="header-lang-icon" aria-hidden="true">🌐</span>
+          <select id="headerLangSelect" class="header-lang-select" aria-label="Choose Language / ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ">
+            <option value="en">English</option>
+            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            <option value="hi">हिंदी (Hindi)</option>
+            <option value="ta">தமிழ் (Tamil)</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="ml">മലയാളം (Malayalam)</option>
+            <option value="mr">मराठी (Marathi)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Translation Notice Banner for partial translation languages -->
+  <div id="translationNoticeBanner" class="translation-notice-banner" style="display: none; background: #FEF3C7; border-bottom: 2px solid #F59E0B; padding: 10px 16px; text-align: center; font-size: 0.98rem; font-weight: 700; color: #92400E;" role="status" aria-live="polite">
+    <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <span aria-hidden="true">ℹ️</span>
+      <span id="translationNoticeText">Notice: Translation for this language is partial. Verified English/Kannada fallback is active for critical scam warnings.</span>
+    </div>
+  </div>
+
+  <!-- Main Site Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="{{ url_for('home') }}" class="brand-wrapper" title="EASY PAY — SAFE PAY Home">
+        <div class="brand-icon-box">🛡️</div>
+        <div>
+          <div class="brand-title" data-i18n="brand_title">EASY PAY — SAFE PAY</div>
+          <div class="brand-tagline" data-i18n="brand_tagline">Pause. Check. Stay Safe.</div>
+        </div>
+      </a>
+
+      <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+        ☰
+      </button>
+
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main Navigation">
+        <a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">
+          <span>🏠</span> <span data-i18n="nav_home">Home</span>
+        </a>
+        <a href="{{ url_for('checker') }}" class="nav-link {% if request.endpoint == 'checker' %}active{% endif %}">
+          <span>🔍</span> <span data-i18n="nav_checker">Check a Message</span>
+        </a>
+        <a href="{{ url_for('coach') }}" class="nav-link {% if request.endpoint == 'coach' %}active{% endif %}">
+          <span>🛡️</span> <span data-i18n="nav_coach">Personal Scam Assistant</span>
+        </a>
+        <a href="{{ url_for('simulator') }}" class="nav-link {% if request.endpoint == 'simulator' %}active{% endif %}">
+          <span>📲</span> <span data-i18n="nav_simulator">Practice UPI</span>
+        </a>
+        <a href="{{ url_for('transactions_page') }}" class="nav-link {% if request.endpoint in ['transactions_page', 'transactions'] %}active{% endif %}">
+          <span>📜</span> <span data-i18n="nav_transactions">Transaction History</span>
+        </a>
+        <a href="{{ url_for('learn') }}" class="nav-link {% if request.endpoint in ['learn', 'learn_upi'] %}active{% endif %}">
+          <span>📚</span> <span data-i18n="nav_learn">Learn UPI Safely</span>
+        </a>
+        <a href="{{ url_for('help_page') }}" class="nav-link {% if request.endpoint == 'help_page' %}active{% endif %}" style="color: var(--status-danger); font-weight: 800;">
+          <span>🆘</span> <span data-i18n="nav_help">Emergency Help</span>
+        </a>
+        <a href="{{ url_for('login_page') }}" class="nav-link nav-link-login {% if request.endpoint == 'login_page' %}active{% endif %}" id="navLoginLink">
+          <span>🔐</span> <span data-i18n="nav_login">Login</span>
+        </a>
+        <div class="nav-user-badge" id="navUserBadge" style="display: none;">
+          <span id="navUserName">👤 Ramesh</span>
+          <button type="button" id="navLogoutBtn" class="nav-logout-btn" title="Logout" data-i18n="nav_logout">Logout</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Global Voice Assistant Floating/Sticky Bar -->
+  <section class="voice-assistant-bar" role="region" aria-label="Voice Assistant Controls">
+    <div class="container voice-bar-inner">
+      <div class="voice-status-box">
+        <span class="voice-icon">🔊</span>
+        <div>
+          <div class="voice-title" data-i18n="voice_assistant">Voice Assistant</div>
+          <div class="voice-subtitle" data-i18n="voice_tagline">Calm, step-by-step audio instructions</div>
+        </div>
+        <div class="speaking-indicator" aria-live="polite">
+          <span class="sound-bar"></span>
+          <span class="sound-bar"></span>
+          <span class="sound-bar"></span>
+          <span style="margin-left: 6px;" data-i18n="speaking_active">Speaking now...</span>
+        </div>
+      </div>
+
+      <div class="voice-controls">
+        <button type="button" class="voice-btn" id="btnVoiceRead" title="Read important instructions aloud">
+          <span data-i18n="read_aloud">🔊 Read Aloud</span>
+        </button>
+        <button type="button" class="voice-btn" id="btnVoiceRepeat" title="Repeat last audio instruction">
+          <span data-i18n="repeat_voice">🔁 Repeat</span>
+        </button>
+        <button type="button" class="voice-btn btn-stop" id="btnVoiceStop" title="Stop speaking">
+          <span data-i18n="stop_speaking">⏹️ Stop Speaking</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main id="mainContent" role="main">
+    <div class="container">
+      {% if request.endpoint != 'home' %}
+      <div class="page-nav-helper">
+        <a href="{{ url_for('home') }}" class="btn-nav-back">
+          <span data-i18n="back_to_home">← Back to Home</span>
+        </a>
+      </div>
+      {% endif %}
+
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="brand-title" style="color: #FFFFFF; font-size: 1.4rem; margin-bottom: 6px;" data-i18n="brand_title">
+            EASY PAY — SAFE PAY
+          </div>
+          <p style="color: #CBD5E1; margin-bottom: 14px;" data-i18n="brand_tagline">Pause. Check. Stay Safe.</p>
+          <p style="font-size: 0.95rem; color: #94A3B8; max-width: 320px;" data-i18n="hero_desc">
+            Helping senior citizens and beginners use digital payment services safely, recognize online scams, and protect their money before it moves.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="golden_rules_title">Quick Safety Guides</h3>
+          <ul class="footer-links">
+            <li><a href="{{ url_for('checker') }}" data-i18n="nav_checker">Check a Message</a></li>
+            <li><a href="{{ url_for('coach') }}" data-i18n="nav_coach">Personal Scam Assistant</a></li>
+            <li><a href="{{ url_for('simulator') }}" data-i18n="nav_simulator">Practice Safe UPI</a></li>
+            <li><a href="{{ url_for('learn') }}" data-i18n="nav_learn">Learn UPI Safely</a></li>
+            <li><a href="{{ url_for('help_page') }}" data-i18n="nav_help">Emergency Help & 1930</a></li>
+            <li><a href="{{ url_for('login_page') }}" data-i18n="nav_login">Senior Member Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading" style="color: #F87171;">🚨 Official Cybercrime Help</h3>
+          <p style="color: #F1F5F9; font-weight: 700; margin-bottom: 6px;">
+            National Cyber Crime Helpline: <a href="tel:1930" style="color: #FCA5A5; font-size: 1.3rem;">1930</a>
+          </p>
+          <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 12px;">
+            Operational 24x7 across all states and Union Territories in India.
+          </p>
+          <p style="color: #CBD5E1; font-size: 0.95rem;">
+            Official Portal: <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" style="color: #38BDF8; font-weight: 700;">cybercrime.gov.in</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer_hackathon">Created for HACKURITY 2026 Hackathon | Built for Senior Citizen Safety</p>
+        <p style="margin-top: 4px; font-size: 0.85rem;" data-i18n="footer_disclaimer">
+          Educational Project Only. We never store personal messages, bank accounts, or financial credentials.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Libraries -->
+  <script src="{{ url_for('static', filename='js/translations.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/speech.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

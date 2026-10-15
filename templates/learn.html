@@ -1,0 +1,2088 @@
+{% extends 'base.html' %}
+
+{% block title %}Learn UPI Safely — Senior Citizen Interactive Guide | EASY PAY — SAFE PAY{% endblock %}
+
+{% block content %}
+<div class="learn-page-container">
+
+  <!-- Header Card -->
+  <header class="learn-header-card" role="banner">
+    <div class="learn-badge-row">
+      <span class="learn-tag-badge" data-i18n="learn_badge">🛡️ SENIOR CITIZEN CYBER SHIELD • HACKURITY 2026</span>
+      <!-- Quick Language Toggle -->
+      <div class="learn-lang-toggle" role="group" aria-label="Language selection">
+        <button type="button" class="btn-lang-pill active" id="btnLearnLangEn" aria-pressed="true">
+          🇬🇧 English
+        </button>
+        <button type="button" class="btn-lang-pill" id="btnLearnLangKn" aria-pressed="false">
+          🇮🇳 ಕನ್ನಡ (Kannada)
+        </button>
+      </div>
+    </div>
+
+    <h1 class="learn-main-title" data-i18n="learn_heading">
+      LEARN UPI SAFELY
+    </h1>
+    <p class="learn-subtitle" data-i18n="learn_subheading">
+      A friendly, step-by-step interactive tutorial designed for senior citizens and beginners to learn digital payments safely, confidently, and without fear.
+    </p>
+
+    <!-- Educational Disclaimer Box -->
+    <div class="learn-disclaimer-box" role="alert">
+      <span class="disclaimer-icon">ℹ️</span>
+      <div class="disclaimer-text">
+        <strong data-i18n="learn_educational_notice">Educational Learning Simulation:</strong>
+        <span data-i18n="learn_disclaimer_desc">This is an educational guide, not a real banking application. We NEVER connect to real payment processing, and NEVER ask for, record, or store real UPI PINs, OTPs, or bank passwords.</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 12 Lessons Quick Directory -->
+  <div class="learn-curriculum-card" role="region" aria-label="12 Lessons Curriculum">
+    <div class="curriculum-header">
+      <span style="font-size: 1.8rem;" aria-hidden="true">📖</span>
+      <div>
+        <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-navy); margin: 0;">
+          <span class="text-en">UPI Safety Learning Centre (12 Essential Lessons)</span>
+          <span class="text-kn">ಯುಪಿಐ ಸುರಕ್ಷತಾ ಕಲಿಕಾ ವಿಷಯಗಳು (೧೨ ಪ್ರಮುಖ ಪಾಠಗಳು)</span>
+        </h2>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin: 2px 0 0 0;">
+          <span class="text-en">Click any lesson below to jump directly to its simple explanation, example, warning signs, and safety tips:</span>
+          <span class="text-kn">ಸರಳ ವಿವರಣೆ, ನೈಜ ಉದಾಹರಣೆ ಮತ್ತು ಸುರಕ್ಷತಾ ಸಲಹೆಗಳನ್ನು ಓದಲು ಕೆಳಗಿನ ಯಾವುದೇ ಪಾಠವನ್ನು ಒತ್ತಿ:</span>
+        </p>
+      </div>
+    </div>
+    <div class="curriculum-grid">
+      <button type="button" class="curriculum-item-btn" data-target-section="1">
+        <span class="curriculum-num">1</span>
+        <span>💡 <span class="text-en">What is UPI?</span><span class="text-kn">ಯುಪಿಐ ಎಂದರೇನು?</span></span>
+      </button>
+      <button type="button" class="curriculum-item-btn" data-target-section="2">
+        <span class="curriculum-num">2</span>
+        <span>💳 <span class="text-en">Send Money Safely</span><span class="text-kn">ಸುರಕ್ಷಿತ ಪಾವತಿ</span></span>
+      </button>
+      <button type="button" class="curriculum-item-btn" data-target-section="3">
+        <span class="curriculum-num">3</span>
+        <span>🔢 <span class="text-en">UPI PIN Secrets</span><span class="text-kn">ಯುಪಿಐ ಪಿನ್ ರಹಸ್ಯ</span></span>
+      </button>
+      <button type="button" class="curriculum-item-btn" data-target-section="7">
+        <span class="curriculum-num">4</span>
+        <span>🔑 <span class="text-en">OTP Safety Rules</span><span class="text-kn">ಒಟಿಪಿ ಸುರಕ್ಷತೆ</span></span>
+      </button>
+      <button type="button" class="curriculum-item-btn" data-target-section="6">
+        <span class="curriculum-num">5</span>
+        <span>📷 <span class="text-en">QR-Code Scams</span><span class="text-kn">ಕ್ಯೂಆರ್ ಕೋಡ್ ಬಲೆ</span></span>
+      </button>
+      <button type="button" class="curriculum-item-btn" data-target-section="6">
+        <span class="curriculum-num">6</span>
+        <span>📥 <span class="text-en">Collect Request Trap</span><span class="text-kn">ಕಲೆಕ್ಟ್ ರಿಕ್ವೆಸ್ಟ್</span></span>
+      </button>
+      <button type="button" class="curriculum-item-btn" data-target-section="8">
+        <span class="curriculum-num">7</span>
+        <span>📱 <span class="text-en">Fake Screenshots</span><span class="text-kn">ನಕಲಿ ಸ್ಕ್ರೀನ್‌ಶಾಟ್</span></span>
+      </button>
+      <button type="button" class="curriculum-item-btn" data-target-section="9">
+        <span class="curriculum-num">8</span>
+        <span>📞 <span class="text-en">Fake Bank Calls</span><span class="text-kn">ನಕಲಿ ಬ್ಯಾಂಕ್ ಕರೆ</span></span>
+      </button>
+      <button type="button" class="curriculum-item-btn" data-target-section="10">
+        <span class="curriculum-num">9</span>
+        <span>🖥️ <span class="text-en">Screen Sharing / AnyDesk</span><span class="text-kn">ಸ್ಕ್ರೀನ್ ಶೇರಿಂಗ್</span></span>
+      </button>
+      <button type="button" class="curriculum-item-btn" data-target-section="11">
+        <span class="curriculum-num">10</span>
+        <span>🔗 <span class="text-en">Phishing Links & SMS</span><span class="text-kn">ಅನುಮಾನಾಸ್ಪದ ಲಿಂಕ್</span></span>
+      </button>
+      <button type="button" class="curriculum-item-btn" data-target-section="12">
+        <span class="curriculum-num">11</span>
+        <span>⚡ <span class="text-en">Urgent Threats & Fear</span><span class="text-kn">ತುರ್ತು ಬೆದರಿಕೆಗಳು</span></span>
+      </button>
+      <button type="button" class="curriculum-item-btn" data-target-section="13">
+        <span class="curriculum-num">12</span>
+        <span>🚨 <span class="text-en">After Suspected Fraud</span><span class="text-kn">ವಂಚನೆ ನಡೆದ ನಂತರ</span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive Section Stepper Tabs -->
+  <nav class="learn-stepper-nav" aria-label="Tutorial Sections Navigation" id="learnStepperNav" style="overflow-x: auto; padding-bottom: 6px;">
+    <button type="button" class="stepper-tab-btn active" data-step="1" id="tabBtn1">
+      <span class="tab-step-num">1</span>
+      <span class="tab-label" data-i18n="learn_tab_1">1. Understanding UPI</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="2" id="tabBtn2">
+      <span class="tab-step-num">2</span>
+      <span class="tab-label" data-i18n="learn_tab_2">2. Making a UPI Payment</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="3" id="tabBtn3">
+      <span class="tab-step-num">3</span>
+      <span class="tab-label" data-i18n="learn_tab_3">3. Set / Reset PIN</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="4" id="tabBtn4">
+      <span class="tab-step-num">4</span>
+      <span class="tab-label" data-i18n="learn_tab_4">4. UPI PIN Safety</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="5" id="tabBtn5">
+      <span class="tab-step-num">5</span>
+      <span class="tab-label" data-i18n="learn_tab_5">5. Biometrics</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="6" id="tabBtn6">
+      <span class="tab-step-num">6</span>
+      <span class="tab-label" data-i18n="learn_tab_6">6. QR & Collect Scams</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="7" id="tabBtn7">
+      <span class="tab-step-num">7</span>
+      <span class="tab-label">7. OTP Safety</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="8" id="tabBtn8">
+      <span class="tab-step-num">8</span>
+      <span class="tab-label">8. Fake Screenshots</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="9" id="tabBtn9">
+      <span class="tab-step-num">9</span>
+      <span class="tab-label">9. Fake Bank Calls</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="10" id="tabBtn10">
+      <span class="tab-step-num">10</span>
+      <span class="tab-label">10. Screen Sharing</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="11" id="tabBtn11">
+      <span class="tab-step-num">11</span>
+      <span class="tab-label">11. Phishing Links</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="12" id="tabBtn12">
+      <span class="tab-step-num">12</span>
+      <span class="tab-label">12. Urgent Threats</span>
+    </button>
+    <button type="button" class="stepper-tab-btn" data-step="13" id="tabBtn13">
+      <span class="tab-step-num">13</span>
+      <span class="tab-label">13. Suspected Fraud</span>
+    </button>
+    <button type="button" class="stepper-tab-btn tab-quiz" data-step="14" id="tabBtn14">
+      <span class="tab-step-num">🎯</span>
+      <span class="tab-label" data-i18n="learn_tab_quiz">Knowledge Quiz</span>
+    </button>
+  </nav>
+
+  <!-- Tutorial Cards Container -->
+  <div class="learn-sections-container" id="learnSectionsContainer">
+
+    <!-- ========================================================
+         SECTION 1: Understanding UPI
+         ======================================================== -->
+    <article class="learn-section-card active" id="learnSection1" data-section="1">
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Section 1 of 6</span>
+          <span class="section-topic-pill">💡 Digital Payment Basics</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="1" aria-label="Read Section 1 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Section 1">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Understanding UPI: How Digital Payments Work</span>
+        <span class="title-kn">ಯುಪಿಐ ಎಂದರೇನು: ಡಿಜಿಟಲ್ ಪಾವತಿಗಳು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ</span>
+      </h2>
+
+      <!-- Everyday Example Box -->
+      <div class="analogy-card">
+        <div class="analogy-icon-box">🥦</div>
+        <div class="analogy-content">
+          <h3 class="analogy-title">
+            <span class="title-en">Simple Everyday Example: Shri Manjunath Vegetables</span>
+            <span class="title-kn">ದೈನಂದಿನ ಸರಳ ಉದಾಹರಣೆ: ಶ್ರೀ ಮಂಜುನಾಥ್ ತರಕಾರಿ ಅಂಗಡಿ</span>
+          </h3>
+          <p class="analogy-text">
+            <span class="text-en">
+              Imagine visiting your neighborhood vegetable vendor to buy fresh vegetables worth <strong>₹120</strong>. Instead of searching through your purse for exact paper notes and 1-rupee coins, you open your trusted UPI application, scan the vendor's printed QR stand, and <strong>₹120 moves directly and safely from your bank account to the vendor's bank account in 3 seconds</strong>.
+            </span>
+            <span class="text-kn">
+              ನೀವು ತರಕಾರಿ ಅಂಗಡಿಯಲ್ಲಿ <strong>₹೧೨೦</strong> ರ ತರಕಾರಿ ಖರೀದಿಸುತ್ತೀರಿ ಎಂದು ಭಾವಿಸಿ. ಚಿಲ್ಲರೆ ನಾಣ್ಯಗಳನ್ನು ಹುಡುಕುವ ಬದಲು, ನಿಮ್ಮ ಮೊಬೈಲ್‌ನಲ್ಲಿ ಅಂಗಡಿಯವರ ಕ್ಯೂಆರ್ ಕೋಡ್ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ <strong>೩ ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಸುರಕ್ಷಿತವಾಗಿ ಪಾವತಿಸಬಹುದು</strong>. ಹಣವು ನೇರವಾಗಿ ನಿಮ್ಮ ಬ್ಯಾಂಕ್‌ನಿಂದ ಅಂಗಡಿಯವರ ಬ್ಯಾಂಕ್ ಖಾತೆಗೆ ಜಮೆಯಾಗುತ್ತದೆ.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Explanation -->
+      <div class="explanation-body">
+        <p class="lead-para">
+          <span class="text-en">
+            <strong>UPI</strong> stands for <strong>Unified Payments Interface</strong>. Think of it like a secure, instant postal delivery service between banks:
+          </span>
+          <span class="text-kn">
+            <strong>ಯುಪಿಐ (UPI)</strong> ಎಂದರೆ <strong>Unified Payments Interface</strong>. ಇದು ಬ್ಯಾಂಕ್‌ಗಳ ನಡುವೆ ಹಣವನ್ನು ತಕ್ಷಣವೇ ತಲುಪಿಸುವ ಸುರಕ್ಷಿತ ಡಿಜಿಟಲ್ ಅಂಚೆ ಸೇವೆ ಇದ್ದಂತೆ:
+          </span>
+        </p>
+
+        <div class="three-pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">🏦</div>
+            <h4>
+              <span class="text-en">Money Stays in Your Bank</span>
+              <span class="text-kn">ಹಣ ನಿಮ್ಮ ಬ್ಯಾಂಕ್‌ನಲ್ಲೇ ಇರುತ್ತದೆ</span>
+            </h4>
+            <p>
+              <span class="text-en">You do not need to store money in any risky wallet. Funds remain safely in your SBI, Canara, HDFC, or any official bank account until you decide to pay.</span>
+              <span class="text-kn">ನೀವು ಯಾವುದೇ ವ್ಯಾಲೆಟ್‌ನಲ್ಲಿ ಹಣ ಇಡುವ ಅಗತ್ಯವಿಲ್ಲ. ಹಣವು ನಿಮ್ಮ ಎಸ್.ಬಿ.ಐ ಅಥವಾ ಕೆನರಾ ಬ್ಯಾಂಕ್ ಖಾತೆಯಲ್ಲೇ ಸುರಕ್ಷಿತವಾಗಿರುತ್ತದೆ.</span>
+            </p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">⏰</div>
+            <h4>
+              <span class="text-en">Available 24x7 Every Day</span>
+              <span class="text-kn">ಯಾವಾಗಲೂ ೨೪ ಗಂಟೆ ಲಭ್ಯ</span>
+            </h4>
+            <p>
+              <span class="text-en">UPI works day and night, 365 days a year — even on Sundays, festival holidays, and after bank branches have closed for the evening.</span>
+              <span class="text-kn">ಭಾನುವಾರ, ಹಬ್ಬದ ರಜಾದಿನಗಳು ಅಥವಾ ಬ್ಯಾಂಕ್ ಮುಚ್ಚಿದ ಸಮಯದಲ್ಲೂ ಇದು ಕೆಲಸ ಮಾಡುತ್ತದೆ.</span>
+            </p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🛡️</div>
+            <h4>
+              <span class="text-en">Regulated by RBI & NPCI</span>
+              <span class="text-kn">ಭಾರತೀಯ ರಿಸರ್ವ್ ಬ್ಯಾಂಕ್ ನಿಯಂತ್ರಣ</span>
+            </h4>
+            <p>
+              <span class="text-en">UPI was created under the guidance of the Reserve Bank of India (RBI) and National Payments Corporation of India (NPCI) with strict bank security standards.</span>
+              <span class="text-kn">ಇದು ಭಾರತೀಯ ರಿಸರ್ವ್ ಬ್ಯಾಂಕ್ (RBI) ಮತ್ತು NPCI ನಿಯಮಾವಳಿಗಳ ಅಡಿಯಲ್ಲಿ ಸಂಪೂರ್ಣ ಅಧಿಕೃತವಾಗಿ ನಡೆಯುತ್ತದೆ.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Video / Demonstration Player -->
+      <div class="tutorial-video-player-card" id="videoPlayer1">
+        <div class="player-header-bar">
+          <span class="player-tag">🎬 EDUCATIONAL VIDEO DEMONSTRATION</span>
+          <span class="player-source">Verified Reference: NPCI UPI Safety Guide</span>
+        </div>
+
+        <div class="player-display-screen" id="displayScreen1">
+          <div class="demo-watermark-overlay" data-i18n="demo_simulation_label">
+            🏷️ EDUCATIONAL SIMULATION ONLY — NEVER ENTER REAL CREDENTIALS
+          </div>
+
+          <!-- Animated Canvas Simulation -->
+          <div class="animated-stage" id="stage1">
+            <div class="stage-step-view active" id="s1_step1">
+              <div class="sim-badge">Step 1: Initiation</div>
+              <div class="sim-actor-row">
+                <div class="sim-actor">
+                  <div class="actor-icon">👵</div>
+                  <div class="actor-name">Senior Customer</div>
+                  <div class="actor-bank">SBI Bank A/C</div>
+                </div>
+                <div class="sim-transfer-arrow">
+                  <div class="arrow-line"></div>
+                  <div class="arrow-text">Direct Bank Transfer (₹120)</div>
+                </div>
+                <div class="sim-actor">
+                  <div class="actor-icon">🏪</div>
+                  <div class="actor-name">Manjunath Stores</div>
+                  <div class="actor-bank">Canara Bank A/C</div>
+                </div>
+              </div>
+              <div class="sim-status-box">Ready to transfer safely without physical paper cash.</div>
+            </div>
+          </div>
+
+          <!-- Captions Overlay -->
+          <div class="player-captions-overlay" id="captionsOverlay1" aria-live="polite">
+            <span class="caption-en">UPI moves money directly between bank accounts in seconds — safe, instant, and verified.</span>
+            <span class="caption-kn">ಯುಪಿಐ ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಖಾತೆಯಿಂದ ಅಂಗಡಿಯವರ ಖಾತೆಗೆ ಕೆಲವೇ ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಹಣವನ್ನು ನೇರವಾಗಿ ವರ್ಗಾಯಿಸುತ್ತದೆ.</span>
+          </div>
+        </div>
+
+        <!-- Player Controls Bar -->
+        <div class="player-controls-bar">
+          <button type="button" class="btn-ctrl btn-play-pause" data-video="1" aria-label="Play or pause demonstration">
+            <span class="ctrl-icon">▶️</span> <span class="ctrl-label">Play Demo</span>
+          </button>
+          <button type="button" class="btn-ctrl btn-restart" data-video="1" aria-label="Restart demonstration">
+            <span class="ctrl-icon">🔄</span> <span class="ctrl-label">Restart</span>
+          </button>
+          <div class="player-progress-track">
+            <div class="player-progress-bar" id="progressBar1" style="width: 100%;"></div>
+          </div>
+          <span class="player-time-label" id="timeLabel1">0:30 / 0:30</span>
+        </div>
+
+        <!-- Accessible Transcript & Text Alternative -->
+        <details class="video-transcript-box" open>
+          <summary class="transcript-toggle-btn">
+            <span>📝 Video Transcript & Text Alternative</span>
+          </summary>
+          <div class="transcript-content">
+            <ol class="transcript-steps-list">
+              <li><strong>Step 1 (Open App):</strong> The customer unlocks their mobile and taps their official UPI app.</li>
+              <li><strong>Step 2 (Scan & Amount):</strong> The camera scans the vendor's QR code. The app displays "Manjunath Stores". The customer enters ₹120.</li>
+              <li><strong>Step 3 (PIN Entry):</strong> The customer enters their confidential 4 or 6-digit bank PIN.</li>
+              <li><strong>Step 4 (Completion):</strong> The bank transfers ₹120 immediately. Both the customer and the shopkeeper receive official SMS confirmation.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" disabled>
+          <span>⬅ Previous Section</span>
+        </button>
+        <span class="section-indicator-text">Section 1 of 6</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="2">
+          <span>Next: Making a UPI Payment ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 2: Making a UPI Payment
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection2" data-section="2">
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Section 2 of 6</span>
+          <span class="section-topic-pill">💳 Step-by-Step Payment Guide</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="2" aria-label="Read Section 2 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Section 2">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Making a UPI Payment: 6 Golden Steps</span>
+        <span class="title-kn">ಯುಪಿಐ ಪಾವತಿ ಮಾಡುವುದು ಹೇಗೆ: ೬ ಮುಖ್ಯ ಹಂತಗಳು</span>
+      </h2>
+
+      <p class="lead-para">
+        <span class="text-en">Follow these exact six steps whenever you send money to a shop, utility company, or family member:</span>
+        <span class="text-kn">ಯಾವುದೇ ಅಂಗಡಿಗೆ ಅಥವಾ ವ್ಯಕ್ತಿಗೆ ಹಣ ಕಳುಹಿಸುವಾಗ ಈ ೬ ಮುಖ್ಯ ಹಂತಗಳನ್ನು ತಪ್ಪದೇ ಅನುಸರಿಸಿ:</span>
+      </p>
+
+      <!-- 6 Concrete Steps Grid -->
+      <div class="tutorial-steps-grid">
+        <div class="step-guide-card">
+          <div class="step-number-badge">1</div>
+          <div class="step-guide-content">
+            <h3>
+              <span class="text-en">Open your own trusted UPI app</span>
+              <span class="text-kn">ನಿಮ್ಮ ನಂಬಿಕಸ್ಥ ಯುಪಿಐ ಆ್ಯಪ್ ತೆರೆಯಿರಿ</span>
+            </h3>
+            <p>
+              <span class="text-en">Tap your official payment app (such as BHIM, Google Pay, PhonePe, Paytm, or your bank's own mobile app) installed directly from the verified Google Play Store or Apple App Store. Never tap links sent in SMS to open your app.</span>
+              <span class="text-kn">ಅಧಿಕೃತ ಪ್ಲೇ ಸ್ಟೋರ್‌ನಿಂದ ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಲಾದ ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಅಥವಾ ಯುಪಿಐ ಆ್ಯಪ್ ಅನ್ನು ಮಾತ್ರ ತೆರೆಯಿರಿ.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="step-guide-card">
+          <div class="step-number-badge">2</div>
+          <div class="step-guide-content">
+            <h3>
+              <span class="text-en">Verify the recipient</span>
+              <span class="text-kn">ಸ್ವೀಕರಿಸುವವರ ಹೆಸರನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ</span>
+            </h3>
+            <p>
+              <span class="text-en">Scan the printed QR code at the counter or type the recipient's phone number. Look carefully at the name that appears on your phone screen (e.g. "Manjunath Stores"). Make sure the name matches the merchant.</span>
+              <span class="text-kn">ಸ್ಕ್ಯಾನ್ ಮಾಡಿದ ನಂತರ ಪರದೆಯ ಮೇಲೆ ಬರುವ ಅಧಿಕೃತ ಹೆಸರನ್ನು ಗಮನವಿಟ್ಟು ಓದಿ ಪರಿಶೀಲಿಸಿ.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="step-guide-card">
+          <div class="step-number-badge">3</div>
+          <div class="step-guide-content">
+            <h3>
+              <span class="text-en">Enter the intended amount</span>
+              <span class="text-kn">ನಿಖರವಾದ ಮೊತ್ತವನ್ನು ನಮೂದಿಸಿ</span>
+            </h3>
+            <p>
+              <span class="text-en">Carefully enter the exact rupee amount you intend to pay (for example, <strong>₹150</strong>). Double-check the number of zeros so you do not accidentally type ₹1500!</span>
+              <span class="text-kn">ನೀವು ಕಳುಹಿಸಬೇಕಾದ ನಿಖರ ಮೊತ್ತವನ್ನು ಟೈಪ್ ಮಾಡಿ. ಸೊನ್ನೆಗಳನ್ನು (0) ಎರಡು ಬಾರಿ ಎಣಿಸಿ ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="step-guide-card">
+          <div class="step-number-badge">4</div>
+          <div class="step-guide-content">
+            <h3>
+              <span class="text-en">Carefully review the payment details</span>
+              <span class="text-kn">ಪಾವತಿ ವಿವರಗಳನ್ನು ಮತ್ತೊಮ್ಮೆ ಪರಿಶೀಲಿಸಿ</span>
+            </h3>
+            <p>
+              <span class="text-en">Before tapping 'Pay', pause and review the full payment card on your screen: Payee Name, Debited Bank Account, and the Total Amount.</span>
+              <span class="text-kn">ಹಣ ಕಳುಹಿಸುವ ಮುನ್ನ ಹೆಸರು, ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಖಾತೆ ಮತ್ತು ಮೊತ್ತವನ್ನು ಮತ್ತೊಮ್ಮೆ ಪರಿಶೀಲಿಸಿ.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="step-guide-card highlight-step">
+          <div class="step-number-badge">5</div>
+          <div class="step-guide-content">
+            <h3>
+              <span class="text-en">Enter your UPI PIN only inside your trusted app</span>
+              <span class="text-kn">ನಿಮ್ಮ ರಹಸ್ಯ ಯುಪಿಐ ಪಿನ್ ಅನ್ನು ಆ್ಯಪ್ ಒಳಗೆ ಮಾತ್ರ ನಮೂದಿಸಿ</span>
+            </h3>
+            <p>
+              <span class="text-en">The secure black bank PIN screen will appear. Enter your 4 or 6-digit confidential UPI PIN <strong>ONLY</strong> on this official screen when <strong>YOU</strong> are paying. Shield your screen with your other hand.</span>
+              <span class="text-kn">ನಿಮ್ಮ ರಹಸ್ಯ ೪ ಅಥವಾ ೬-ಅಂಕಿಯ ಯುಪಿಐ ಪಿನ್ ಅನ್ನು ಕೇವಲ ಹಣ ಕಳುಹಿಸಲು ಮಾತ್ರ ನಮೂದಿಸಿ. ಇತರರು ನೋಡದಂತೆ ಪರದೆಯನ್ನು ಮರೆಮಾಡಿ.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="step-guide-card">
+          <div class="step-number-badge">6</div>
+          <div class="step-guide-content">
+            <h3>
+              <span class="text-en">Confirm result & check transaction history</span>
+              <span class="text-kn">ಫಲಿತಾಂಶ ಖಚಿತಪಡಿಸಿ ಮತ್ತು ಇತಿಹಾಸ ಪರಿಶೀಲಿಸಿ</span>
+            </h3>
+            <p>
+              <span class="text-en">Wait for the green checkmark ("Payment Successful"). Check your transaction history inside the app and look for the confirmation SMS from your bank.</span>
+              <span class="text-kn">ಪಾವತಿ ಯಶಸ್ವಿ (Payment Successful) ಹಸಿರು ಗುರುತು ಬರುವುದನ್ನು ಗಮನಿಸಿ ಮತ್ತು ಬ್ಯಾಂಕ್‌ನಿಂದ ಬರುವ ಎಸ್ಎಂಎಸ್ ಪರಿಶೀಲಿಸಿ.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Video / Demonstration Player -->
+      <div class="tutorial-video-player-card" id="videoPlayer2">
+        <div class="player-header-bar">
+          <span class="player-tag">🎬 INTERACTIVE STEP-BY-STEP PAYMENT DEMO</span>
+          <span class="player-source">Verified Reference: Reserve Bank of India (RBI Kehta Hai)</span>
+        </div>
+
+        <div class="player-display-screen" id="displayScreen2">
+          <div class="demo-watermark-overlay" data-i18n="demo_simulation_label">
+            🏷️ EDUCATIONAL SIMULATION ONLY — NEVER ENTER REAL CREDENTIALS
+          </div>
+
+          <div class="phone-demo-wrapper">
+            <div class="phone-screen-inner">
+              <div class="sim-phone-header">
+                <span>EASY PAY SAFE DEMO</span>
+                <span>🔒 SECURE BANK</span>
+              </div>
+              <div class="sim-phone-body">
+                <div class="sim-merchant-badge">
+                  <div class="merchant-avatar">🏪</div>
+                  <div class="merchant-info">
+                    <strong>Shri Manjunath Stores</strong>
+                    <span class="verified-tag">✔ Verified Merchant</span>
+                  </div>
+                </div>
+                <div class="sim-amount-box">₹150.00</div>
+                <div class="sim-debit-from">Debiting: State Bank of India •••• 1234</div>
+                <div class="sim-pin-keypad-mockup">
+                  <div class="pin-bullets">● ● ● ●</div>
+                  <div class="keypad-notice">🔒 Official Bank PIN Shielded Screen</div>
+                </div>
+                <div class="sim-success-banner">✔ Payment Successful • ₹150 Debited</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Captions Overlay -->
+          <div class="player-captions-overlay" id="captionsOverlay2" aria-live="polite">
+            <span class="caption-en">Always verify the recipient's name before entering your confidential UPI PIN.</span>
+            <span class="caption-kn">ರಹಸ್ಯ ಯುಪಿಐ ಪಿನ್ ಹಾಕುವ ಮುನ್ನ ಸ್ವೀಕರಿಸುವವರ ಹೆಸರನ್ನು ಯಾವಾಗಲೂ ಪರಿಶೀಲಿಸಿ.</span>
+          </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="player-controls-bar">
+          <button type="button" class="btn-ctrl btn-play-pause" data-video="2" aria-label="Play or pause demonstration">
+            <span class="ctrl-icon">▶️</span> <span class="ctrl-label">Play Demo</span>
+          </button>
+          <button type="button" class="btn-ctrl btn-restart" data-video="2" aria-label="Restart demonstration">
+            <span class="ctrl-icon">🔄</span> <span class="ctrl-label">Restart</span>
+          </button>
+          <div class="player-progress-track">
+            <div class="player-progress-bar" id="progressBar2" style="width: 100%;"></div>
+          </div>
+          <span class="player-time-label" id="timeLabel2">0:45 / 0:45</span>
+        </div>
+
+        <!-- Transcript -->
+        <details class="video-transcript-box" open>
+          <summary class="transcript-toggle-btn">
+            <span>📝 Video Transcript & Text Alternative</span>
+          </summary>
+          <div class="transcript-content">
+            <p><strong>Demonstration Summary:</strong> Shows how to pay safely at a store. Step 1: Scan QR code. Step 2: The screen verifies the vendor name "Shri Manjunath Stores". Step 3: Enter ₹150. Step 4: The customer enters their dummy UPI PIN on the shielded keypad. Step 5: The green confirmation checkmark appears, and the transaction is recorded in the transaction history.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="1">
+          <span>⬅ Previous: Understanding UPI</span>
+        </button>
+        <span class="section-indicator-text">Section 2 of 6</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="3">
+          <span>Next: Setting / Resetting PIN ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 3: Setting or Resetting a UPI PIN
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection3" data-section="3">
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Section 3 of 6</span>
+          <span class="section-topic-pill">🔢 PIN Setup & Reset</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="3" aria-label="Read Section 3 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Section 3">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Setting or Resetting Your UPI PIN</span>
+        <span class="title-kn">ಯುಪಿಐ ಪಿನ್ ಹೊಂದಿಸುವುದು ಅಥವಾ ಬದಲಾಯಿಸುವುದು</span>
+      </h2>
+
+      <!-- Strict Senior Safety Alert Box -->
+      <div class="safety-warning-banner" role="alert">
+        <div class="warning-icon-badge">⚠️</div>
+        <div class="warning-text-block">
+          <h4>
+            <span class="text-en">CRITICAL SAFETY REMINDERS</span>
+            <span class="text-kn">ಅತ್ಯಂತ ಪ್ರಮುಖ ಸುರಕ್ಷತಾ ನಿಯಮಗಳು</span>
+          </h4>
+          <ul>
+            <li><span class="text-en"><strong>NEVER enter your actual, real PIN into this website or any website.</strong> We never ask for, collect, or store real PINs.</span><span class="text-kn"><strong>ನಿಮ್ಮ ನಿಜವಾದ ಯುಪಿಐ ಪಿನ್ ಅನ್ನು ಈ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ಎಂದಿಗೂ ನಮೂದಿಸಬೇಡಿ.</strong> ನಾವು ಯಾವುದೇ ನೈಜ ಪಿನ್ ಕೇಳುವುದಿಲ್ಲ.</span></li>
+            <li><span class="text-en"><strong>The exact PIN setup process depends on your specific UPI application and bank.</strong> Always follow your bank's official instructions inside your trusted mobile application.</span><span class="text-kn">ಪಿನ್ ಬದಲಿಸುವ ಪ್ರಕ್ರಿಯೆಯು ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಮತ್ತು ಆ್ಯಪ್ ಮೇಲೆ ಅವಲಂಬಿತವಾಗಿರುತ್ತದೆ.</span></li>
+            <li><span class="text-en"><strong>Never show or record a real PIN</strong> on sticky notes, phone notes, or diaries.</span><span class="text-kn">ನಿಜವಾದ ಪಿನ್ ಅನ್ನು ಎಂದಿಗೂ ಕಾಗದದ ಮೇಲೆ ಅಥವಾ ಮೊಬೈಲ್ ನೋಟ್ಸ್‌ನಲ್ಲಿ ಬರೆದಿಡಬೇಡಿ.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="explanation-body">
+        <p class="lead-para">
+          <span class="text-en">
+            Your <strong>UPI PIN</strong> is like your digital ATM card PIN. You create it when linking your bank account to your payment app, or you can reset it whenever you forget it. Here is the general process:
+          </span>
+          <span class="text-kn">
+            ಯುಪಿಐ ಪಿನ್ ನಿಮ್ಮ ಮೊಬೈಲ್ ಬ್ಯಾಂಕಿಂಗ್‌ನ ಎಟಿಎಂ ಪಿನ್ ಇದ್ದಂತೆ. ಇದನ್ನು ನೀವೇ ರಚಿಸುತ್ತೀರಿ:
+          </span>
+        </p>
+
+        <div class="pin-steps-flow">
+          <div class="flow-card">
+            <span class="flow-num">Step A</span>
+            <h4>
+              <span class="text-en">Go to Your Profile</span>
+              <span class="text-kn">ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ತೆರೆಯಿರಿ</span>
+            </h4>
+            <p>
+              <span class="text-en">Inside your trusted UPI app, tap your Profile Picture or Bank Accounts. Select the bank account and choose <strong>"Set UPI PIN"</strong> or <strong>"Forgot / Change PIN"</strong>.</span>
+              <span class="text-kn">ನಿಮ್ಮ ಯುಪಿಐ ಆ್ಯಪ್‌ನಲ್ಲಿ ಬ್ಯಾಂಕ್ ಖಾತೆ ಆಯ್ಕೆಮಾಡಿ "Set UPI PIN" ಅಥವಾ "Change PIN" ಒತ್ತಿ.</span>
+            </p>
+          </div>
+          <div class="flow-card">
+            <span class="flow-num">Step B</span>
+            <h4>
+              <span class="text-en">Provide Card or Aadhaar Details</span>
+              <span class="text-kn">ಕಾರ್ಡ್ ಅಥವಾ ಆಧಾರ್ ವಿವರ</span>
+            </h4>
+            <p>
+              <span class="text-en">Enter the last 6 digits of your official ATM debit card and its expiry month/year (or use Aadhaar OTP if your bank supports it).</span>
+              <span class="text-kn">ನಿಮ್ಮ ಎಟಿಎಂ ಡೆಬಿಟ್ ಕಾರ್ಡ್‌ನ ಕೊನೆಯ ೬ ಅಂಕಿಗಳು ಮತ್ತು ಮುಕ್ತಾಯ ದಿನಾಂಕವನ್ನು ನಮೂದಿಸಿ.</span>
+            </p>
+          </div>
+          <div class="flow-card">
+            <span class="flow-num">Step C</span>
+            <h4>
+              <span class="text-en">Enter Bank SMS OTP</span>
+              <span class="text-kn">ಬ್ಯಾಂಕ್ ಒಟಿಪಿ ನಮೂದಿಸಿ</span>
+            </h4>
+            <p>
+              <span class="text-en">Your bank sends a secure One-Time Password (OTP) via SMS to your registered mobile number. The app reads or receives it securely.</span>
+              <span class="text-kn">ನಿಮ್ಮ ಮೊಬೈಲ್‌ಗೆ ಬರುವ ಅಧಿಕೃತ ಬ್ಯಾಂಕ್ ಒಟಿಪಿ ನಮೂದಿಸಿ.</span>
+            </p>
+          </div>
+          <div class="flow-card">
+            <span class="flow-num">Step D</span>
+            <h4>
+              <span class="text-en">Set a New Memorable Secret PIN</span>
+              <span class="text-kn">ಹೊಸ ರಹಸ್ಯ ಪಿನ್ ರಚಿಸಿ</span>
+            </h4>
+            <p>
+              <span class="text-en">Choose a 4 or 6-digit number that only you know. Avoid birth years (e.g. 1954), 1234, or 0000. Re-enter it once more to confirm.</span>
+              <span class="text-kn">ಯಾರಿಗೂ ಊಹಿಸಲು ಸಾಧ್ಯವಾಗದ ೪ ಅಥವಾ ೬-ಅಂಕಿಯ ಹೊಸ ಪಿನ್ ನಮೂದಿಸಿ ಖಚಿತಪಡಿಸಿ.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video / Simulated Demonstration -->
+      <div class="tutorial-video-player-card" id="videoPlayer3">
+        <div class="player-header-bar">
+          <span class="player-tag">🎬 EDUCATIONAL SIMULATION DEMO</span>
+          <span class="player-source">Verified NPCI Educational Demo Guidelines</span>
+        </div>
+
+        <div class="player-display-screen" id="displayScreen3">
+          <div class="demo-watermark-overlay" data-i18n="demo_simulation_label">
+            🏷️ EDUCATIONAL SIMULATION ONLY — NEVER ENTER REAL CREDENTIALS
+          </div>
+
+          <div class="dummy-pin-demo-container">
+            <div class="dummy-phone-box">
+              <div class="dummy-title">DEMONSTRATION: SETTING A DUMMY PIN</div>
+              <div class="dummy-debit-mock">
+                <span>Debit Card (Dummy): •••• •••• •••• 5678</span>
+                <span>Expiry: 12/28</span>
+              </div>
+              <div class="dummy-otp-badge">✔ Bank SMS OTP Auto-Filled (Educational Simulation)</div>
+              <div class="dummy-new-pin-display">
+                <span>New Dummy PIN:</span>
+                <span class="dummy-dots">● ● ● ● (Example: 9-9-9-9)</span>
+              </div>
+              <div class="dummy-warning-pill">Never disclose this PIN to any caller or family member</div>
+            </div>
+          </div>
+
+          <!-- Captions Overlay -->
+          <div class="player-captions-overlay" id="captionsOverlay3" aria-live="polite">
+            <span class="caption-en">Educational Demonstration Only. Follow your bank's official instructions in your app. Never share your real PIN.</span>
+            <span class="caption-kn">ಇದು ಕೇವಲ ಶೈಕ್ಷಣಿಕ ಡೆಮೊ. ನಿಮ್ಮ ನೈಜ ಪಿನ್ ಅನ್ನು ಎಂದಿಗೂ ಯಾರಿಗೂ ಹೇಳಬೇಡಿ.</span>
+          </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="player-controls-bar">
+          <button type="button" class="btn-ctrl btn-play-pause" data-video="3" aria-label="Play or pause demonstration">
+            <span class="ctrl-icon">▶️</span> <span class="ctrl-label">Play Demo</span>
+          </button>
+          <button type="button" class="btn-ctrl btn-restart" data-video="3" aria-label="Restart demonstration">
+            <span class="ctrl-icon">🔄</span> <span class="ctrl-label">Restart</span>
+          </button>
+          <div class="player-progress-track">
+            <div class="player-progress-bar" id="progressBar3" style="width: 100%;"></div>
+          </div>
+          <span class="player-time-label" id="timeLabel3">0:35 / 0:35</span>
+        </div>
+
+        <!-- Transcript -->
+        <details class="video-transcript-box" open>
+          <summary class="transcript-toggle-btn">
+            <span>📝 Video Transcript & Text Alternative</span>
+          </summary>
+          <div class="transcript-content">
+            <p><strong>Demonstration Summary:</strong> Illustrates the general flow of setting or resetting a PIN using your debit card or Aadhaar OTP inside your bank app. The demonstration uses dummy placeholders (card ending in 5678, dummy PIN 9999). It emphasizes that genuine banks never ask for your PIN over phone calls or emails, and that users must only enter PINs inside their trusted payment apps.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="2">
+          <span>⬅ Previous: Making a Payment</span>
+        </button>
+        <span class="section-indicator-text">Section 3 of 6</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="4">
+          <span>Next: UPI PIN Safety ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 4: UPI PIN Safety
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection4" data-section="4">
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Section 4 of 6</span>
+          <span class="section-topic-pill">🛡️ The Golden Rule of Safety</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="4" aria-label="Read Section 4 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Section 4">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">UPI PIN Safety: The Golden Rules</span>
+        <span class="title-kn">ಯುಪಿಐ ಪಿನ್ ಸುರಕ್ಷತೆ: ಸುವರ್ಣ ನಿಯಮಗಳು</span>
+      </h2>
+
+      <!-- Golden Rule Banner -->
+      <div class="golden-rule-banner">
+        <div class="rule-star-icon">⭐</div>
+        <div class="rule-banner-body">
+          <h3 class="golden-rule-heading">
+            <span class="text-en">THE GOLDEN RULE OF THE UPI PIN</span>
+            <span class="text-kn">ಯುಪಿಐ ಪಿನ್‌ನ ಮುಖ್ಯ ಸುವರ್ಣ ನಿಯಮ</span>
+          </h3>
+          <p class="golden-rule-lead">
+            <span class="text-en">A UPI PIN is used <strong>ONLY to SEND money</strong> (money leaving your account). You <strong>NEVER</strong> enter a UPI PIN to receive money, receive a prize, or accept a refund.</span>
+            <span class="text-kn">ಯುಪಿಐ ಪಿನ್ ಕೇವಲ ನಿಮ್ಮ ಖಾತೆಯಿಂದ <strong>ಹಣ ಕಳುಹಿಸಲು ಮಾತ್ರ</strong>. ಹಣ ಪಡೆಯಲು, ಬಹುಮಾನ ಅಥವಾ ಮರುಪಾವತಿ ಪಡೆಯಲು ಎಂದಿಗೂ ಪಿನ್ ಹಾಕುವ ಅಗತ್ಯವಿಲ್ಲ.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Safety Principles Grid -->
+      <div class="pin-safety-rules-grid">
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">🤫</div>
+          <h4>
+            <span class="text-en">Strictly Confidential</span>
+            <span class="text-kn">ಸಂಪೂರ್ಣ ರಹಸ್ಯ</span>
+          </h4>
+          <p>
+            <span class="text-en">Your UPI PIN is like your bank locker key. Never disclose it to a phone caller, family member, friend, technician, or bank employee.</span>
+            <span class="text-kn">ನಿಮ್ಮ ಪಿನ್ ಅನ್ನು ಯಾವುದೇ ಕರೆ ಮಾಡಿದ ವ್ಯಕ್ತಿಗೆ, ಸಂಬಂಧಿಕರಿಗೆ ಅಥವಾ ಬ್ಯಾಂಕ್ ಸಿಬ್ಬಂದಿಗೆ ಎಂದಿಗೂ ಹೇಳಬೇಡಿ.</span>
+          </p>
+        </div>
+
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">📥</div>
+          <h4>
+            <span class="text-en">Receiving Money is Automatic</span>
+            <span class="text-kn">ಹಣ ಸ್ವೀಕರಿಸುವುದು ಸ್ವಯಂಚಾಲಿತ</span>
+          </h4>
+          <p>
+            <span class="text-en">When someone genuinely sends you money, it automatically deposits into your bank. You do not need to press anything or enter any number.</span>
+            <span class="text-kn">ಯಾರಾದರೂ ನಿಮಗೆ ಹಣ ಕಳುಹಿಸಿದರೆ ಅದು ನೇರವಾಗಿ ನಿಮ್ಮ ಖಾತೆಗೆ ಜಮೆಯಾಗುತ್ತದೆ. ನೀವು ಯಾವುದೇ ಬಟನ್ ಒತ್ತಬೇಕಾಗಿಲ್ಲ.</span>
+          </p>
+        </div>
+
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">🛑</div>
+          <h4>
+            <span class="text-en">Reject Unexpected Requests</span>
+            <span class="text-kn">ಅಪರಿಚಿತ ವಿನಂತಿಗಳನ್ನು ತಿರಸ್ಕರಿಸಿ</span>
+          </h4>
+          <p>
+            <span class="text-en">If a notification pops up asking for your PIN when you were not making a payment, immediately tap <strong>Decline</strong> or <strong>Cancel</strong>.</span>
+            <span class="text-kn">ನೀವು ಪಾವತಿ ಮಾಡದಿದ್ದಾಗ ಪಿನ್ ಕೇಳುವ ಸಂದೇಶ ಬಂದರೆ ತಕ್ಷಣ "Decline" ಅಥವಾ ತಿರಸ್ಕರಿಸಿ.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Do's and Don'ts Comparison Table -->
+      <div class="dos-donts-table-container">
+        <div class="table-column dos-side">
+          <div class="column-header">
+            <span>✔ WHEN TO ENTER PIN</span>
+          </div>
+          <ul class="rule-checklist">
+            <li>When <strong>YOU</strong> are intentionally buying vegetables, groceries, or medicine.</li>
+            <li>When paying an official electricity or telephone bill inside your app.</li>
+            <li>When transferring money to your children or grandchildren.</li>
+          </ul>
+        </div>
+        <div class="table-column donts-side">
+          <div class="column-header">
+            <span>✖ WHEN NEVER TO ENTER PIN</span>
+          </div>
+          <ul class="rule-checklist">
+            <li>When someone says: "Enter PIN to receive your ₹10,000 lottery or bonus".</li>
+            <li>When a caller asks for PIN to "verify your identity" or "prevent account blocking".</li>
+            <li>When a courier or buyer claims to send you a refund.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Animated Video / Demonstration Player -->
+      <div class="tutorial-video-player-card" id="videoPlayer4">
+        <div class="player-header-bar">
+          <span class="player-tag">🎬 INTERACTIVE PIN SAFETY DEMO</span>
+          <span class="player-source">Verified Reference: NPCI UPI Chalega Campaign</span>
+        </div>
+
+        <div class="player-display-screen" id="displayScreen4">
+          <div class="demo-watermark-overlay" data-i18n="demo_simulation_label">
+            🏷️ EDUCATIONAL SIMULATION ONLY — NEVER ENTER REAL CREDENTIALS
+          </div>
+
+          <div class="animated-trap-comparison">
+            <div class="trap-box danger-box">
+              <div class="trap-tag">❌ FRAUD TRAP</div>
+              <div class="trap-text">"Enter your UPI PIN to claim ₹5,000 lottery prize."</div>
+              <div class="trap-result">Entering PIN DEBITS ₹5,000 from you!</div>
+            </div>
+            <div class="trap-box safe-box">
+              <div class="trap-tag">✔ SAFE ACTION</div>
+              <div class="trap-text">Receiving money requires ZERO action from you.</div>
+              <div class="trap-result">Tap DECLINE & Block!</div>
+            </div>
+          </div>
+
+          <!-- Captions Overlay -->
+          <div class="player-captions-overlay" id="captionsOverlay4" aria-live="polite">
+            <span class="caption-en">Remember the Golden Rule: Entering your UPI PIN ALWAYS sends money OUT of your bank account.</span>
+            <span class="caption-kn">ನೆನಪಿಡಿ: ಯುಪಿಐ ಪಿನ್ ಹಾಕಿದರೆ ಹಣ ನಿಮ್ಮ ಖಾತೆಯಿಂದ ಹೊರಹೋಗುತ್ತದೆ. ಪಡೆಯಲು ಎಂದಿಗೂ ಪಿನ್ ಹಾಕಬೇಡಿ.</span>
+          </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="player-controls-bar">
+          <button type="button" class="btn-ctrl btn-play-pause" data-video="4" aria-label="Play or pause demonstration">
+            <span class="ctrl-icon">▶️</span> <span class="ctrl-label">Play Demo</span>
+          </button>
+          <button type="button" class="btn-ctrl btn-restart" data-video="4" aria-label="Restart demonstration">
+            <span class="ctrl-icon">🔄</span> <span class="ctrl-label">Restart</span>
+          </button>
+          <div class="player-progress-track">
+            <div class="player-progress-bar" id="progressBar4" style="width: 100%;"></div>
+          </div>
+          <span class="player-time-label" id="timeLabel4">0:30 / 0:30</span>
+        </div>
+
+        <!-- Transcript -->
+        <details class="video-transcript-box" open>
+          <summary class="transcript-toggle-btn">
+            <span>📝 Video Transcript & Text Alternative</span>
+          </summary>
+          <div class="transcript-content">
+            <p><strong>Demonstration Summary:</strong> Visually proves that entering a PIN is only required to send money. It compares a fraudulent incoming collect request with genuine banking alerts, showing that tapping approve on a collect request causes a loss of funds, and that seniors should always decline unexpected requests.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="3">
+          <span>⬅ Previous: Setting / Resetting PIN</span>
+        </button>
+        <span class="section-indicator-text">Section 4 of 6</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="5">
+          <span>Next: Biometric Authentication ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 5: Biometric Authentication
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection5" data-section="5">
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Section 5 of 6</span>
+          <span class="section-topic-pill">👆 Modern Device Security</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="5" aria-label="Read Section 5 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Section 5">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Biometric Authentication & App Security</span>
+        <span class="title-kn">ಬಯೋಮೆಟ್ರಿಕ್ / ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ದೃಢೀಕರಣ ಮತ್ತು ಭದ್ರತೆ</span>
+      </h2>
+
+      <!-- Privacy & Safety Guarantee -->
+      <div class="biometric-privacy-badge" role="note">
+        <span class="privacy-icon">🔒</span>
+        <div class="privacy-text">
+          <span class="text-en"><strong>Privacy Notice:</strong> This educational website never collects fingerprints, facial scans, or any biometric information. All biometric settings remain strictly inside your own physical smartphone.</span>
+          <span class="text-kn"><strong>ಗೌಪ್ಯತೆ ಸೂಚನೆ:</strong> ಈ ಶೈಕ್ಷಣಿಕ ವೆಬ್‌ಸೈಟ್ ನಿಮ್ಮ ಯಾವುದೇ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಅಥವಾ ಬಯೋಮೆಟ್ರಿಕ್ ವಿವರಗಳನ್ನು ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ.</span>
+        </div>
+      </div>
+
+      <div class="explanation-body">
+        <p class="lead-para">
+          <span class="text-en">
+            Many modern smartphones and payment applications offer <strong>Biometric Authentication</strong> (such as your fingerprint sensor or face recognition). This feature provides an extra layer of protection for your phone.
+          </span>
+          <span class="text-kn">
+            ಹಲವು ಆಧುನಿಕ ಸ್ಮಾರ್ಟ್‌ಫೋನ್‌ಗಳು ಮತ್ತು ಯುಪಿಐ ಆ್ಯಪ್‌ಗಳು <strong>ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ (ಬಯೋಮೆಟ್ರಿಕ್)</strong> ಲಾಕ್ ಸೌಲಭ್ಯವನ್ನು ಹೊಂದಿವೆ. ಇದು ನಿಮ್ಮ ಮೊಬೈಲ್‌ಗೆ ಹೆಚ್ಚುವರಿ ಸುರಕ್ಷತೆ ನೀಡುತ್ತದೆ.
+          </span>
+        </p>
+
+        <!-- Key Distinction Box -->
+        <div class="nuance-card">
+          <div class="nuance-icon">ℹ️</div>
+          <div class="nuance-text">
+            <h4>
+              <span class="text-en">Important Distinction: App Lock vs. Bank UPI PIN</span>
+              <span class="text-kn">ಪ್ರಮುಖ ವ್ಯತ್ಯಾಸ: ಆ್ಯಪ್ ಲಾಕ್ ಮತ್ತು ಬ್ಯಾಂಕ್ ಯುಪಿಐ ಪಿನ್</span>
+            </h4>
+            <p>
+              <span class="text-en">
+                Biometric authentication (your fingerprint) is used to <strong>open or unlock</strong> your payment application so that strangers cannot open it if they borrow your phone. <strong>However, biometric authentication does NOT replace your confidential UPI PIN in every situation.</strong> The bank UPI PIN is still mandated by NPCI to authorize the actual transfer of money.
+              </span>
+              <span class="text-kn">
+                ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ನಿಮ್ಮ ಆ್ಯಪ್ ಅನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ. ಆದರೆ <strong>ಇದು ಎಲ್ಲಾ ಸಂದರ್ಭದಲ್ಲೂ ಯುಪಿಐ ಪಿನ್ ಬದಲಿಗೆ ಪರ್ಯಾಯವಲ್ಲ.</strong> ಹಣ ವರ್ಗಾವಣೆಯಾಗಲು ಬ್ಯಾಂಕ್ ಯುಪಿಐ ಪಿನ್ ಅಗತ್ಯವಾಗಿರುತ್ತದೆ.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <!-- How Seniors Can Check App Settings -->
+        <h3 class="subsection-title">
+          <span class="text-en">How to Check Security Settings in Your Own App</span>
+          <span class="text-kn">ನಿಮ್ಮ ಆ್ಯಪ್‌ನಲ್ಲಿ ಭದ್ರತಾ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸುವುದು ಹೇಗೆ</span>
+        </h3>
+
+        <div class="security-steps-row">
+          <div class="sec-step-card">
+            <span class="sec-step-num">Step 1</span>
+            <div class="sec-step-icon">👤</div>
+            <h4>
+              <span class="text-en">Tap Profile</span>
+              <span class="text-kn">ಪ್ರೊಫೈಲ್ ಒತ್ತಿ</span>
+            </h4>
+            <p>
+              <span class="text-en">Open your trusted UPI app and tap your photo or initials in the top corner.</span>
+              <span class="text-kn">ನಿಮ್ಮ ಯುಪಿಐ ಆ್ಯಪ್ ತೆರೆದು ಮೇಲ್ಭಾಗದಲ್ಲಿರುವ ಪ್ರೊಫೈಲ್ ಚಿತ್ರವನ್ನು ಒತ್ತಿ.</span>
+            </p>
+          </div>
+          <div class="sec-step-card">
+            <span class="sec-step-num">Step 2</span>
+            <div class="sec-step-icon">⚙️</div>
+            <h4>
+              <span class="text-en">Open Settings</span>
+              <span class="text-kn">ಸೆಟ್ಟಿಂಗ್ಸ್ ತೆರೆಯಿರಿ</span>
+            </h4>
+            <p>
+              <span class="text-en">Select <strong>"Security & Privacy"</strong> or <strong>"App Settings"</strong>.</span>
+              <span class="text-kn">"Security & Privacy" ಅಥವಾ ಸೆಟ್ಟಿಂಗ್ಸ್ ಆಯ್ಕೆಮಾಡಿ.</span>
+            </p>
+          </div>
+          <div class="sec-step-card">
+            <span class="sec-step-num">Step 3</span>
+            <div class="sec-step-icon">👆</div>
+            <h4>
+              <span class="text-en">Turn On App Lock</span>
+              <span class="text-kn">ಆ್ಯಪ್ ಲಾಕ್ ಆನ್ ಮಾಡಿ</span>
+            </h4>
+            <p>
+              <span class="text-en">Look for <strong>"Enable Screen Lock"</strong> or <strong>"Fingerprint Lock"</strong> and toggle it ON.</span>
+              <span class="text-kn">"Enable Fingerprint / Screen Lock" ಆನ್ ಮಾಡಿ.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Video / Demonstration Player -->
+      <div class="tutorial-video-player-card" id="videoPlayer5">
+        <div class="player-header-bar">
+          <span class="player-tag">🎬 BIOMETRIC SECURITY DEMONSTRATION</span>
+          <span class="player-source">Verified Device Security Guide</span>
+        </div>
+
+        <div class="player-display-screen" id="displayScreen5">
+          <div class="demo-watermark-overlay" data-i18n="demo_simulation_label">
+            🏷️ EDUCATIONAL SIMULATION ONLY — NEVER ENTER REAL CREDENTIALS
+          </div>
+
+          <div class="biometric-demo-stage">
+            <div class="phone-lock-illustration">
+              <div class="fingerprint-scan-icon">👆</div>
+              <div class="scan-ring"></div>
+              <div class="lock-status-text">✔ Device Fingerprint Unlocks App Safely</div>
+              <div class="lock-sub-text">Confidential Bank UPI PIN remains required to send money.</div>
+            </div>
+          </div>
+
+          <!-- Captions Overlay -->
+          <div class="player-captions-overlay" id="captionsOverlay5" aria-live="polite">
+            <span class="caption-en">Enable fingerprint lock in your app settings so nobody else can open your payment app.</span>
+            <span class="caption-kn">ಬೇರೆ ಯಾರೂ ನಿಮ್ಮ ಆ್ಯಪ್ ತೆರೆಯದಂತೆ ಸೆಟ್ಟಿಂಗ್ಸ್‌ನಲ್ಲಿ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಲಾಕ್ ಆನ್ ಮಾಡಿ.</span>
+          </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="player-controls-bar">
+          <button type="button" class="btn-ctrl btn-play-pause" data-video="5" aria-label="Play or pause demonstration">
+            <span class="ctrl-icon">▶️</span> <span class="ctrl-label">Play Demo</span>
+          </button>
+          <button type="button" class="btn-ctrl btn-restart" data-video="5" aria-label="Restart demonstration">
+            <span class="ctrl-icon">🔄</span> <span class="ctrl-label">Restart</span>
+          </button>
+          <div class="player-progress-track">
+            <div class="player-progress-bar" id="progressBar5" style="width: 100%;"></div>
+          </div>
+          <span class="player-time-label" id="timeLabel5">0:30 / 0:30</span>
+        </div>
+
+        <!-- Transcript -->
+        <details class="video-transcript-box" open>
+          <summary class="transcript-toggle-btn">
+            <span>📝 Video Transcript & Text Alternative</span>
+          </summary>
+          <div class="transcript-content">
+            <p><strong>Demonstration Summary:</strong> Illustrates how biometric screen lock protects your phone when someone else touches it. Shows navigating to app settings, enabling biometric unlock, and clarifies that biometric authentication safeguards the device while the bank PIN authorizes fund movements.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="4">
+          <span>⬅ Previous: UPI PIN Safety</span>
+        </button>
+        <span class="section-indicator-text">Section 5 of 6</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="6">
+          <span>Next: QR & Collect Scams ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 6: Recognizing Collect Requests and QR-Code Scams
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection6" data-section="6">
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Section 6 of 6</span>
+          <span class="section-topic-pill">⚠️ Fraud Prevention & Scams</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="6" aria-label="Read Section 6 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Section 6">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Recognizing Collect Requests & QR Code Scams</span>
+        <span class="title-kn">ಕಲೆಕ್ಟ್ ರಿಕ್ವೆಸ್ಟ್ ಮತ್ತು ಕ್ಯೂಆರ್ ಕೋಡ್ ವಂಚನೆಗಳನ್ನು ಗುರುತಿಸುವುದು</span>
+      </h2>
+
+      <!-- Core Truth Card -->
+      <div class="danger-warning-card">
+        <div class="danger-header">
+          <span class="danger-icon">🚨</span>
+          <h3>
+            <span class="text-en">The Two Most Common Frauds Targeting Seniors</span>
+            <span class="text-kn">ಹಿರಿಯರನ್ನು ಗುರಿಯಾಗಿಸುವ ೨ ಪ್ರಮುಖ ವಂಚನೆಗಳು</span>
+          </h3>
+        </div>
+        <p class="danger-lead">
+          <span class="text-en">Scammers use tricky words to confuse seniors into paying money when they think they are receiving money. Understand these two tricks:</span>
+          <span class="text-kn">ಹಣ ಬರುತ್ತಿದೆ ಎಂದು ನಂಬಿಸಿ ನಿಮ್ಮ ಖಾತೆಯಿಂದ ಹಣ ಕದಿಯುವ ಎರಡು ಮುಖ್ಯ ತಂತ್ರಗಳನ್ನು ತಿಳಿಯಿರಿ:</span>
+        </p>
+      </div>
+
+      <div class="scam-deepdive-grid">
+        <!-- Scam 1: Collect Request Trap -->
+        <div class="scam-detail-card">
+          <div class="scam-header">
+            <span class="scam-type-pill">Scam Trick 1</span>
+            <h4>
+              <span class="text-en">The "Collect Request" Trap</span>
+              <span class="text-kn">ನಕಲಿ "ಕಲೆಕ್ಟ್ ರಿಕ್ವೆಸ್ಟ್" ಬಲೆ</span>
+            </h4>
+          </div>
+          <div class="scam-body">
+            <p>
+              <span class="text-en"><strong>How it works:</strong> A fraudster sends an unexpected "Payment Request" (Collect Request) for ₹5,000 or ₹25,000 to your mobile app. They call you and say: <em>"Sir/Madam, I am sending your pension bonus / electricity refund. Just tap Approve and enter your PIN."</em></span>
+              <span class="text-kn"><strong>ಇದು ಹೇಗೆ ನಡೆಯುತ್ತದೆ:</strong> ವಂಚಕರು ನಿಮ್ಮ ಮೊಬೈಲ್‌ಗೆ ಹಣ ಪಾವತಿ ಕೋರಿಕೆ (Collect Request) ಕಳುಹಿಸಿ ಕರೆ ಮಾಡುತ್ತಾರೆ: <em>"ನಿಮಗೆ ಬೋನಸ್ ಬಂದಿದೆ, ಅಪ್ರೂವ್ ಮಾಡಿ ಪಿನ್ ಹಾಕಿ"</em> ಎಂದು ಸುಳ್ಳು ಹೇಳುತ್ತಾರೆ.</span>
+            </p>
+            <div class="action-consequence">
+              <strong>
+                <span class="text-en">Why you must review before approving:</span>
+                <span class="text-kn">ಏಕೆ ಎಚ್ಚರವಾಗಿರಬೇಕು:</span>
+              </strong>
+              <p>
+                <span class="text-en">Tapping "Approve" and entering your PIN <strong>deducts</strong> that amount from your bank and gives it to the scammer! <strong>Always tap DECLINE.</strong></span>
+                <span class="text-kn">ಅಪ್ರೂವ್ ಒತ್ತಿ ಪಿನ್ ಹಾಕಿದರೆ ಆ ಹಣ ನಿಮ್ಮ ಖಾತೆಯಿಂದ ಕಡಿತವಾಗಿ ವಂಚಕನಿಗೆ ಹೋಗುತ್ತದೆ! ಯಾವಾಗಲೂ <strong>ತಿರಸ್ಕರಿಸಿ (Decline)</strong>.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scam 2: QR Code Truth -->
+        <div class="scam-detail-card">
+          <div class="scam-header">
+            <span class="scam-type-pill">Scam Trick 2</span>
+            <h4>
+              <span class="text-en">The "Scan QR Code to Receive Money" Lie</span>
+              <span class="text-kn">"ಹಣ ಪಡೆಯಲು ಕ್ಯೂಆರ್ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ" ಎಂಬ ಸುಳ್ಳು</span>
+            </h4>
+          </div>
+          <div class="scam-body">
+            <p>
+              <span class="text-en"><strong>How it works:</strong> Someone on WhatsApp or OLX sends you a photo of a QR code, saying: <em>"Scan this QR code with your camera and your lottery prize of ₹10,000 will be credited into your account."</em></span>
+              <span class="text-kn"><strong>ಇದು ಹೇಗೆ ನಡೆಯುತ್ತದೆ:</strong> ವಾಟ್ಸ್‌ಆ್ಯಪ್‌ನಲ್ಲಿ ಕ್ಯೂಆರ್ ಕೋಡ್ ಕಳುಹಿಸಿ: <em>"ಇದನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ, ನಿಮ್ಮ ಖಾತೆಗೆ ₹೧೦,೦೦೦ ಜಮೆಯಾಗುತ್ತದೆ"</em> ಎಂದು ಹೇಳುತ್ತಾರೆ.</span>
+            </p>
+            <div class="action-consequence">
+              <strong>
+                <span class="text-en">The Unbreakable QR Code Reality:</span>
+                <span class="text-kn">ಕ್ಯೂಆರ್ ಕೋಡ್‌ನ ಸತ್ಯ:</span>
+              </strong>
+              <p>
+                <span class="text-en"><strong>Scanning a QR code to pay someone does NOT mean you will receive money.</strong> You scan a QR code exclusively to SEND money out. Scanning a QR code can NEVER deposit money into your account.</span>
+                <span class="text-kn"><strong>ಕ್ಯೂಆರ್ ಕೋಡ್ ಸ್ಕ್ಯಾನ್ ಮಾಡುವುದರಿಂದ ಎಂದಿಗೂ ಹಣ ನಿಮ್ಮ ಖಾತೆಗೆ ಜಮೆಯಾಗುವುದಿಲ್ಲ.</strong> ಇದು ಹಣ ಕಳುಹಿಸಲು ಮಾತ್ರ.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Video / Demonstration Player -->
+      <div class="tutorial-video-player-card" id="videoPlayer6">
+        <div class="player-header-bar">
+          <span class="player-tag">🎬 COLLECT REQUEST & QR SCAM SIMULATION</span>
+          <span class="player-source">Verified Reference: Cyber Crime Awareness Series</span>
+        </div>
+
+        <div class="player-display-screen" id="displayScreen6">
+          <div class="demo-watermark-overlay" data-i18n="demo_simulation_label">
+            🏷️ EDUCATIONAL SIMULATION ONLY — NEVER ENTER REAL CREDENTIALS
+          </div>
+
+          <div class="collect-scam-demo-box">
+            <div class="incoming-request-mockup">
+              <div class="request-banner">⚠️ INCOMING COLLECT REQUEST (SIMULATED)</div>
+              <div class="request-details">
+                <div class="req-row"><strong>From:</strong> Unknown Requester (Refund Dept)</div>
+                <div class="req-row"><strong>Amount:</strong> ₹5,000.00</div>
+                <div class="req-row note">Note: "Enter PIN to accept refund" (SCAM TRAP)</div>
+              </div>
+              <div class="req-buttons-row">
+                <button type="button" class="btn-demo-decline">✔ TAP DECLINE (SAFE)</button>
+                <button type="button" class="btn-demo-approve">❌ Approve (Trap)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Captions Overlay -->
+          <div class="player-captions-overlay" id="captionsOverlay6" aria-live="polite">
+            <span class="caption-en">Never approve unexpected payment requests. Always tap Decline and protect your savings.</span>
+            <span class="caption-kn">ಅಪರಿಚಿತ ಹಣ ವಿನಂತಿಗಳನ್ನು ಎಂದಿಗೂ ಒಪ್ಪಿಕೊಳ್ಳಬೇಡಿ. ಯಾವಾಗಲೂ Decline ಒತ್ತಿ ನಿಮ್ಮ ಹಣವನ್ನು ರಕ್ಷಿಸಿ.</span>
+          </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="player-controls-bar">
+          <button type="button" class="btn-ctrl btn-play-pause" data-video="6" aria-label="Play or pause demonstration">
+            <span class="ctrl-icon">▶️</span> <span class="ctrl-label">Play Demo</span>
+          </button>
+          <button type="button" class="btn-ctrl btn-restart" data-video="6" aria-label="Restart demonstration">
+            <span class="ctrl-icon">🔄</span> <span class="ctrl-label">Restart</span>
+          </button>
+          <div class="player-progress-track">
+            <div class="player-progress-bar" id="progressBar6" style="width: 100%;"></div>
+          </div>
+          <span class="player-time-label" id="timeLabel6">0:35 / 0:35</span>
+        </div>
+
+        <!-- Transcript -->
+        <details class="video-transcript-box" open>
+          <summary class="transcript-toggle-btn">
+            <span>📝 Video Transcript & Text Alternative</span>
+          </summary>
+          <div class="transcript-content">
+            <p><strong>Demonstration Summary:</strong> Shows an incoming collect request for ₹5,000 pretending to be a refund. Demonstrates the correct safe response: inspecting the requester, noting that money is being requested from you rather than given to you, and tapping DECLINE to safely discard the scam attempt.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="5">
+          <span>⬅ Previous: Biometrics</span>
+        </button>
+        <span class="section-indicator-text">Section 6 of 13</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="7">
+          <span>Next: Lesson 4 — OTP Safety ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 7: Lesson 4 — OTP Safety
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection7" data-section="7">
+      <div id="lesson-4"></div>
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Lesson 4 of 12</span>
+          <span class="section-topic-pill">🔑 One-Time Passwords</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="7" aria-label="Read Lesson 4 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Lesson 4">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Lesson 4: OTP Safety — Never Share One-Time Passwords</span>
+        <span class="title-kn">ಪಾಠ ೪: ಒಟಿಪಿ (OTP) ಸುರಕ್ಷತೆ — ಒಟಿಪಿಯನ್ನು ಎಂದಿಗೂ ಯಾರೊಂದಿಗೂ ಹಂಚಿಕೊಳ್ಳಬೇಡಿ</span>
+      </h2>
+
+      <!-- Golden Rule Banner -->
+      <div class="golden-rule-callout">
+        <span class="gr-icon">⭐</span>
+        <p class="gr-text">
+          <span class="text-en"><strong>THE GOLDEN RULE:</strong> Receiving money through UPI NEVER requires sharing an OTP or entering your UPI PIN. When someone sends you money, it deposits automatically!</span>
+          <span class="text-kn"><strong>ಸುವರ್ಣ ನಿಯಮ:</strong> ಯುಪಿಐ ಮೂಲಕ ಹಣ ಪಡೆಯಲು ಎಂದಿಗೂ ಒಟಿಪಿ ಹಂಚಿಕೊಳ್ಳುವ ಅಥವಾ ಯುಪಿಐ ಪಿನ್ ಹಾಕುವ ಅಗತ್ಯವಿಲ್ಲ. ಹಣ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಜಮೆಯಾಗುತ್ತದೆ!</span>
+        </p>
+      </div>
+
+      <!-- Core Explanation -->
+      <div class="explanation-body">
+        <p class="lead-para">
+          <span class="text-en">
+            An <strong>OTP (One-Time Password)</strong> is a confidential 4 or 6-digit verification code sent by your bank to your registered mobile number via SMS. It serves as your digital signature to confirm that <strong>YOU</strong> are intentionally authorizing an online purchase, password change, or money transfer.
+          </span>
+          <span class="text-kn">
+            <strong>ಒಟಿಪಿ (OTP)</strong> ಎಂಬುದು ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ನಿಮ್ಮ ನೋಂದಾಯಿತ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಗೆ ಕಳುಹಿಸುವ ರಹಸ್ಯ ೪ ಅಥವಾ ೬-ಅಂಕಿಯ ಕೋಡ್ ಆಗಿದೆ. ಇದು ನೀವು ಮಾತ್ರ ಖಾತೆಯನ್ನು ಬಳಸುತ್ತಿದ್ದೀರಿ ಮತ್ತು ಹಣ ವರ್ಗಾವಣೆಗೆ ಅನುಮೋದನೆ ನೀಡುತ್ತಿದ್ದೀರಿ ಎಂದು ದೃಢೀಕರಿಸುತ್ತದೆ.
+          </span>
+        </p>
+      </div>
+
+      <!-- Realistic Everyday Example -->
+      <div class="analogy-card">
+        <div class="analogy-icon-box">💬</div>
+        <div class="analogy-content">
+          <h3 class="analogy-title">
+            <span class="title-en">Realistic Example: The "Electricity Rebate" Caller</span>
+            <span class="title-kn">ನೈಜ ಉದಾಹರಣೆ: "ವಿದ್ಯುತ್ ರಿಯಾಯಿತಿ" ಕರೆ</span>
+          </h3>
+          <p class="analogy-text">
+            <span class="text-en">
+              A smooth-talking caller phones a senior citizen: <em>"Sir/Madam, I am calling from BESCOM electricity board. You have a pending rebate of ₹350 on your last bill. I have just triggered a verification code to your phone. Please read those 6 digits to me so I can credit the money."</em><br>
+              <strong>The Reality:</strong> The scammer is actually attempting to log into the senior's netbanking or initiate a ₹25,000 money transfer. Reading the OTP immediately allows the thief to steal the funds!
+            </span>
+            <span class="text-kn">
+              ವಂಚಕನೊಬ್ಬ ಕರೆ ಮಾಡಿ: <em>"ಸರ್, ನಾವು ವಿದ್ಯುತ್ ಇಲಾಖೆಯಿಂದ ಕರೆ ಮಾಡುತ್ತಿದ್ದೇವೆ. ನಿಮಗೆ ₹೩೫೦ ಮರುಪಾವತಿ ಬಂದಿದೆ. ನಿಮ್ಮ ಮೊಬೈಲ್‌ಗೆ ಬಂದಿರುವ ೬-ಅಂಕಿಯ ಕೋಡ್ ಹೇಳಿ"</em> ಎನ್ನುತ್ತಾನೆ.<br>
+              <strong>ಸತ್ಯ:</strong> ಆತ ನಿಮ್ಮ ಖಾತೆಯಿಂದ ₹೨೫,೦೦೦ ಕದಿಯಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದ್ದಾನೆ. ನೀವು ಆ ಒಟಿಪಿ ಹೇಳಿದರೆ ನಿಮ್ಮ ಹಣ ಕಡಿತವಾಗುತ್ತದೆ!
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Common Warning Signs Grid -->
+      <h3 class="subsection-title">
+        <span class="text-en">Common Warning Signs of OTP Frauds</span>
+        <span class="text-kn">ಒಟಿಪಿ ವಂಚನೆಯ ಸಾಮಾನ್ಯ ಎಚ್ಚರಿಕೆಯ ಲಕ್ಷಣಗಳು</span>
+      </h3>
+      <div class="pin-safety-rules-grid">
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">⏳</div>
+          <h4><span class="text-en">Artificial Urgency</span><span class="text-kn">ತಕ್ಷಣದ ಒತ್ತಡ</span></h4>
+          <p><span class="text-en">"Tell me the OTP quickly within 30 seconds or your connection will be disconnected."</span><span class="text-kn">"೩೦ ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಒಟಿಪಿ ಹೇಳಿ ಇಲ್ಲದಿದ್ದರೆ ಸೇವೆ ಸ್ಥಗಿತವಾಗುತ್ತದೆ" ಎಂದು ಒತ್ತಡ ಹೇರುತ್ತಾರೆ.</span></p>
+        </div>
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">🎁</div>
+          <h4><span class="text-en">Prizes & Refunds</span><span class="text-kn">ಬಹುಮಾನ ಮತ್ತು ಮರುಪಾವತಿ</span></h4>
+          <p><span class="text-en">Claiming that an OTP is required to "receive" your bonus, cashback, or tax refund.</span><span class="text-kn">ಹಣ ಪಡೆಯಲು ಒಟಿಪಿ ಅಗತ್ಯವಿದೆ ಎಂದು ಸುಳ್ಳು ಹೇಳುತ್ತಾರೆ.</span></p>
+        </div>
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">👮</div>
+          <h4><span class="text-en">Fake Authority</span><span class="text-kn">ಅಧಿಕಾರಿಗಳ ಸೋಗು</span></h4>
+          <p><span class="text-en">Impersonating a bank manager, RBI inspector, or police cyber officer.</span><span class="text-kn">ಬ್ಯಾಂಕ್ ಮ್ಯಾನೇಜರ್ ಅಥವಾ ಪೊಲೀಸ್ ಅಧಿಕಾರಿ ಎಂದು ಹೆದರಿಸುತ್ತಾರೆ.</span></p>
+        </div>
+      </div>
+
+      <!-- Step-by-Step Guidance -->
+      <div class="tutorial-steps-grid" style="margin-top: 24px;">
+        <div class="step-guide-card">
+          <div class="step-number-badge">1</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Read the Full SMS</span><span class="text-kn">ಎಸ್ಎಂಎಸ್ ಪೂರ್ಣವಾಗಿ ಓದಿ</span></h4>
+            <p><span class="text-en">Always read the words in the SMS: look for words like <em>"debiting ₹..."</em> or <em>"login to..."</em>. If you didn't initiate it, never share it.</span><span class="text-kn">ಎಸ್ಎಂಎಸ್‌ನಲ್ಲಿ "Debited" ಅಥವಾ "ಹಣ ಕಡಿತ" ಎಂದು ಬರೆದಿರುವುದನ್ನು ಗಮನಿಸಿ.</span></p>
+          </div>
+        </div>
+        <div class="step-guide-card">
+          <div class="step-number-badge">2</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Disconnect Immediately</span><span class="text-kn">ತಕ್ಷಣ ಕರೆ ಕಟ್ ಮಾಡಿ</span></h4>
+            <p><span class="text-en">If anyone asks you to read or forward an SMS OTP, hang up the call immediately without apology.</span><span class="text-kn">ಯಾರಾದರೂ ಒಟಿಪಿ ಕೇಳಿದರೆ ತಕ್ಷಣ ಫೋನ್ ಕಟ್ ಮಾಡಿ.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recap Box -->
+      <div class="lesson-recap-box">
+        <div class="lesson-recap-title">📌 <span class="text-en">Lesson 4 Short Recap</span><span class="text-kn">ಪಾಠ ೪ ರ ಸಾರಾಂಶ</span></div>
+        <p class="lesson-recap-text">
+          <span class="text-en">Your bank OTP is as private as your house key. Real bank managers, police, and merchants will NEVER ask for it over the phone. Never read, forward, or type your OTP anywhere except your own verified app screen.</span>
+          <span class="text-kn">ನಿಮ್ಮ ಒಟಿಪಿ ನಿಮ್ಮ ಮನೆಯ ಬೀಗದ ಕೈ ಇದ್ದಂತೆ. ಯಾವುದೇ ನೈಜ ಬ್ಯಾಂಕ್ ಅಧಿಕಾರಿ ಒಟಿಪಿ ಕೇಳುವುದಿಲ್ಲ. ಅದನ್ನು ಯಾರಿಗೂ ಹೇಳಬೇಡಿ.</span>
+        </p>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="6">
+          <span>⬅ Previous: QR & Collect Scams</span>
+        </button>
+        <span class="section-indicator-text">Section 7 of 13</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="8">
+          <span>Next: Lesson 7 — Fake Screenshots ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 8: Lesson 7 — Fake Payment Screenshots
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection8" data-section="8">
+      <div id="lesson-7"></div>
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Lesson 7 of 12</span>
+          <span class="section-topic-pill">📱 Screenshot Verification</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="8" aria-label="Read Lesson 7 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Lesson 7">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Lesson 7: Fake Payment Screenshots & Spoofed SMS</span>
+        <span class="title-kn">ಪಾಠ ೭: ನಕಲಿ ಪಾವತಿ ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ಮತ್ತು ಸುಳ್ಳು ಎಸ್ಎಂಎಸ್ ವಂಚನೆ</span>
+      </h2>
+
+      <!-- Golden Rule Banner -->
+      <div class="golden-rule-callout">
+        <span class="gr-icon">⭐</span>
+        <p class="gr-text">
+          <span class="text-en"><strong>THE GOLDEN RULE:</strong> Receiving money through UPI NEVER requires sharing an OTP or entering your UPI PIN. Never trust someone else's screen — verify inside YOUR own bank app!</span>
+          <span class="text-kn"><strong>ಸುವರ್ಣ ನಿಯಮ:</strong> ಬೇರೆಯವರ ಮೊಬೈಲ್ ಸ್ಕ್ರೀನ್ ನೋಡಿ ನಂಬಬೇಡಿ. ನಿಮ್ಮ ಸ್ವಂತ ಬ್ಯಾಂಕ್ ಆ್ಯಪ್ ತೆರೆದು ಹಣ ಬಂದಿದೆಯೇ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ!</span>
+        </p>
+      </div>
+
+      <div class="explanation-body">
+        <p class="lead-para">
+          <span class="text-en">
+            Scammers use special "Spoof Pay" mobile apps that generate fake green payment screens complete with official UPI logos, tick marks, and your name (e.g. <em>"₹2,500 Paid Successfully to Ramesh Rao"</em>). They show you this screen or send a screenshot via WhatsApp to trick you into handing over goods, cash, or services before real money moves.
+          </span>
+          <span class="text-kn">
+            ವಂಚಕರು ನಕಲಿ ಆ್ಯಪ್‌ಗಳನ್ನು ಬಳಸಿ ಹಸಿರು ಬಣ್ಣದ "Payment Successful" ಎಂದು ನಿಮ್ಮ ಹೆಸರಿನಲ್ಲಿ ಸುಳ್ಳು ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ಸೃಷ್ಟಿಸುತ್ತಾರೆ. ಹಣ ಜಮೆಯಾಗದಿದ್ದರೂ ಹಣ ಬಂದಿದೆ ಎಂದು ನಂಬಿಸಿ ವಸ್ತು ಅಥವಾ ನಗದು ಪಡೆದುಕೊಳ್ಳುತ್ತಾರೆ.
+          </span>
+        </p>
+      </div>
+
+      <!-- Everyday Example -->
+      <div class="analogy-card">
+        <div class="analogy-icon-box">🏪</div>
+        <div class="analogy-content">
+          <h3 class="analogy-title">
+            <span class="title-en">Realistic Example: The Rushed Buyer</span>
+            <span class="title-kn">ನೈಜ ಉದಾಹರಣೆ: ಧಾವಂತದ ಗ್ರಾಹಕ</span>
+          </h3>
+          <p class="analogy-text">
+            <span class="text-en">
+              A buyer comes to buy old furniture or goods at a senior citizen's home. The buyer scans the UPI QR code on their phone, immediately shows a bright green screen saying <em>"₹4,000 Transferred to Senior"</em>, and says: <em>"Sir, the bank network is slow, but see the screen, payment is 100% done. I am getting late for my train, let me take the items now."</em><br>
+              <strong>The Reality:</strong> Zero money was transferred. The screen was a dummy generator. Once the buyer leaves with the goods, they block your number!
+            </span>
+            <span class="text-kn">
+              ಒಬ್ಬ ವ್ಯಕ್ತಿ ನಿಮ್ಮಿಂದ ವಸ್ತು ಖರೀದಿಸಿ, ತನ್ನ ಮೊಬೈಲ್‌ನಲ್ಲಿ ಹಣ ಪಾವತಿಯಾದ ನಕಲಿ ಹಸಿರು ಸ್ಕ್ರೀನ್ ತೋರಿಸಿ: <em>"ನೋಡಿ ಸರ್ ₹೪,೦೦೦ ಕಳುಹಿಸಿದ್ದೇನೆ, ರೈಲಿಗೆ ತಡವಾಗುತ್ತಿದೆ ನಾನು ಹೋಗಬೇಕು"</em> ಎಂದು ಆತುರಪಡಿಸುತ್ತಾನೆ. ವಾಸ್ತವವಾಗಿ ಆತ ನಕಲಿ ಸ್ಕ್ರೀನ್ ತೋರಿಸಿರುತ್ತಾನೆ.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Warning Signs -->
+      <h3 class="subsection-title">
+        <span class="text-en">Warning Signs of Screenshot Fraud</span>
+        <span class="text-kn">ನಕಲಿ ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌ನ ಎಚ್ಚರಿಕೆಯ ಲಕ್ಷಣಗಳು</span>
+      </h3>
+      <div class="pin-safety-rules-grid">
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">🏃</div>
+          <h4><span class="text-en">Extreme Hurry</span><span class="text-kn">ಅತಿಯಾದ ಧಾವಂತ</span></h4>
+          <p><span class="text-en">The person refuses to wait 1 minute for you to check your bank balance.</span><span class="text-kn">ನಿಮ್ಮ ಮೊಬೈಲ್‌ನಲ್ಲಿ ಚೆಕ್ ಮಾಡಲು ೧ ನಿಮಿಷವೂ ಕಾಯಲು ಒಪ್ಪುವುದಿಲ್ಲ.</span></p>
+        </div>
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">📱</div>
+          <h4><span class="text-en">Personal SMS Numbers</span><span class="text-kn">ಸಾಮಾನ್ಯ ನಂಬರ್‌ನಿಂದ ಎಸ್ಎಂಎಸ್</span></h4>
+          <p><span class="text-en">You receive a "credited" SMS from a regular 10-digit mobile number instead of your bank's 6-letter official sender header (like AX-SBIINB).</span><span class="text-kn">ಬ್ಯಾಂಕ್ ಬದಲು ಸಾಮಾನ್ಯ ೧೦-ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯಿಂದ "ಹಣ ಜಮೆ" ಸಂದೇಶ ಬರುತ್ತದೆ.</span></p>
+        </div>
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">📵</div>
+          <h4><span class="text-en">No App Confirmation</span><span class="text-kn">ಆ್ಯಪ್‌ನಲ್ಲಿ ಯಾವುದೇ ನೋಟಿಫಿಕೇಶನ್ ಇಲ್ಲ</span></h4>
+          <p><span class="text-en">Your own UPI app (BHIM, PhonePe, GPay) hasn't chimed or shown any incoming notification.</span><span class="text-kn">ನಿಮ್ಮ ಆ್ಯಪ್‌ನಲ್ಲಿ ಯಾವುದೇ ಹಣ ಸ್ವೀಕರಿಸಿದ ಶಬ್ದ ಅಥವಾ ಸಂದೇಶ ಬಂದಿರುವುದಿಲ್ಲ.</span></p>
+        </div>
+      </div>
+
+      <!-- Recap Box -->
+      <div class="lesson-recap-box">
+        <div class="lesson-recap-title">📌 <span class="text-en">Lesson 7 Short Recap</span><span class="text-kn">ಪಾಠ ೭ ರ ಸಾರಾಂಶ</span></div>
+        <p class="lesson-recap-text">
+          <span class="text-en">Never trust a payment screenshot on someone else's phone. Money has ONLY arrived when YOUR own bank balance shows the increased amount or YOUR app sounds the confirmation voice box. Never release goods until verified inside your own trusted app.</span>
+          <span class="text-kn">ಬೇರೆಯವರ ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ನಂಬಿ ಎಂದಿಗೂ ವಸ್ತು ಅಥವಾ ಹಣ ನೀಡಬೇಡಿ. ನಿಮ್ಮ ಸ್ವಂತ ಬ್ಯಾಂಕ್ ಖಾತೆಗೆ ಹಣ ಬಂದಿರುವುದನ್ನು ಆ್ಯಪ್ ತೆರೆದು ನೋಡಿದ ನಂತರವೇ ನಂಬಿ.</span>
+        </p>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="7">
+          <span>⬅ Previous: OTP Safety</span>
+        </button>
+        <span class="section-indicator-text">Section 8 of 13</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="9">
+          <span>Next: Lesson 8 — Fake Bank Calls ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 9: Lesson 8 — Fake Bank and Customer-Care Calls
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection9" data-section="9">
+      <div id="lesson-8"></div>
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Lesson 8 of 12</span>
+          <span class="section-topic-pill">📞 Impersonation Calls</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="9" aria-label="Read Lesson 8 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Lesson 8">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Lesson 8: Fake Bank and Customer-Care Calls</span>
+        <span class="title-kn">ಪಾಠ ೮: ನಕಲಿ ಬ್ಯಾಂಕ್ ಮತ್ತು ಗ್ರಾಹಕ ಸೇವಾ ಕರೆಗಳು</span>
+      </h2>
+
+      <!-- Golden Rule Banner -->
+      <div class="golden-rule-callout">
+        <span class="gr-icon">⭐</span>
+        <p class="gr-text">
+          <span class="text-en"><strong>THE GOLDEN RULE:</strong> Receiving money through UPI NEVER requires sharing an OTP or entering your UPI PIN. Real bank managers never ask for passwords or PINs over the phone!</span>
+          <span class="text-kn"><strong>ಸುವರ್ಣ ನಿಯಮ:</strong> ಅಧಿಕೃತ ಬ್ಯಾಂಕ್ ಮ್ಯಾನೇಜರ್ ಅಥವಾ ನೌಕರರು ಎಂದಿಗೂ ಫೋನ್ ಕರೆಯಲ್ಲಿ ನಿಮ್ಮ ರಹಸ್ಯ ಪಿನ್ ಅಥವಾ ಒಟಿಪಿ ಕೇಳುವುದಿಲ್ಲ!</span>
+        </p>
+      </div>
+
+      <div class="explanation-body">
+        <p class="lead-para">
+          <span class="text-en">
+            Cyber fraudsters frequently call senior citizens pretending to be from their home bank branch (SBI, Canara, HDFC), the Reserve Bank of India, credit card departments, or courier companies. They speak authoritatively and use high psychological pressure, threatening that your pension account will be frozen or your card will be deactivated unless you follow their immediate instructions.
+          </span>
+          <span class="text-kn">
+            ವಂಚಕರು ಬ್ಯಾಂಕ್ ಮ್ಯಾನೇಜರ್, ಆರ್‌ಬಿಐ ಅಧಿಕಾರಿ ಅಥವಾ ಕೊರಿಯರ್ ಕಚೇರಿಯಿಂದ ಕರೆ ಮಾಡುತ್ತಿದ್ದೇವೆ ಎಂದು ನಂಬಿಸಿ, ನಿಮ್ಮ ಪಿಂಚಣಿ ಖಾತೆ ಸ್ಥಗಿತಗೊಳ್ಳುತ್ತದೆ ಎಂದು ಹೆದರಿಸಿ ರಹಸ್ಯ ವಿವರಗಳನ್ನು ಕದಿಯುತ್ತಾರೆ.
+          </span>
+        </p>
+      </div>
+
+      <!-- Everyday Example -->
+      <div class="analogy-card">
+        <div class="analogy-icon-box">🏦</div>
+        <div class="analogy-content">
+          <h3 class="analogy-title">
+            <span class="title-en">Realistic Example: The "Pension Account KYC Update" Call</span>
+            <span class="title-kn">ನೈಜ ಉದಾಹರಣೆ: "ಪಿಂಚಣಿ ಖಾತೆ ಕೆವೈಸಿ ಅಪ್ಡೇಟ್" ಕರೆ</span>
+          </h3>
+          <p class="analogy-text">
+            <span class="text-en">
+              A senior receives a phone call from someone claiming: <em>"Sir, I am Senior Manager Deshmukh from SBI Main Branch. Your pension account KYC has expired. Under RBI guidelines, your pension disbursement will be permanently stopped today unless we verify your account over this secure call. Please tell me your debit card number and the 4-digit PIN to unblock it."</em><br>
+              <strong>The Reality:</strong> Banks never ask for PINs or passwords over the phone. Real KYC updates are handled securely inside bank branches or via verified biometric kiosks.
+            </span>
+            <span class="text-kn">
+              ವಂಚಕ ಕರೆ ಮಾಡಿ: <em>"ಸರ್, ನಿಮ್ಮ ಪಿಂಚಣಿ ಖಾತೆಯ ಕೆವೈಸಿ ಅವಧಿ ಮುಗಿದಿದೆ, ಇಂದೇ ಪಿನ್ ಹೇಳಿ ಅಪ್ಡೇಟ್ ಮಾಡದಿದ್ದರೆ ಪಿಂಚಣಿ ಬರುವುದು ನಿಲ್ಲುತ್ತದೆ"</em> ಎಂದು ಹೆದರಿಸುತ್ತಾನೆ. ಆದರೆ ಬ್ಯಾಂಕ್ ಎಂದಿಗೂ ಫೋನ್‌ನಲ್ಲಿ ಪಿನ್ ಕೇಳುವುದಿಲ್ಲ.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Warning Signs -->
+      <h3 class="subsection-title">
+        <span class="text-en">Common Warning Signs of Fake Calls</span>
+        <span class="text-kn">ನಕಲಿ ಕರೆಗಳ ಎಚ್ಚರಿಕೆಯ ಲಕ್ಷಣಗಳು</span>
+      </h3>
+      <div class="pin-safety-rules-grid">
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">🛑</div>
+          <h4><span class="text-en">Demanding Credentials</span><span class="text-kn">ರಹಸ್ಯ ವಿವರಗಳ ಬೇಡಿಕೆ</span></h4>
+          <p><span class="text-en">Caller asks for debit card digits, CVV, expiry date, UPI PIN, or SMS OTP.</span><span class="text-kn">ಕಾರ್ಡ್ ಸಂಖ್ಯೆ, ಸಿವಿವಿ, ಯುಪಿಐ ಪಿನ್ ಅಥವಾ ಒಟಿಪಿ ಕೇಳುವುದು.</span></p>
+        </div>
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">🤫</div>
+          <h4><span class="text-en">Secrecy Demands</span><span class="text-kn">ಯಾರಿಗೂ ಹೇಳಬೇಡಿ ಎಂಬ ಒತ್ತಡ</span></h4>
+          <p><span class="text-en">Caller instructs: "Do not disconnect or speak to your children, this is confidential banking."</span><span class="text-kn">"ಫೋನ್ ಕಟ್ ಮಾಡಬೇಡಿ, ಮಕ್ಕಳಿಗೂ ಹೇಳಬೇಡಿ" ಎಂದು ಬೆದರಿಸುವುದು.</span></p>
+        </div>
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">🔍</div>
+          <h4><span class="text-en">Fake Google Numbers</span><span class="text-kn">ಗೂಗಲ್‌ನಲ್ಲಿ ಹುಡುಕಿದ ನಕಲಿ ನಂಬರ್</span></h4>
+          <p><span class="text-en">Numbers found on random internet searches often belong to fraudsters running fake call centers.</span><span class="text-kn">ಗೂಗಲ್‌ನಲ್ಲಿ ಸಿಗುವ ಬಹುತೇಕ ಗ್ರಾಹಕ ಸೇವಾ ಸಂಖ್ಯೆಗಳು ನಕಲಿಯಾಗಿರುತ್ತವೆ.</span></p>
+        </div>
+      </div>
+
+      <!-- Recap Box -->
+      <div class="lesson-recap-box">
+        <div class="lesson-recap-title">📌 <span class="text-en">Lesson 8 Short Recap</span><span class="text-kn">ಪಾಠ ೮ ರ ಸಾರಾಂಶ</span></div>
+        <p class="lesson-recap-text">
+          <span class="text-en">Whenever a phone caller asks for sensitive details or makes you feel pressured, hang up immediately. Always find official bank numbers printed on your physical bank passbook or the back of your debit card.</span>
+          <span class="text-kn">ಯಾವುದೇ ಕರೆಯಲ್ಲಿ ಒತ್ತಡ ಅಥವಾ ಭಯ ಹುಟ್ಟಿಸಿದರೆ ತಕ್ಷಣ ಫೋನ್ ಕಟ್ ಮಾಡಿ. ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಪಾಸ್‌ಬುಕ್‌ನಲ್ಲಿರುವ ಅಧಿಕೃತ ಸಂಖ್ಯೆಗೆ ಮಾತ್ರ ಕರೆ ಮಾಡಿ.</span>
+        </p>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="8">
+          <span>⬅ Previous: Fake Screenshots</span>
+        </button>
+        <span class="section-indicator-text">Section 9 of 13</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="10">
+          <span>Next: Lesson 9 — Screen Sharing ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 10: Lesson 9 — Screen-Sharing and Remote-Access Scams
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection10" data-section="10">
+      <div id="lesson-9"></div>
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Lesson 9 of 12</span>
+          <span class="section-topic-pill">🖥️ Remote Access Traps</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="10" aria-label="Read Lesson 9 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Lesson 9">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Lesson 9: Screen-Sharing and Remote-Access Scams</span>
+        <span class="title-kn">ಪಾಠ ೯: ಸ್ಕ್ರೀನ್-ಶೇರಿಂಗ್ ಮತ್ತು ರಿಮೋಟ್ ಆ್ಯಪ್ ವಂಚನೆಗಳು (AnyDesk, TeamViewer)</span>
+      </h2>
+
+      <!-- Golden Rule Banner -->
+      <div class="golden-rule-callout">
+        <span class="gr-icon">⭐</span>
+        <p class="gr-text">
+          <span class="text-en"><strong>THE GOLDEN RULE:</strong> Receiving money through UPI NEVER requires sharing an OTP or entering your UPI PIN. NEVER install AnyDesk, TeamViewer, or QuickSupport on the instructions of any caller!</span>
+          <span class="text-kn"><strong>ಸುವರ್ಣ ನಿಯಮ:</strong> ಯಾವುದೇ ಕರೆ ಮಾಡಿದ ವ್ಯಕ್ತಿಯ ಮಾತನ್ನು ಕೇಳಿ AnyDesk, TeamViewer ಅಥವಾ QuickSupport ಆ್ಯಪ್‌ಗಳನ್ನು ನಿಮ್ಮ ಮೊಬೈಲ್‌ನಲ್ಲಿ ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಬೇಡಿ!</span>
+        </p>
+      </div>
+
+      <div class="explanation-body">
+        <p class="lead-para">
+          <span class="text-en">
+            Remote-access apps like <strong>AnyDesk, TeamViewer, RustDesk, and QuickSupport</strong> allow one phone or computer to view and control another device from across the globe. Scammers trick seniors into installing these apps under the pretext of "technical support" or "verifying your phone". Once installed, the criminal sees everything on your screen — including passwords, PINs, and incoming SMS OTPs!
+          </span>
+          <span class="text-kn">
+            AnyDesk ಮತ್ತು TeamViewer ನಂತಹ ಆ್ಯಪ್‌ಗಳು ಇತರರು ನಿಮ್ಮ ಮೊಬೈಲ್ ಪರದೆಯನ್ನು ವೀಕ್ಷಿಸಲು ಅವಕಾಶ ನೀಡುತ್ತವೆ. ವಂಚಕರು "ತಾಂತ್ರಿಕ ಸಹಾಯ" ನೀಡುವ ನೆಪದಲ್ಲಿ ಇವುಗಳನ್ನು ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಿಸಿ, ನಿಮ್ಮ ಮೊಬೈಲ್‌ನಲ್ಲಿ ಬರುವ ರಹಸ್ಯ ಒಟಿಪಿ ಮತ್ತು ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ನೇರವಾಗಿ ನೋಡಿ ಹಣ ಕದಿಯುತ್ತಾರೆ.
+          </span>
+        </p>
+      </div>
+
+      <!-- Everyday Example -->
+      <div class="analogy-card">
+        <div class="analogy-icon-box">⚠️</div>
+        <div class="analogy-content">
+          <h3 class="analogy-title">
+            <span class="title-en">Realistic Example: The "Faulty Gas Pipeline Bill" Trick</span>
+            <span class="title-kn">ನೈಜ ಉದಾಹರಣೆ: "ಗ್ಯಾಸ್ ಬಿಲ್ ಸರಿಪಡಿಸುವ" ನೆಪ</span>
+          </h3>
+          <p class="analogy-text">
+            <span class="text-en">
+              A caller says: <em>"Sir, your gas bill refund of ₹120 was stuck. Open Google Play Store and type 'AnyDesk' or 'QuickSupport'. Tap install, then read me the 9-digit number that appears on the screen so our system technician can help you."</em><br>
+              <strong>The Reality:</strong> As soon as the senior reads that 9-digit code, the scammer's computer connects directly to the senior's phone screen. While keeping the senior talking, the scammer opens banking apps and drains the savings account.
+            </span>
+            <span class="text-kn">
+              ವಂಚಕ ಕರೆ ಮಾಡಿ: <em>"ನಿಮ್ಮ ಬಿಲ್ ಸರಿಪಡಿಸಲು ಪ್ಲೇ ಸ್ಟೋರ್‌ನಿಂದ AnyDesk ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ ೯-ಅಂಕಿಯ ಕೋಡ್ ಹೇಳಿ"</em> ಎನ್ನುತ್ತಾನೆ. ನೀವು ಆ ಕೋಡ್ ಹೇಳಿದ ತಕ್ಷಣ ಆತ ನಿಮ್ಮ ಮೊಬೈಲ್ ಅನ್ನು ನಿಯಂತ್ರಿಸಿ ಖಾಲಿಯಾಗುವಂತೆ ಮಾಡುತ್ತಾನೆ.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- What to Do If Tricked -->
+      <h3 class="subsection-title">
+        <span class="text-en">What to Do If You Already Installed Such an App</span>
+        <span class="text-kn">ಆಕಸ್ಮಿಕವಾಗಿ ಈ ಆ್ಯಪ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿದ್ದರೆ ಏನು ಮಾಡಬೇಕು</span>
+      </h3>
+      <div class="tutorial-steps-grid">
+        <div class="step-guide-card">
+          <div class="step-number-badge">1</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Turn Off Internet Instantly</span><span class="text-kn">ಇಂಟರ್ನೆಟ್ ತಕ್ಷಣ ಆಫ್ ಮಾಡಿ</span></h4>
+            <p><span class="text-en">Swipe down and turn off Wi-Fi and Mobile Data immediately, or switch phone to Airplane Mode. This instantly severs the scammer's connection.</span><span class="text-kn">ತಕ್ಷಣ ನಿಮ್ಮ ಮೊಬೈಲ್ ಡೇಟಾ ಮತ್ತು ವೈಫೈ ಆಫ್ ಮಾಡಿ ಅಥವಾ ಏರೋಪ್ಲೇನ್ ಮೋಡ್ ಆನ್ ಮಾಡಿ.</span></p>
+          </div>
+        </div>
+        <div class="step-guide-card">
+          <div class="step-number-badge">2</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Uninstall the Application</span><span class="text-kn">ಆ್ಯಪ್ ಅನ್‌ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಿ</span></h4>
+            <p><span class="text-en">Press and hold the AnyDesk or QuickSupport icon on your screen and select <strong>Uninstall</strong> / Delete.</span><span class="text-kn">ಆ್ಯಪ್ ಐಕಾನ್ ಒತ್ತಿ ಹಿಡಿದು ಡಿಲೀಟ್ (Uninstall) ಮಾಡಿ.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recap Box -->
+      <div class="lesson-recap-box">
+        <div class="lesson-recap-title">📌 <span class="text-en">Lesson 9 Short Recap</span><span class="text-kn">ಪಾಠ ೯ ರ ಸಾರಾಂಶ</span></div>
+        <p class="lesson-recap-text">
+          <span class="text-en">Never let any caller instruct you to download remote-screen apps or read out codes from your screen. Genuine customer service representatives never need to control your phone.</span>
+          <span class="text-kn">ಯಾವುದೇ ಕರೆಯಲ್ಲಿ ಅಪರಿಚಿತ ಆ್ಯಪ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಹೇಳಿದರೆ ಎಂದಿಗೂ ಒಪ್ಪಬೇಡಿ. ನೈಜ ಗ್ರಾಹಕ ಸೇವೆ ನಿಮ್ಮ ಮೊಬೈಲ್ ನಿಯಂತ್ರಣ ಕೇಳುವುದಿಲ್ಲ.</span>
+        </p>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="9">
+          <span>⬅ Previous: Fake Bank Calls</span>
+        </button>
+        <span class="section-indicator-text">Section 10 of 13</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="11">
+          <span>Next: Lesson 10 — Phishing Links ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 11: Lesson 10 — Suspicious Links and Phishing Messages
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection11" data-section="11">
+      <div id="lesson-10"></div>
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Lesson 10 of 12</span>
+          <span class="section-topic-pill">🔗 Phishing Links & SMS</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="11" aria-label="Read Lesson 10 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Lesson 10">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Lesson 10: Suspicious Links & Phishing Messages</span>
+        <span class="title-kn">ಪಾಠ ೧೦: ಅನುಮಾನಾಸ್ಪದ ಲಿಂಕ್‌ಗಳು ಮತ್ತು ಸಂದೇಶಗಳು (ಫಿಶಿಂಗ್)</span>
+      </h2>
+
+      <!-- Golden Rule Banner -->
+      <div class="golden-rule-callout">
+        <span class="gr-icon">⭐</span>
+        <p class="gr-text">
+          <span class="text-en"><strong>THE GOLDEN RULE:</strong> Receiving money through UPI NEVER requires sharing an OTP or entering your UPI PIN. Never click web links sent in unsolicited text messages or WhatsApp!</span>
+          <span class="text-kn"><strong>ಸುವರ್ಣ ನಿಯಮ:</strong> ಅಪರಿಚಿತ ಸಂದೇಶಗಳಲ್ಲಿ ಅಥವಾ ವಾಟ್ಸ್‌ಆ್ಯಪ್‌ನಲ್ಲಿ ಬರುವ ವೆಬ್ ಲಿಂಕ್‌ಗಳನ್ನು ಎಂದಿಗೂ ಕ್ಲಿಕ್ ಮಾಡಬೇಡಿ!</span>
+        </p>
+      </div>
+
+      <div class="explanation-body">
+        <p class="lead-para">
+          <span class="text-en">
+            <strong>Phishing</strong> is when fraudsters cast a wide digital net by sending thousands of deceptive SMS and WhatsApp messages disguised as bank alerts, electricity disconnections, traffic challans, or courier delivery failures. Tapping the link opens a fake web page that mimics your bank to steal your login credentials or install malicious software.
+          </span>
+          <span class="text-kn">
+            <strong>ಫಿಶಿಂಗ್</strong> ಎಂದರೆ ಬ್ಯಾಂಕ್, ವಿದ್ಯುತ್ ಇಲಾಖೆ ಅಥವಾ ಟ್ರಾಫಿಕ್ ಪೊಲೀಸ್ ಹೆಸರಿನಲ್ಲಿ ನಕಲಿ ಲಿಂಕ್ ಕಳುಹಿಸಿ ಜನರನ್ನು ಮೋಸಗೊಳಿಸುವುದು. ಆ ಲಿಂಕ್ ಕ್ಲಿಕ್ ಮಾಡಿದರೆ ನಕಲಿ ವೆಬ್‌ಸೈಟ್ ತೆರೆದು ನಿಮ್ಮ ಬ್ಯಾಂಕಿಂಗ್ ವಿವರಗಳನ್ನು ಕದಿಯಲಾಗುತ್ತದೆ.
+          </span>
+        </p>
+      </div>
+
+      <!-- Everyday Example -->
+      <div class="analogy-card">
+        <div class="analogy-icon-box">⚡</div>
+        <div class="analogy-content">
+          <h3 class="analogy-title">
+            <span class="title-en">Realistic Example: The "Electricity Power Cutoff Tonight" SMS</span>
+            <span class="title-kn">ನೈಜ ಉದಾಹರಣೆ: "ಇಂದೇ ರಾತ್ರಿ ವಿದ್ಯುತ್ ಕಡಿತ" ಎಸ್‌ಎಂಎಸ್</span>
+          </h3>
+          <p class="analogy-text">
+            <span class="text-en">
+              SMS received at 7:30 PM: <em>"Dear Consumer, Your electricity power will be disconnected tonight at 9:30 PM from the power station due to unpaid previous month bill. Update your bill immediately by tapping bit.ly/power-bill-pay or call officer at 98xxxx."</em><br>
+              <strong>The Reality:</strong> Power companies never disconnect electricity at night or send shortened bit.ly links. The link downloads a fraudulent APK that captures your bank logins.
+            </span>
+            <span class="text-kn">
+              ಸಂದೇಶ: <em>"ಪ್ರಿಯ ಗ್ರಾಹಕರೇ, ನಿಮ್ಮ ವಿದ್ಯುತ್ ಬಿಲ್ ಪಾವತಿಯಾಗದ ಕಾರಣ ಇಂದೇ ರಾತ್ರಿ ೯:೩೦ ಕ್ಕೆ ವಿದ್ಯುತ್ ಕಡಿತಗೊಳ್ಳಲಿದೆ. ತಕ್ಷಣ bit.ly ಲಿಂಕ್ ಕ್ಲಿಕ್ ಮಾಡಿ"</em> ಎಂದು ಬರುತ್ತದೆ. ಇದು ನೂರಕ್ಕೆ ನೂರು ನಕಲಿ ಸಂದೇಶ.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- How to Spot Fake Links -->
+      <h3 class="subsection-title">
+        <span class="text-en">How to Spot Fake Links</span>
+        <span class="text-kn">ನಕಲಿ ಲಿಂಕ್‌ಗಳನ್ನು ಗುರುತಿಸುವುದು ಹೇಗೆ</span>
+      </h3>
+      <div class="pin-safety-rules-grid">
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">✂️</div>
+          <h4><span class="text-en">Shortened URLs</span><span class="text-kn">ಕಿರು ಲಿಂಕ್‌ಗಳು</span></h4>
+          <p><span class="text-en">Links starting with bit.ly, tinyurl.com, or is.gd hide where they lead. Banks never use link shorteners.</span><span class="text-kn">bit.ly ಅಥವಾ tinyurl ನಂತಹ ಲಿಂಕ್‌ಗಳನ್ನು ಅಧಿಕೃತ ಬ್ಯಾಂಕುಗಳು ಬಳಸುವುದಿಲ್ಲ.</span></p>
+        </div>
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">🔤</div>
+          <h4><span class="text-en">Strange Domain Names</span><span class="text-kn">ವಿಚಿತ್ರ ವೆಬ್ ವಿಳಾಸ</span></h4>
+          <p><span class="text-en">Look at the end of the address: genuine Indian banks end with <em>.co.in</em> or <em>.bank</em>, not <em>.xyz</em> or <em>.info</em>.</span><span class="text-kn">ಅಧಿಕೃತ ಬ್ಯಾಂಕ್ ವಿಳಾಸ .co.in ಅಥವಾ .bank ಎಂದಿರುತ್ತದೆ, .xyz ಅಲ್ಲ.</span></p>
+        </div>
+        <div class="safety-rule-card">
+          <div class="rule-icon-box">📦</div>
+          <h4><span class="text-en">APK File Downloads</span><span class="text-kn">ಎಪಿಕೆ (APK) ಕಡತಗಳು</span></h4>
+          <p><span class="text-en">If a link prompts you to download a file ending in ".apk", cancel immediately. APK files are software programs.</span><span class="text-kn">.apk ಫೈಲ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಕೇಳಿದರೆ ತಕ್ಷಣ ರದ್ದುಮಾಡಿ.</span></p>
+        </div>
+      </div>
+
+      <!-- Recap Box -->
+      <div class="lesson-recap-box">
+        <div class="lesson-recap-title">📌 <span class="text-en">Lesson 10 Short Recap</span><span class="text-kn">ಪಾಠ ೧೦ ರ ಸಾರಾಂಶ</span></div>
+        <p class="lesson-recap-text">
+          <span class="text-en">Never tap links in unexpected text messages. If an SMS says your electricity or bank account is in jeopardy, open your official app directly from your home screen or visit your physical branch to check.</span>
+          <span class="text-kn">ಅಪರಿಚಿತ ಸಂದೇಶಗಳಲ್ಲಿರುವ ಲಿಂಕ್‌ಗಳನ್ನು ಎಂದಿಗೂ ಮುಟ್ಟಬೇಡಿ. ಬಿಲ್ ಪಾವತಿಸಲು ನಿಮ್ಮ ಅಧಿಕೃತ ಆ್ಯಪ್ ಅನ್ನು ಮಾತ್ರ ನೇರವಾಗಿ ಬಳಸಿ.</span>
+        </p>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="10">
+          <span>⬅ Previous: Screen Sharing</span>
+        </button>
+        <span class="section-indicator-text">Section 11 of 13</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="12">
+          <span>Next: Lesson 11 — Urgent Threats ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 12: Lesson 11 — Recognizing Urgent or Threatening Payment Requests
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection12" data-section="12">
+      <div id="lesson-11"></div>
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Lesson 11 of 12</span>
+          <span class="section-topic-pill">⚡ Psychological Urgency Traps</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="12" aria-label="Read Lesson 11 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Lesson 11">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Lesson 11: Recognizing Urgent or Threatening Payment Requests</span>
+        <span class="title-kn">ಪಾಠ ೧೧: ತುರ್ತು ಅಥವಾ ಬೆದರಿಕೆಯ ಸಂದೇಶಗಳನ್ನು ಗುರುತಿಸುವುದು</span>
+      </h2>
+
+      <!-- Golden Rule Banner -->
+      <div class="golden-rule-callout">
+        <span class="gr-icon">⭐</span>
+        <p class="gr-text">
+          <span class="text-en"><strong>THE GOLDEN RULE:</strong> Receiving money through UPI NEVER requires sharing an OTP or entering your UPI PIN. When pressured to act immediately, STOP immediately!</span>
+          <span class="text-kn"><strong>ಸುವರ್ಣ ನಿಯಮ:</strong> ತಕ್ಷಣವೇ ಹಣ ಕಳುಹಿಸಿ ಎಂದು ಯಾರಾದರೂ ಒತ್ತಡ ಹೇರಿದರೆ, ತಕ್ಷಣವೇ ನಿಲ್ಲಿಸಿ (Stop) ಮತ್ತು ಯೋಚಿಸಿ!</span>
+        </p>
+      </div>
+
+      <div class="explanation-body">
+        <p class="lead-para">
+          <span class="text-en">
+            High emotional urgency and psychological fear are the number one weapons used against seniors. Scammers manufacture artificial crises — such as an impending arrest ("Digital Arrest"), family emergency, blocked pension, or courier customs fine — to make you panic and transfer money before you have time to consult your children or bank.
+          </span>
+          <span class="text-kn">
+            ವಂಚಕರು ಹಿರಿಯರ ಮೇಲೆ ಭಯ ಮತ್ತು ತುರ್ತು ಭಾವನೆಯನ್ನು ಹೇರುತ್ತಾರೆ. ಬಂಧನದ ಬೆದರಿಕೆ (ಡಿಜಿಟಲ್ ಅರೆಸ್ಟ್), ಕುಟುಂಬದ ತುರ್ತು ಪರಿಸ್ಥಿತಿ ಅಥವಾ ದಂಡದ ನೆಪವೊಡ್ಡಿ ಹಿರಿಯರು ತಮ್ಮ ಕುಟುಂಬದವರನ್ನು ಕೇಳಲು ಸಮಯ ನೀಡದೆ ಹಣ ಕಳುಹಿಸುವಂತೆ ಮಾಡುತ್ತಾರೆ.
+          </span>
+        </p>
+      </div>
+
+      <!-- Everyday Example -->
+      <div class="analogy-card">
+        <div class="analogy-icon-box">👮</div>
+        <div class="analogy-content">
+          <h3 class="analogy-title">
+            <span class="title-en">Realistic Example: The "Digital Arrest" Trap</span>
+            <span class="title-kn">ನೈಜ ಉದಾಹರಣೆ: "ಡಿಜಿಟಲ್ ಅರೆಸ್ಟ್" ಬಲೆ</span>
+          </h3>
+          <p class="analogy-text">
+            <span class="text-en">
+              A caller wearing a police uniform appears on a WhatsApp video call: <em>"Sir, a parcel containing illegal passports and drugs in your name was seized at Mumbai Airport. You are under immediate Digital Arrest. Do not tell your family. You must transfer ₹1,00,000 to our RBI verification account to verify your innocence, which will be refunded in 1 hour."</em><br>
+              <strong>The Reality:</strong> Indian law has NO concept of "Digital Arrest". Police never interrogate or demand bail money over WhatsApp or video calls. It is 100% extortion!
+            </span>
+            <span class="text-kn">
+              ವಾಟ್ಸ್‌ಆ್ಯಪ್ ವಿಡಿಯೋ ಕಾಲ್‌ನಲ್ಲಿ ಪೊಲೀಸ್ ಸಮವಸ್ತ್ರ ಧರಿಸಿ ಕರೆ ಮಾಡಿ: <em>"ನಿಮ್ಮ ಹೆಸರಿನಲ್ಲಿ ಅಕ್ರಮ ಪಾರ್ಸೆಲ್ ಸಿಕ್ಕಿದೆ, ನೀವು ಡಿಜಿಟಲ್ ಅರೆಸ್ಟ್‌ನಲ್ಲಿದ್ದೀರಿ. ಯಾರಿಗೂ ಹೇಳದೆ ಪರಿಶೀಲನಾ ಖಾತೆಗೆ ₹೧ ಲಕ್ಷ ಕಳುಹಿಸಿ"</em> ಎಂದು ಹೆದರಿಸುತ್ತಾರೆ. ಭಾರತೀಯ ಕಾನೂನಿನಲ್ಲಿ "ಡಿಜಿಟಲ್ ಅರೆಸ್ಟ್" ಎಂಬ ಯಾವುದೇ ನಿಯಮವಿಲ್ಲ.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Safety Checklist -->
+      <h3 class="subsection-title">
+        <span class="text-en">The 3-Step Defense Against Urgent Threats</span>
+        <span class="text-kn">ತುರ್ತು ಬೆದರಿಕೆಗಳ ವಿರುದ್ಧ ೩ ಹಂತದ ಸುರಕ್ಷತೆ</span>
+      </h3>
+      <div class="tutorial-steps-grid">
+        <div class="step-guide-card">
+          <div class="step-number-badge">1</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Pause and Breathe</span><span class="text-kn">ಶಾಂತರಾಗಿ ಉಸಿರೆಳೆದುಕೊಳ್ಳಿ</span></h4>
+            <p><span class="text-en">No legitimate government agency or bank resolves legal issues by demanding an immediate UPI transfer in 10 minutes.</span><span class="text-kn">ಯಾವುದೇ ನೈಜ ಸರ್ಕಾರಿ ಸಂಸ್ಥೆ ೧೦ ನಿಮಿಷದಲ್ಲಿ ಯುಪಿಐ ಹಣ ನೀಡುವಂತೆ ಕೇಳುವುದಿಲ್ಲ.</span></p>
+          </div>
+        </div>
+        <div class="step-guide-card">
+          <div class="step-number-badge">2</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Disconnect the Video/Call</span><span class="text-kn">ಕರೆಯನ್ನು ತಕ್ಷಣ ಕಟ್ ಮಾಡಿ</span></h4>
+            <p><span class="text-en">End the call immediately. Scammers cannot arrest you through your smartphone screen.</span><span class="text-kn">ಕರೆಯನ್ನು ತಕ್ಷಣ ಕಟ್ ಮಾಡಿ. ಯಾರೂ ಮೊಬೈಲ್ ಪರದೆಯ ಮೂಲಕ ಬಂಧಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.</span></p>
+          </div>
+        </div>
+        <div class="step-guide-card">
+          <div class="step-number-badge">3</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Call Your Family or Relatives</span><span class="text-kn">ಕುಟುಂಬದವರಿಗೆ ಕರೆ ಮಾಡಿ</span></h4>
+            <p><span class="text-en">Immediately phone your son, daughter, or neighbor to talk it through.</span><span class="text-kn">ತಕ್ಷಣ ನಿಮ್ಮ ಮಕ್ಕಳಿಗೆ ಅಥವಾ ಆಪ್ತ ಸ್ನೇಹಿತರಿಗೆ ಕರೆ ಮಾಡಿ ಮಾತನಾಡಿ.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recap Box -->
+      <div class="lesson-recap-box">
+        <div class="lesson-recap-title">📌 <span class="text-en">Lesson 11 Short Recap</span><span class="text-kn">ಪಾಠ ೧೧ ರ ಸಾರಾಂಶ</span></div>
+        <p class="lesson-recap-text">
+          <span class="text-en">Urgency is the scammer's trademark. When anyone creates fear, urgency, or insists on immediate secret money transfers, disconnect immediately. Pause. Check. Stay Safe.</span>
+          <span class="text-kn">ತುರ್ತು ಮತ್ತು ಭಯ ವಂಚಕರ ಮುಖ್ಯ ಅಸ್ತ್ರ. ಯಾರೇ ಆದರೂ ತುರ್ತಾಗಿ ಹಣ ಕಳುಹಿಸಲು ಹೇಳಿದರೆ ಕರೆ ಕಟ್ ಮಾಡಿ ನಿಮ್ಮ ಕುಟುಂಬದವರನ್ನು ಸಂಪರ್ಕಿಸಿ.</span>
+        </p>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="11">
+          <span>⬅ Previous: Phishing Links</span>
+        </button>
+        <span class="section-indicator-text">Section 12 of 13</span>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="13">
+          <span>Next: Lesson 12 — Suspected Fraud Help ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 13: Lesson 12 — What to Do After Suspected Financial Fraud
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection13" data-section="13">
+      <div id="lesson-12"></div>
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Lesson 12 of 12</span>
+          <span class="section-topic-pill">🚨 Emergency Response</span>
+        </div>
+        <div class="section-audio-controls">
+          <button type="button" class="btn-audio-action btn-read-aloud" data-section="13" aria-label="Read Lesson 12 aloud">
+            <span>🔊 Read Section Aloud</span>
+          </button>
+          <button type="button" class="btn-audio-action btn-stop-audio" aria-label="Stop reading Lesson 12">
+            <span>⏹️ Stop Speaking</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="section-title">
+        <span class="title-en">Lesson 12: What to Do After Suspected Financial Fraud</span>
+        <span class="title-kn">ಪಾಠ ೧೨: ಹಣ ಕಳೆದುಕೊಂಡಾಗ ಅಥವಾ ವಂಚನೆಗೊಳಗಾದಾಗ ಏನು ಮಾಡಬೇಕು (ತುರ್ತು ಸಹಾಯವಾಣಿ ೧೯೩೦)</span>
+      </h2>
+
+      <!-- Golden Rule Banner -->
+      <div class="golden-rule-callout" style="background: #FEE2E2; border-color: #EF4444;">
+        <span class="gr-icon">🚨</span>
+        <p class="gr-text" style="color: #991B1B;">
+          <span class="text-en"><strong>EMERGENCY HELPLINE:</strong> Dial 1930 immediately within the "Golden Hour". Official Cybercrime Reporting Portal: https://cybercrime.gov.in</span>
+          <span class="text-kn"><strong>ತುರ್ತು ಸಹಾಯವಾಣಿ:</strong> ಸೈಬರ್ ಸಹಾಯವಾಣಿ ೧೯೩೦ ಗೆ ತಕ್ಷಣ ಕರೆ ಮಾಡಿ. ಅಧಿಕೃತ ಪೋರ್ಟಲ್: https://cybercrime.gov.in</span>
+        </p>
+      </div>
+
+      <div class="explanation-body">
+        <p class="lead-para">
+          <span class="text-en">
+            If you realize you have accidentally transferred money to a scammer or disclosed your PIN, <strong>do not panic and do not blame yourself</strong>. Cyber criminals are organized and sophisticated. Acting swiftly within the first 1 to 2 hours (the "Golden Hour") dramatically improves the probability of law enforcement freezing the funds before the fraudster withdraws them.
+          </span>
+          <span class="text-kn">
+            ನೀವು ಆಕಸ್ಮಿಕವಾಗಿ ವಂಚಕನಿಗೆ ಹಣ ಕಳುಹಿಸಿದ್ದರೆ ಅಥವಾ ಪಿನ್ ಹೇಳಿದ್ದರೆ ಗಾಬರಿಯಾಗಬೇಡಿ, ನಿಮ್ಮನ್ನು ದೂಷಿಸಿಕೊಳ್ಳಬೇಡಿ. ತಕ್ಷಣ ಈ ಮೊದಲ ೧-೨ ಗಂಟೆಗಳಲ್ಲಿ (Golden Hour) ಕ್ರಮ ಕೈಗೊಂಡರೆ ಕಳೆದುಹೋದ ಹಣವನ್ನು ಫ್ರೀಜ್ ಮಾಡುವ ಸಾಧ್ಯತೆ ಹೆಚ್ಚಿರುತ್ತದೆ.
+          </span>
+        </p>
+      </div>
+
+      <!-- Emergency 6-Step Action Plan -->
+      <h3 class="subsection-title">
+        <span class="text-en">6 Immediate Steps to Protect Your Funds</span>
+        <span class="text-kn">ನಿಮ್ಮ ಹಣವನ್ನು ರಕ್ಷಿಸಲು ೬ ತಕ್ಷಣದ ಹಂತಗಳು</span>
+      </h3>
+      <div class="tutorial-steps-grid">
+        <div class="step-guide-card highlight-step">
+          <div class="step-number-badge">1</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Stop All Contact</span><span class="text-kn">ಎಲ್ಲಾ ಸಂಪರ್ಕವನ್ನು ನಿಲ್ಲಿಸಿ</span></h4>
+            <p><span class="text-en">Hang up immediately. Do not send "additional verification fees" to get your money back — that is another trap.</span><span class="text-kn">ಫೋನ್ ಕಟ್ ಮಾಡಿ. ಹಣ ಮರಳಿ ಪಡೆಯಲು ಮತ್ತಷ್ಟು ಹಣ ಕಳುಹಿಸಬೇಡಿ.</span></p>
+          </div>
+        </div>
+
+        <div class="step-guide-card highlight-step">
+          <div class="step-number-badge">2</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Call Bank to Block Card & Freeze UPI</span><span class="text-kn">ಬ್ಯಾಂಕ್‌ಗೆ ಕರೆ ಮಾಡಿ ಕಾರ್ಡ್ ಬ್ಲಾಕ್ ಮಾಡಿ</span></h4>
+            <p><span class="text-en">Call your bank's toll-free number (from the back of your debit card or passbook) to immediately block the compromised card and freeze your UPI ID.</span><span class="text-kn">ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಸಹಾಯವಾಣಿಗೆ ಕರೆ ಮಾಡಿ ತಕ್ಷಣ ಎಟಿಎಂ ಕಾರ್ಡ್ ಮತ್ತು ಯುಪಿಐ ಬ್ಲಾಕ್ ಮಾಡಿ.</span></p>
+          </div>
+        </div>
+
+        <div class="step-guide-card highlight-step">
+          <div class="step-number-badge">3</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Dial Helpline 1930 Immediately</span><span class="text-kn">ಸಹಾಯವಾಣಿ ೧೯೩೦ ಗೆ ತಕ್ಷಣ ಕರೆ ಮಾಡಿ</span></h4>
+            <p><span class="text-en">Call <strong>1930</strong> (toll-free across India). Have your debit SMS, bank account number, and transaction ID ready. The operator can alert the recipient's bank to freeze the funds.</span><span class="text-kn">ಭಾರತ ಸರ್ಕಾರದ ಸೈಬರ್ ಸಹಾಯವಾಣಿ <strong>೧೯೩೦</strong> ಗೆ ಕರೆ ಮಾಡಿ ವಹಿವಾಟು ಐಡಿ ಮತ್ತು ಬ್ಯಾಂಕ್ ವಿವರ ನೀಡಿ.</span></p>
+          </div>
+        </div>
+
+        <div class="step-guide-card">
+          <div class="step-number-badge">4</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">File Online at cybercrime.gov.in</span><span class="text-kn">ಆನ್‌ಲೈನ್ ದೂರು ದಾಖಲಿಸಿ</span></h4>
+            <p><span class="text-en">Submit a formal report on the Ministry of Home Affairs portal: <strong>https://cybercrime.gov.in</strong>. Note down your formal Acknowledgement Number.</span><span class="text-kn">ಅಧಿಕೃತ ಪೋರ್ಟಲ್ <strong>https://cybercrime.gov.in</strong> ನಲ್ಲಿ ದೂರು ದಾಖಲಿಸಿ ಸ್ವೀಕೃತಿ ಸಂಖ್ಯೆ ಪಡೆಯಿರಿ.</span></p>
+          </div>
+        </div>
+
+        <div class="step-guide-card">
+          <div class="step-number-badge">5</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Preserve All Evidence</span><span class="text-kn">ಎಲ್ಲಾ ಸಾಕ್ಷ್ಯಗಳನ್ನು ಭದ್ರವಾಗಿಡಿ</span></h4>
+            <p><span class="text-en">Do not delete SMS messages, call logs, WhatsApp chats, or transaction reference numbers (UTR). Take screenshots for the police.</span><span class="text-kn">ಸಂದೇಶಗಳು, ಫೋನ್ ನಂಬರ್, ಯುಟಿಆರ್ ಸಂಖ್ಯೆ ಮತ್ತು ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌ಗಳನ್ನು ಡಿಲೀಟ್ ಮಾಡದೆ ಇಟ್ಟುಕೊಳ್ಳಿ.</span></p>
+          </div>
+        </div>
+
+        <div class="step-guide-card">
+          <div class="step-number-badge">6</div>
+          <div class="step-guide-content">
+            <h4><span class="text-en">Inform Your Family</span><span class="text-kn">ಕುಟುಂಬಕ್ಕೆ ತಿಳಿಸಿ</span></h4>
+            <p><span class="text-en">Talk to your children or trusted relatives. Family support helps you handle bank branch visits and follow-ups calmly.</span><span class="text-kn">ನಿಮ್ಮ ಆಪ್ತ ಕುಟುಂಬ ಸದಸ್ಯರಿಗೆ ತಿಳಿಸಿ ಬ್ಯಾಂಕ್ ಭೇಟಿ ಮತ್ತು ಮುಂದಿನ ಕ್ರಮಗಳಿಗೆ ಅವರ ಸಹಾಯ ಪಡೆಯಿರಿ.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recap Box -->
+      <div class="lesson-recap-box">
+        <div class="lesson-recap-title">📌 <span class="text-en">Lesson 12 Short Recap</span><span class="text-kn">ಪಾಠ ೧೨ ರ ಸಾರಾಂಶ</span></div>
+        <p class="lesson-recap-text">
+          <span class="text-en">Never blame yourself. Act immediately: 1. Hang up. 2. Block your bank card. 3. Call Helpline 1930. 4. Lodge report at cybercrime.gov.in. Speed is your strongest shield to recover stolen money.</span>
+          <span class="text-kn">ಗಾಬರಿಯಾಗಬೇಡಿ: ತಕ್ಷಣ ಕಾರ್ಡ್ ಬ್ಲಾಕ್ ಮಾಡಿ, ೧೯೩೦ ಗೆ ಕರೆ ಮಾಡಿ ಮತ್ತು cybercrime.gov.in ನಲ್ಲಿ ದೂರು ದಾಖಲಿಸಿ.</span>
+        </p>
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="section-nav-footer">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="12">
+          <span>⬅ Previous: Urgent Threats</span>
+        </button>
+        <span class="section-indicator-text">Section 13 of 13</span>
+        <button type="button" class="btn-nav-step btn-next-step btn-finish-lessons" data-next="14">
+          <span>🎯 Take the Safety Knowledge Check ➡</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================
+         SECTION 14: Senior Safety Knowledge Check (Quiz)
+         ======================================================== -->
+    <article class="learn-section-card" id="learnSection14" data-section="14">
+      <div class="section-card-header">
+        <div class="section-badge-info">
+          <span class="section-num-pill">Review & Quiz</span>
+          <span class="section-topic-pill">🎯 Knowledge Check</span>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 24px;">
+        <span style="font-size: 2.5rem;">🎯</span>
+        <h2 class="section-title" data-i18n="quiz_heading">Senior Safety Knowledge Check</h2>
+        <p class="section-subtitle" data-i18n="quiz_subheading">
+          Test your confidence with these 6 quick questions based on what you just learned:
+        </p>
+      </div>
+
+      <!-- Questions Container -->
+      <div id="quizQuestionsContainer">
+        <!-- Injected by static/js/learn.js -->
+      </div>
+
+      <div style="text-align: center; margin-top: 28px;">
+        <button type="button" class="btn-large btn-teal" id="btnSubmitQuiz" style="min-width: 260px;">
+          <span data-i18n="btn_submit_quiz">Submit Quiz</span>
+        </button>
+      </div>
+
+      <!-- Quiz Result Certificate -->
+      <div id="quizResultBox" style="display: none; margin-top: 30px;">
+        <!-- Dynamic result card -->
+      </div>
+
+      <!-- Back to Section 13 -->
+      <div class="section-nav-footer" style="margin-top: 30px;">
+        <button type="button" class="btn-nav-step btn-prev-step" data-prev="13">
+          <span>⬅ Back to Section 13: Suspected Fraud</span>
+        </button>
+        <button type="button" class="btn-nav-step btn-next-step" data-next="1">
+          <span>🔁 Review from Section 1</span>
+        </button>
+      </div>
+    </article>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/learn.js') }}"></script>
+{% endblock %}

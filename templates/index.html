@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block title %}EASY PAY — SAFE PAY | Pause. Check. Stay Safe.{% endblock %}
+
+{% block content %}
+<!-- Hero Welcome Section -->
+<section class="hero-card" aria-labelledby="heroTitle">
+  <span class="hero-tag-badge" data-i18n="hero_badge">HACKURITY 2026 — Senior Citizen Cyber Shield</span>
+  <h1 class="hero-title" id="heroTitle" data-i18n="hero_title">Learn Safe Digital Payments Before Money Moves.</h1>
+  <div class="hero-tagline" data-i18n="brand_tagline">Pause. Check. Stay Safe.</div>
+  <p class="hero-description voice-readable" data-i18n="hero_desc">
+    Simple, friendly, step-by-step guidance designed specifically for senior citizens and beginners to use UPI, recognize scams, and bank with confidence.
+  </p>
+  <div class="hero-actions">
+    <a href="{{ url_for('coach') }}" class="btn-large btn-teal" id="heroBtnCoach">
+      <span data-i18n="btn_start_practice">🛡️ Personal Scam Assistant</span>
+    </a>
+    <a href="{{ url_for('checker') }}" class="btn-large btn-primary" id="heroBtnChecker">
+      <span data-i18n="btn_check_sms">🔍 Check a Suspicious Message</span>
+    </a>
+  </div>
+</section>
+
+<!-- 3 Golden Rules Every Senior Must Remember -->
+<section class="rules-banner" aria-labelledby="rulesTitle">
+  <div class="rules-header">
+    <span style="font-size: 2rem;">⭐</span>
+    <h2 id="rulesTitle" data-i18n="golden_rules_title">3 Golden Rules Every Senior Must Remember</h2>
+  </div>
+  <div class="rules-grid">
+    <div class="rule-item-card">
+      <div class="rule-number">1</div>
+      <div>
+        <div class="rule-text-title" data-i18n="rule_1_title">UPI PIN is ONLY for giving money</div>
+        <div class="rule-text-desc" data-i18n="rule_1_desc">Entering your UPI PIN ALWAYS subtracts money from your account. You NEVER enter a PIN to receive money.</div>
+      </div>
+    </div>
+    <div class="rule-item-card">
+      <div class="rule-number">2</div>
+      <div>
+        <div class="rule-text-title" data-i18n="rule_2_title">Banks NEVER ask for OTP or Passwords</div>
+        <div class="rule-text-desc" data-i18n="rule_2_desc">No bank manager, police officer, or telecom executive has the authority to ask for your SMS OTP or card details.</div>
+      </div>
+    </div>
+    <div class="rule-item-card">
+      <div class="rule-number">3</div>
+      <div>
+        <div class="rule-text-title" data-i18n="rule_3_title">NEVER install AnyDesk / QuickSupport</div>
+        <div class="rule-text-desc" data-i18n="rule_3_desc">If any caller asks you to install AnyDesk, TeamViewer, or share your screen, disconnect immediately.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Features Grid -->
+<section class="features-section" aria-labelledby="featuresTitle">
+  <div class="section-heading-box">
+    <h2 class="section-title" id="featuresTitle" data-i18n="brand_title">EASY PAY — SAFE PAY Features</h2>
+    <p class="section-subtitle">Select an activity below to practice, verify, or learn in a safe environment:</p>
+  </div>
+
+  <div class="features-grid">
+    <!-- Card 1: Check a Message -->
+    <article class="feature-action-card">
+      <div class="feature-card-icon">🔍</div>
+      <h3 class="feature-card-title" data-i18n="card_checker_title">Check a Message</h3>
+      <p class="feature-card-desc" data-i18n="card_checker_desc">
+        Paste any SMS, WhatsApp message, or link. Our rule checker spots hidden dangers, urgency traps, and fake links.
+      </p>
+      <div class="feature-card-action">
+        <a href="{{ url_for('checker') }}" class="btn-large btn-primary" style="width: 100%;">
+          <span data-i18n="btn_open_checker">Check Message Now →</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Card 2: Personal Scam Assistant -->
+    <article class="feature-action-card" style="border-color: var(--accent-teal);">
+      <div class="feature-card-icon" style="background: #CCFBF1; color: var(--accent-teal-dark);">🛡️</div>
+      <h3 class="feature-card-title" data-i18n="card_coach_title">Personal Scam Assistant</h3>
+      <p class="feature-card-desc" data-i18n="card_coach_desc">
+        Understand suspicious messages, phone calls, links, and payment requests before you act. Instant plain-language guidance.
+      </p>
+      <div class="feature-card-action">
+        <a href="{{ url_for('coach') }}" class="btn-large btn-teal" style="width: 100%;">
+          <span data-i18n="btn_open_coach">Open Scam Assistant →</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Card 3: Safe UPI Simulator (Smart Payment Assistant) -->
+    <article class="feature-action-card">
+      <div class="feature-card-icon">📲</div>
+      <h3 class="feature-card-title" data-i18n="card_sim_title">Smart Payment Assistant</h3>
+      <div style="display: inline-block; background: #FEF3C7; color: #92400E; font-size: 0.8rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px;">
+        🏷️ DEMO MODE — NO REAL MONEY
+      </div>
+      <p class="feature-card-desc" data-i18n="card_sim_desc">
+        Verify payments before you pay. A safe, guided educational simulator to check recipient names, spot traps, and cancel without real money.
+      </p>
+      <div class="feature-card-action">
+        <a href="{{ url_for('simulator') }}" class="btn-large btn-secondary" style="width: 100%;">
+          <span data-i18n="btn_open_sim">Try Payment Assistant →</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Card 4: Transaction History and Safety Insights -->
+    <article class="feature-action-card">
+      <div class="feature-card-icon" style="background: #F0FDF4; color: #16A34A;">📜</div>
+      <h3 class="feature-card-title" data-i18n="card_trans_title">Transaction History & Safety</h3>
+      <div style="display: inline-block; background: #E0E7FF; color: #3730A3; font-size: 0.8rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px;">
+        📊 SIMULATED RECORDS & STATS
+      </div>
+      <p class="feature-card-desc" data-i18n="card_trans_desc">
+        Review all your completed demonstration payments with safety classifications, totals, search, and filters.
+      </p>
+      <div class="feature-card-action">
+        <a href="{{ url_for('transactions_page') }}" class="btn-large btn-secondary" style="width: 100%;">
+          <span data-i18n="btn_open_trans">View Transactions →</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Card 5: Learn UPI Safely (UPI Learning Centre) -->
+    <article class="feature-action-card">
+      <div class="feature-card-icon">📚</div>
+      <h3 class="feature-card-title" data-i18n="card_learn_title">UPI Learning Centre</h3>
+      <p class="feature-card-desc" data-i18n="card_learn_desc">
+        Simple, step-by-step interactive lessons for seniors: understanding UPI, making payments, PIN security, biometrics, and avoiding scams.
+      </p>
+      <div class="feature-card-action">
+        <a href="{{ url_for('learn') }}" class="btn-large btn-secondary" style="width: 100%;">
+          <span data-i18n="btn_open_learn">Open Learning Centre →</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Card 6: Emergency Help (Voice Assistance & Emergency Support) -->
+    <article class="feature-action-card" style="border-color: var(--status-danger-border);">
+      <div class="feature-card-icon" style="background: var(--status-danger-bg); color: var(--status-danger);">🆘</div>
+      <h3 class="feature-card-title" style="color: var(--status-danger);" data-i18n="card_help_title">Voice & Emergency Support</h3>
+      <p class="feature-card-desc" data-i18n="card_help_desc">
+        Immediate steps to take if you suspect a scam. Official Cyber Crime Helpline 1930, bank contact guide, and voice assistance.
+      </p>
+      <div class="feature-card-action">
+        <a href="{{ url_for('help_page') }}" class="btn-large btn-danger" style="width: 100%;">
+          <span data-i18n="btn_open_help">Get Emergency Help →</span>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+{% endblock %}

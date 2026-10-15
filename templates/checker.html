@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}Scam Message Checker | EASY PAY — SAFE PAY{% endblock %}
+
+{% block content %}
+<div style="max-width: 900px; margin: 0 auto;">
+  <div class="checker-box-card">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 12px;">
+      <span style="font-size: 2.2rem;">🔍</span>
+      <div>
+        <h1 class="hero-title" style="font-size: 1.8rem; margin-bottom: 4px;" data-i18n="checker_heading">
+          Suspicious Message & Link Checker
+        </h1>
+        <p class="form-helper-text" data-i18n="checker_subheading">
+          Paste any message you received. We will check it for warning signs before you click or reply.
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick Sample Messages for testing/demonstration -->
+    <div class="sample-messages-box">
+      <div class="sample-chips-label" data-i18n="sample_messages_label">
+        Try a sample scam message:
+      </div>
+      <div class="sample-chips-wrapper">
+        <button type="button" class="sample-chip" data-sample="power" data-i18n="sample_power">⚡ Power Disconnection SMS</button>
+        <button type="button" class="sample-chip" data-sample="otp" data-i18n="sample_otp">💳 Bank OTP Request</button>
+        <button type="button" class="sample-chip" data-sample="lottery" data-i18n="sample_lottery">🎁 KBC Lottery Winner</button>
+        <button type="button" class="sample-chip" data-sample="remote" data-i18n="sample_remote">📱 AnyDesk Screen Share</button>
+        <button type="button" class="sample-chip" data-sample="collect" data-i18n="sample_collect">💸 OLX UPI Collect Request</button>
+        <button type="button" class="sample-chip" data-sample="unlock" data-i18n="sample_unlock">🔒 Account Unlock Fee</button>
+        <button type="button" class="sample-chip" data-sample="safe" data-i18n="sample_safe">✅ Friendly Safe Message</button>
+      </div>
+    </div>
+
+    <!-- Textarea Input Area -->
+    <div class="textarea-container">
+      <label for="scamMessageInput" class="form-label-large" data-i18n="checker_input_label">
+        Paste SMS, WhatsApp message, or website link here:
+      </label>
+      <textarea
+        id="scamMessageInput"
+        class="message-textarea voice-readable"
+        rows="5"
+        data-i18n-placeholder="checker_placeholder"
+        placeholder="Example: Dear customer, your electricity bill is unpaid. Power cut tonight. Call 9845..."></textarea>
+    </div>
+
+    <!-- Voice Input & Clear Controls -->
+    <div class="textarea-tools">
+      <button type="button" class="speech-input-btn" id="btnMicInput">
+        <span data-i18n="btn_mic_input">🎙️ Speak Message</span>
+      </button>
+
+      <button type="button" class="btn-control-chip" id="btnClearMessage" style="font-size: 1rem; padding: 8px 16px;">
+        <span data-i18n="btn_clear">Clear Text</span>
+      </button>
+    </div>
+
+    <!-- Submit Action -->
+    <div>
+      <button type="button" class="btn-large btn-primary" id="btnAnalyzeMessage" style="width: 100%;">
+        <span data-i18n="btn_analyze">🔍 Check This Message</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Dynamic Result Display Area -->
+  <div class="result-display-area" id="checkerResultArea" aria-live="polite">
+    <!-- Analysis cards injected via static/js/checker.js -->
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/checker.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,285 @@
+{% extends 'base.html' %}
+
+{% block title %}Transaction History & Safety Insights | EASY PAY — SAFE PAY{% endblock %}
+
+{% block content %}
+<div class="transactions-page-container" style="max-width: 1040px; margin: 0 auto; padding-bottom: 50px;">
+
+  <!-- Header Banner -->
+  <header class="assistant-header-card" style="margin-bottom: 24px;">
+    <div class="assistant-header-main">
+      <div class="assistant-avatar-box" aria-hidden="true">📊</div>
+      <div style="flex: 1;">
+        <div class="assistant-badge-pill" style="background: #FEF3C7; color: #92400E; border: 1px solid #FCD34D;">
+          <span>DEMO MODE • ZERO REAL MONEY</span>
+        </div>
+        <h1 class="assistant-title" id="txnHistoryTitle" data-i18n="txn_history_heading">
+          TRANSACTION HISTORY & SAFETY INSIGHTS
+        </h1>
+        <p class="assistant-subtitle voice-readable" data-i18n="txn_history_subheading">
+          Review your simulated demonstration payments, track transaction safety scores, and identify warning signs before real money moves.
+        </p>
+      </div>
+    </div>
+
+    <!-- Demo Safety Notice Banner -->
+    <div class="demo-safety-banner" style="margin-top: 16px; background: #FFFBEB; border: 2px dashed #F59E0B; color: #92400E; padding: 14px 18px; border-radius: var(--radius-md); font-weight: 700; font-size: 1.05rem;" role="alert">
+      ⚠️ DEMONSTRATION MODE ONLY — All transactions below are simulated practice payments. No real bank accounts, UPI PINs, or money were involved.
+    </div>
+
+    <!-- Quick Audio Controls -->
+    <div class="helpers-audio-bar" style="margin-top: 14px;">
+      <button type="button" class="btn-helpers-audio" id="btnReadTxnPage" title="Read transaction history summary aloud">
+        🔊 <span data-i18n="btn_read_section">Read Aloud</span>
+      </button>
+      <button type="button" class="btn-helpers-audio" id="btnStopTxnAudio" style="display:none;" title="Stop audio">
+        ⏹️ <span data-i18n="btn_stop_reading">Stop Speaking</span>
+      </button>
+      <a href="{{ url_for('simulator') }}" class="btn-control-chip" style="margin-left: auto; text-decoration: none; font-weight: 700;">
+        ➕ Make a New Demo Payment →
+      </a>
+    </div>
+  </header>
+
+  <!-- Demonstration Statistics Cards -->
+  <section class="txn-stats-grid" aria-labelledby="statsTitle" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 28px;">
+    <h2 id="statsTitle" class="sr-only">Demonstration Statistics</h2>
+
+    <!-- Stat 1: Total Successful Demo Payments -->
+    <div class="stat-card" style="background: #FFFFFF; border: 2px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm);">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+        <span style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+          Successful Demo Payments
+        </span>
+        <span style="font-size: 1.8rem;">✅</span>
+      </div>
+      <div class="stat-number" id="statCompletedCount" style="font-size: 2.4rem; font-weight: 900; color: var(--status-success);">
+        {{ stats.successful_demo_transactions_count }}
+      </div>
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+        Practice payments confirmed safely in simulator
+      </div>
+    </div>
+
+    <!-- Stat 2: Total Amount of Successful Demo Transactions -->
+    <div class="stat-card" style="background: #FFFFFF; border: 2px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm);">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+        <span style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+          Total Demo Amount Paid
+        </span>
+        <span style="font-size: 1.8rem;">💰</span>
+      </div>
+      <div class="stat-number" id="statCompletedTotal" style="font-size: 2.4rem; font-weight: 900; color: var(--primary-navy);">
+        {{ stats.successful_demo_transactions_total }}
+      </div>
+      <div style="font-size: 0.85rem; color: #DC2626; font-weight: 700; margin-top: 4px;">
+        (Demo Statistics Only — No Real Money Transferred)
+      </div>
+    </div>
+
+    <!-- Stat 3: Risky Payments Flagged -->
+    <div class="stat-card" style="background: #FFFFFF; border: 2px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm);">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+        <span style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+          Safety Flags Detected
+        </span>
+        <span style="font-size: 1.8rem;">🛡️</span>
+      </div>
+      <div class="stat-number" id="statRiskyCount" style="font-size: 2.4rem; font-weight: 900; color: var(--status-danger);">
+        {{ stats.risky_demo_transactions_count }}
+      </div>
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+        Suspicious demo attempts flagged or cancelled
+      </div>
+    </div>
+  </section>
+
+  <!-- Helpful Safety Reminders Banner -->
+  <section class="safety-reminders-card" role="region" aria-label="Safety Reminders" style="background: #EFF6FF; border: 2px solid #BFDBFE; border-radius: var(--radius-lg); padding: 20px; margin-bottom: 28px;">
+    <div style="display: flex; align-items: flex-start; gap: 14px;">
+      <span style="font-size: 2rem;">💡</span>
+      <div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #1E3A8A; margin-bottom: 6px;">
+          Senior Payment Safety Reminder:
+        </h3>
+        <p style="font-size: 1.05rem; color: #1E40AF; margin-bottom: 8px;">
+          In genuine UPI apps, checking your transaction history regularly helps spot unauthorized debit collect requests. If any transaction looks suspicious or unfamiliar, <strong>never repeat payments or call numbers from SMS alerts</strong>.
+        </p>
+        <ul style="margin: 0; padding-left: 20px; font-size: 0.95rem; color: #1E3A8A;">
+          <li>Review recipient registered names carefully before paying.</li>
+          <li>Never share OTPs or enter your UPI PIN to "refund" or "reverse" any transaction.</li>
+          <li>Ask a family member or call your bank directly to review any unfamiliar payment before taking action.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Search Controls Bar -->
+  <section class="txn-filter-bar" aria-label="Transaction Filters" style="background: #FFFFFF; border: 2px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 24px; box-shadow: var(--shadow-sm);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; align-items: flex-end;">
+      
+      <!-- Search Input -->
+      <div>
+        <label for="txnSearchInput" style="display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.95rem; color: var(--primary-navy);">
+          🔍 Search by Recipient or UPI ID:
+        </label>
+        <input
+          type="text"
+          id="txnSearchInput"
+          class="assistant-textarea"
+          style="width: 100%; height: 48px; min-height: 48px; padding: 10px 14px; font-size: 1.05rem; border: 2px solid var(--border-light); border-radius: var(--radius-md);"
+          placeholder="e.g. Vegetables, Apollo, BESCOM..."
+          aria-label="Search transactions">
+      </div>
+
+      <!-- Status Filter -->
+      <div>
+        <label for="txnStatusFilter" style="display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.95rem; color: var(--primary-navy);">
+          📌 Transaction Status:
+        </label>
+        <select id="txnStatusFilter" class="header-lang-select" style="width: 100%; height: 48px; border: 2px solid var(--border-light); border-radius: var(--radius-md); font-size: 1.05rem; padding: 0 12px;">
+          <option value="all">All Statuses</option>
+          <option value="Completed">Completed Only</option>
+          <option value="Cancelled by User">Cancelled by User</option>
+          <option value="Declined by User">Declined by User</option>
+        </select>
+      </div>
+
+      <!-- Risk Filter -->
+      <div>
+        <label for="txnRiskFilter" style="display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.95rem; color: var(--primary-navy);">
+          🛡️ Risk Classification:
+        </label>
+        <select id="txnRiskFilter" class="header-lang-select" style="width: 100%; height: 48px; border: 2px solid var(--border-light); border-radius: var(--radius-md); font-size: 1.05rem; padding: 0 12px;">
+          <option value="all">All Risk Levels</option>
+          <option value="NO OBVIOUS WARNING SIGNS">No Obvious Warnings (Green)</option>
+          <option value="CAUTION">Caution / Suspicious (Yellow)</option>
+          <option value="HIGH RISK">High Risk (Red)</option>
+        </select>
+      </div>
+
+      <!-- Sort Order -->
+      <div>
+        <label for="txnSortOrder" style="display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.95rem; color: var(--primary-navy);">
+          ↕️ Sort by Date:
+        </label>
+        <select id="txnSortOrder" class="header-lang-select" style="width: 100%; height: 48px; border: 2px solid var(--border-light); border-radius: var(--radius-md); font-size: 1.05rem; padding: 0 12px;">
+          <option value="DESC">Newest First (Recent)</option>
+          <option value="ASC">Oldest First</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- Active Filters Summary & Reset -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-light);">
+      <span id="filteredResultsCount" style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600;">
+        Showing {{ transactions|length }} demonstration transactions
+      </span>
+      <button type="button" id="btnResetFilters" class="btn-control-chip" style="font-size: 0.9rem;">
+        ↺ Reset Filters
+      </button>
+    </div>
+  </section>
+
+  <!-- Transactions List Container -->
+  <section class="transactions-list-section" aria-label="Transaction Records">
+    <div id="transactionsListContainer" style="display: flex; flex-direction: column; gap: 16px;">
+      
+      {% for txn in transactions %}
+      <article class="transaction-item-card" data-ref="{{ txn.txn_ref }}" style="background: #FFFFFF; border: 2px solid {% if txn.risk_classification == 'HIGH RISK' %}#F87171{% elif txn.risk_classification == 'CAUTION' %}#FBBF24{% else %}var(--border-light){% endif %}; border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); transition: transform 0.15s ease;">
+        
+        <div style="margin-bottom: 8px;">
+          <span style="display: inline-block; background: #EEF2FF; color: #4338CA; border: 1px solid #C7D2FE; font-size: 0.78rem; font-weight: 800; padding: 2px 8px; border-radius: 999px;">
+            🏷️ PRACTICE UPI SIMULATION
+          </span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+              <span style="font-size: 1.5rem;">
+                {% if txn.risk_classification == 'HIGH RISK' %}🚨{% elif txn.risk_classification == 'CAUTION' %}⚠️{% else %}🏪{% endif %}
+              </span>
+              <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-navy); margin: 0;">
+                {{ txn.recipient_name }}
+              </h3>
+            </div>
+            <div style="font-size: 0.95rem; color: var(--text-muted);">
+              UPI ID: <span style="font-family: monospace; font-weight: 600; color: var(--text-main);">{{ txn.upi_id }}</span>
+            </div>
+          </div>
+
+          <div style="text-align: right;">
+            <div style="font-size: 1.6rem; font-weight: 900; color: {% if txn.status == 'Completed' %}var(--primary-navy){% else %}#64748B{% endif %};">
+              {{ txn.amount }}
+            </div>
+            <span class="status-pill {% if txn.status == 'Completed' %}status-success{% else %}status-danger{% endif %}" style="display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 0.82rem; font-weight: 800; text-transform: uppercase;">
+              {{ txn.status }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Meta Details Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; background: #F8FAFC; border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 14px; font-size: 0.92rem;">
+          <div>
+            <span style="color: var(--text-muted); display: block;">Reference ID:</span>
+            <span style="font-family: monospace; font-weight: 700; color: var(--text-main);">{{ txn.txn_ref }}</span>
+          </div>
+          <div>
+            <span style="color: var(--text-muted); display: block;">Date & Time:</span>
+            <span style="font-weight: 600; color: var(--text-main);">{{ txn.date_time }}</span>
+          </div>
+          <div>
+            <span style="color: var(--text-muted); display: block;">Purpose:</span>
+            <span style="font-weight: 600; color: var(--text-main);">{{ txn.purpose }}</span>
+          </div>
+          <div>
+            <span style="color: var(--text-muted); display: block;">Recipient Verification:</span>
+            <span style="font-weight: 700; color: #D97706;">{{ txn.verification_status }}</span>
+          </div>
+        </div>
+
+        {% if txn.warning_signs %}
+        <div style="background: #FEF2F2; border-left: 4px solid #EF4444; padding: 8px 12px; border-radius: 4px; font-size: 0.9rem; color: #991B1B; margin-bottom: 12px;">
+          <strong>⚠️ Warning Signs:</strong> {{ txn.warning_signs }}
+        </div>
+        {% endif %}
+
+        <!-- Risk Level & Warning Signs -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <span style="font-size: 0.88rem; color: var(--text-muted);">Safety Assessment: </span>
+            <span class="warning-badge-pill {% if txn.risk_classification == 'HIGH RISK' %}badge-high-risk{% elif txn.risk_classification == 'CAUTION' %}badge-suspicious{% else %}badge-clean{% endif %}" style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; font-size: 0.85rem; font-weight: 800; border-radius: 999px;">
+              {% if txn.risk_classification == 'HIGH RISK' %}🚨 HIGH RISK{% elif txn.risk_classification == 'CAUTION' %}⚠️ CAUTION{% else %}✔ NO OBVIOUS WARNING SIGNS{% endif %}
+            </span>
+          </div>
+        </div>
+
+      </article>
+      {% endfor %}
+
+    </div>
+
+    <!-- Empty State Box (hidden by default) -->
+    <div id="txnEmptyState" style="display: none; text-align: center; background: #FFFFFF; border: 2px dashed var(--border-light); border-radius: var(--radius-lg); padding: 40px 20px; margin-top: 20px;">
+      <span style="font-size: 3rem;">🔍</span>
+      <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin: 12px 0 6px 0;">
+        No Transactions Found
+      </h3>
+      <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 480px; margin: 0 auto 18px auto;">
+        No demonstration payments matched your search or filter criteria. Try adjusting filters or resetting.
+      </p>
+      <button type="button" class="btn-large btn-secondary" onclick="document.getElementById('btnResetFilters').click();">
+        Reset Search Filters ↺
+      </button>
+    </div>
+
+  </section>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/transactions.js') }}"></script>
+{% endblock %}

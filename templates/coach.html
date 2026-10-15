@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% block title %}Personal Scam Assistant | EASY PAY — SAFE PAY{% endblock %}
+
+{% block content %}
+<div class="assistant-container" style="max-width: 960px; margin: 0 auto; padding-bottom: 40px;">
+  
+  <!-- Assistant Top Banner Card -->
+  <div class="assistant-header-card">
+    <div class="assistant-header-main">
+      <div class="assistant-avatar-box" aria-hidden="true">🛡️</div>
+      <div style="flex: 1;">
+        <div class="assistant-badge-pill">
+          <span>AI & Safety Rules Shield</span>
+        </div>
+        <h1 class="assistant-title" id="assistantTitle" data-i18n="assistant_title">
+          PERSONAL SCAM ASSISTANT
+        </h1>
+        <p class="assistant-subtitle voice-readable" data-i18n="assistant_subtitle">
+          Help senior citizens understand suspicious messages, phone calls, links, and payment requests before they act.
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick Language Toggle Bar -->
+    <div class="assistant-lang-bar" role="region" aria-label="Language selection">
+      <span class="assistant-lang-label">
+        <span aria-hidden="true">🌐</span> <span>Language / ಭಾಷೆ:</span>
+      </span>
+      <div class="assistant-lang-pills">
+        <button type="button" class="assistant-lang-btn active" data-lang="en" id="btnLangEn" aria-pressed="true">
+          🇬🇧 Simple English
+        </button>
+        <button type="button" class="assistant-lang-btn" data-lang="kn" id="btnLangKn" aria-pressed="false">
+          🇮🇳 ಕನ್ನಡ (Kannada)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Suggested Questions & Situations Section -->
+  <div class="assistant-suggested-card" role="region" aria-label="Suggested questions">
+    <div class="suggested-heading-row">
+      <div class="suggested-title">
+        <span aria-hidden="true">💡</span>
+        <span data-i18n="suggested_title">Suggested Questions & Situations:</span>
+      </div>
+      <span class="suggested-hint">Tap any question to check instantly:</span>
+    </div>
+    
+    <div class="suggested-chips-grid">
+      <button type="button" class="suggested-chip-btn" data-question="Is this bank message suspicious?">
+        <span class="chip-icon">🏦</span>
+        <span class="chip-text" data-i18n="q_bank_suspicious">"Is this bank message suspicious?"</span>
+      </button>
+
+      <button type="button" class="suggested-chip-btn" data-question="Someone is asking for my OTP. What should I do?">
+        <span class="chip-icon">🔑</span>
+        <span class="chip-text" data-i18n="q_ask_otp">"Someone is asking for my OTP. What should I do?"</span>
+      </button>
+
+      <button type="button" class="suggested-chip-btn" data-question="I received a UPI payment request.">
+        <span class="chip-icon">📲</span>
+        <span class="chip-text" data-i18n="q_upi_request">"I received a UPI payment request."</span>
+      </button>
+
+      <button type="button" class="suggested-chip-btn" data-question="Someone called claiming to be from the police.">
+        <span class="chip-icon">👮</span>
+        <span class="chip-text" data-i18n="q_police_call">"Someone called claiming to be from the police."</span>
+      </button>
+
+      <button type="button" class="suggested-chip-btn" data-question="I clicked a suspicious link. What should I do?">
+        <span class="chip-icon">🔗</span>
+        <span class="chip-text" data-i18n="q_clicked_link">"I clicked a suspicious link. What should I do?"</span>
+      </button>
+
+      <button type="button" class="suggested-chip-btn" data-question="I already sent money to a scammer. What should I do?">
+        <span class="chip-icon">🚨</span>
+        <span class="chip-text" data-i18n="q_sent_money">"I already sent money to a scammer. What should I do?"</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive Chat Stream Box -->
+  <div class="assistant-chat-stream-card" id="assistantChatContainer" role="log" aria-live="polite" aria-label="Conversation history">
+    <div class="chat-stream-inner" id="assistantChatStream">
+      <!-- Welcome Bubble rendered initially -->
+      <div class="chat-bubble-row assistant-row" id="welcomeMessageRow">
+        <div class="chat-avatar" aria-hidden="true">🛡️</div>
+        <div class="chat-bubble assistant-bubble">
+          <div class="bubble-speaker-tag">Personal Scam Assistant</div>
+          <div class="bubble-text voice-readable" id="welcomeMessageText" data-i18n="assistant_welcome">
+            Hello! I am your Personal Scam Assistant. Before you click a link, share an OTP, or send money, tell me about any suspicious message, phone call, or payment request. I will explain the warning signs in plain language.
+          </div>
+          <div class="bubble-audio-actions">
+            <button type="button" class="btn-bubble-voice btn-read-welcome" id="btnReadWelcome" title="Read this message aloud">
+              <span data-i18n="btn_read_aloud">🔊 Read Aloud</span>
+            </button>
+            <button type="button" class="btn-bubble-voice btn-stop btn-stop-welcome" id="btnStopWelcome" title="Stop reading aloud">
+              <span data-i18n="btn_stop_speaking">⏹️ Stop Speaking</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Subsequent user and assistant responses appended dynamically by static/js/coach.js -->
+    </div>
+  </div>
+
+  <!-- Floating Audio Status Pill when speech is playing -->
+  <div class="assistant-voice-status" id="assistantVoiceStatus" style="display: none;" aria-live="polite">
+    <span class="audio-wave-dot"></span>
+    <span class="audio-wave-dot"></span>
+    <span class="audio-wave-dot"></span>
+    <span id="voiceStatusText">Reading explanation aloud...</span>
+    <button type="button" id="btnFloatingStop" class="btn-chip-stop">⏹️ Stop</button>
+  </div>
+
+  <!-- Message Input Box & Controls -->
+  <div class="assistant-input-card">
+    <label for="assistantMessageInput" class="assistant-input-label">
+      <span aria-hidden="true">✍️</span>
+      <span data-i18n="checker_input_label">Paste a message or describe a phone call:</span>
+    </label>
+    
+    <div class="input-textarea-wrapper">
+      <textarea
+        id="assistantMessageInput"
+        class="assistant-textarea"
+        rows="4"
+        data-i18n-placeholder="assistant_placeholder"
+        placeholder="Paste a message, describe a phone call, or ask a question here... (e.g., 'Your bank account will be blocked today. Share your OTP immediately.')"
+        aria-label="Message or question input"></textarea>
+    </div>
+
+    <!-- Controls Toolbar -->
+    <div class="assistant-controls-toolbar">
+      <div class="toolbar-left-actions">
+        <button type="button" class="btn-large btn-teal btn-submit-analyze" id="btnAnalyzeMessage">
+          <span data-i18n="btn_analyze_message">🔍 Analyze Message</span>
+        </button>
+
+        <button type="button" class="btn-control-chip" id="btnVoiceInput" title="Speak your question using microphone">
+          <span data-i18n="btn_speak_input">🎙️ Speak Question</span>
+        </button>
+      </div>
+
+      <div class="toolbar-right-actions">
+        <button type="button" class="btn-control-chip" id="btnReadLatest" title="Read latest assistant response aloud">
+          <span data-i18n="btn_read_aloud">🔊 Read Aloud</span>
+        </button>
+
+        <button type="button" class="btn-control-chip btn-stop" id="btnStopVoice" title="Stop voice reading">
+          <span data-i18n="btn_stop_speaking">⏹️ Stop Speaking</span>
+        </button>
+
+        <button type="button" class="btn-control-chip" id="btnClearChat" title="Clear conversation history">
+          <span data-i18n="btn_clear_chat">🗑️ Clear Chat</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Senior Citizen Safety Disclaimer Notice -->
+  <div class="assistant-safety-disclaimer-card" role="note">
+    <div class="disclaimer-icon-box">🛡️</div>
+    <div class="disclaimer-text-box">
+      <strong>Senior Safety Notice:</strong>
+      <p data-i18n="assistant_disclaimer">
+        We never collect OTPs, PINs, passwords, or bank credentials. No advice constitutes a legal or banking guarantee. Always verify numbers through official bank passbooks.
+      </p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/coach.js') }}"></script>
+{% endblock %}

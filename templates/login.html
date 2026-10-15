@@ -1,0 +1,297 @@
+{% extends 'base.html' %}
+
+{% block title %}Senior Citizen Safe Login | EASY PAY — SAFE PAY{% endblock %}
+
+{% block content %}
+<div class="login-page-wrapper">
+
+  <!-- ======================================================== -->
+  <!-- 1. CHOOSE YOUR LANGUAGE SECTION (Prominent, Before Form) -->
+  <!-- ======================================================== -->
+  <section class="login-language-section" aria-labelledby="chooseLangHeader">
+    <div class="lang-section-top">
+      <div class="lang-section-icon" aria-hidden="true">🌐</div>
+      <div class="lang-section-text">
+        <h2 id="chooseLangHeader" class="lang-section-title" data-i18n="choose_language_title">
+          Choose Your Language / ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ
+        </h2>
+        <p class="lang-section-desc" data-i18n="choose_language_subtitle">
+          Select your preferred language. You can change this anytime.
+        </p>
+      </div>
+    </div>
+
+    <!-- 7 Large, Accessible Language Buttons -->
+    <div class="login-lang-buttons-grid" role="group" aria-label="Language selection options">
+      <!-- 1. English -->
+      <button type="button" class="login-lang-card-btn active" data-lang="en" aria-label="English">
+        <div class="lang-check-badge" aria-hidden="true">✔</div>
+        <div class="lang-name-native">English</div>
+        <div class="lang-name-sub">English</div>
+      </button>
+
+      <!-- 2. Kannada -->
+      <button type="button" class="login-lang-card-btn" data-lang="kn" aria-label="ಕನ್ನಡ (Kannada)">
+        <div class="lang-check-badge" aria-hidden="true">✔</div>
+        <div class="lang-name-native">ಕನ್ನಡ</div>
+        <div class="lang-name-sub">Kannada</div>
+      </button>
+
+      <!-- 3. Hindi -->
+      <button type="button" class="login-lang-card-btn" data-lang="hi" aria-label="हिंदी (Hindi)">
+        <div class="lang-check-badge" aria-hidden="true">✔</div>
+        <div class="lang-name-native">हिंदी</div>
+        <div class="lang-name-sub">Hindi</div>
+      </button>
+
+      <!-- 4. Tamil -->
+      <button type="button" class="login-lang-card-btn" data-lang="ta" aria-label="தமிழ் (Tamil)">
+        <div class="lang-check-badge" aria-hidden="true">✔</div>
+        <div class="lang-name-native">தமிழ்</div>
+        <div class="lang-name-sub">Tamil</div>
+      </button>
+
+      <!-- 5. Telugu -->
+      <button type="button" class="login-lang-card-btn" data-lang="te" aria-label="తెలుగు (Telugu)">
+        <div class="lang-check-badge" aria-hidden="true">✔</div>
+        <div class="lang-name-native">తెలుగు</div>
+        <div class="lang-name-sub">Telugu</div>
+      </button>
+
+      <!-- 6. Malayalam -->
+      <button type="button" class="login-lang-card-btn" data-lang="ml" aria-label="മലയാളം (Malayalam)">
+        <div class="lang-check-badge" aria-hidden="true">✔</div>
+        <div class="lang-name-native">മലയാളം</div>
+        <div class="lang-name-sub">Malayalam</div>
+      </button>
+
+      <!-- 7. Marathi -->
+      <button type="button" class="login-lang-card-btn" data-lang="mr" aria-label="मराठी (Marathi)">
+        <div class="lang-check-badge" aria-hidden="true">✔</div>
+        <div class="lang-name-native">मराठी</div>
+        <div class="lang-name-sub">Marathi</div>
+      </button>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 2. VOICE ACCESSIBILITY INSTRUCTION CARD                 -->
+  <!-- ======================================================== -->
+  <section class="login-voice-card" aria-label="Voice accessibility guidance">
+    <div class="login-voice-inner">
+      <div class="login-voice-info">
+        <span class="voice-speaker-icon" aria-hidden="true">🔊</span>
+        <div>
+          <span class="voice-guide-headline" data-i18n="login_voice_instruction">
+            Need help? Click 'Read Instructions Aloud' to hear guidance in your chosen language.
+          </span>
+          <p class="voice-guide-sub" id="voiceSupportStatus">
+            Voice is calibrated to speak slowly and clearly for senior citizens.
+          </p>
+        </div>
+      </div>
+      <div class="login-voice-buttons">
+        <button type="button" class="btn-voice-pill" id="btnLoginReadVoice" title="Listen to instructions in selected language">
+          <span data-i18n="btn_read_instructions">🔊 Read Instructions Aloud</span>
+        </button>
+        <button type="button" class="btn-voice-pill btn-voice-stop" id="btnLoginStopVoice" title="Stop audio readout">
+          <span data-i18n="btn_stop_instructions">⏹️ Stop Speaking</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 3. SENIOR SAFE LOGIN FORM CARD                          -->
+  <!-- ======================================================== -->
+  <div class="login-card-container">
+    <div class="login-main-card">
+      <!-- Card Header -->
+      <div class="login-card-header">
+        <div class="login-shield-badge">🛡️</div>
+        <div>
+          <h1 class="login-card-title" id="loginCardTitle" data-i18n="login_heading">
+            Senior Citizen Safe Login
+          </h1>
+          <p class="login-card-welcome voice-readable" id="loginWelcomeText" data-i18n="login_welcome">
+            Welcome to EASY PAY — SAFE PAY. Please enter your credentials to continue safely.
+          </p>
+        </div>
+      </div>
+
+      <!-- Live Notification Banner (Errors or Success) -->
+      <div id="loginFeedbackBanner" class="login-feedback-banner" style="display: none;" role="alert" aria-live="polite"></div>
+
+      <!-- Main Login Form -->
+      <form id="safeLoginForm" class="login-form-body" novalidate>
+        <!-- Field 1: Username / Mobile -->
+        <div class="form-group-senior">
+          <label for="loginUsernameInput" class="form-label-senior">
+            <span class="field-icon-senior">👤</span>
+            <span data-i18n="login_username_label">Username or Mobile Number:</span>
+          </label>
+          <input
+            type="text"
+            id="loginUsernameInput"
+            name="username"
+            class="form-input-senior voice-readable"
+            data-i18n-placeholder="login_username_placeholder"
+            placeholder="Enter username or 10-digit mobile"
+            autocomplete="username"
+            required
+            aria-required="true"
+          />
+          <div class="field-error-msg" id="loginUsernameError" role="alert"></div>
+        </div>
+
+        <!-- Field 2: Password / PIN with Show/Hide Toggle -->
+        <div class="form-group-senior">
+          <label for="loginPasswordInput" class="form-label-senior">
+            <span class="field-icon-senior">🔑</span>
+            <span data-i18n="login_password_label">Password or PIN:</span>
+          </label>
+          <div class="password-wrapper-senior">
+            <input
+              type="password"
+              id="loginPasswordInput"
+              name="password"
+              class="form-input-senior voice-readable"
+              data-i18n-placeholder="login_password_placeholder"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+              aria-required="true"
+            />
+            <button
+              type="button"
+              class="pwd-toggle-btn"
+              id="btnTogglePasswordVis"
+              aria-label="Show or hide password"
+              title="Show or hide password"
+            >
+              👁️
+            </button>
+          </div>
+          <div class="field-error-msg" id="loginPasswordError" role="alert"></div>
+        </div>
+
+        <!-- Safety Reminder Notice -->
+        <div class="senior-safety-notice-box">
+          <span class="notice-icon">🛡️</span>
+          <p class="notice-text" data-i18n="login_safety_tip">
+            Safety Reminder: We will NEVER call or send SMS asking for your login password or UPI PIN.
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="login-actions-layout">
+          <button type="submit" class="btn-large btn-primary login-btn-main" id="btnSubmitLogin">
+            <span data-i18n="btn_login">Sign In / Login →</span>
+          </button>
+          <button type="button" class="btn-large btn-secondary login-btn-register" id="btnOpenRegisterModal">
+            <span data-i18n="btn_register">Create New Account / Register</span>
+          </button>
+        </div>
+
+        <!-- Help & Secondary Links -->
+        <div class="login-card-footer-links">
+          <button type="button" class="link-btn-plain" id="btnOpenForgotModal">
+            <span data-i18n="link_forgot_pwd">Forgot Password? Need Help?</span>
+          </button>
+          <a href="{{ url_for('help_page') }}" class="link-btn-plain text-emergency">
+            <span data-i18n="login_emergency_help">🚨 Facing an emergency scam? Click here for 1930 help</span>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 4. FORGOT PASSWORD MODAL (Senior Friendly)              -->
+  <!-- ======================================================== -->
+  <div class="accessible-modal-backdrop" id="forgotModalBackdrop" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="forgotTitle">
+    <div class="accessible-modal-card">
+      <div class="modal-card-header">
+        <span style="font-size: 2rem;">💡</span>
+        <h3 id="forgotTitle" class="modal-card-title" data-i18n="forgot_pwd_title">
+          Password Assistance for Seniors
+        </h3>
+      </div>
+      <p class="modal-card-body-text" data-i18n="forgot_pwd_desc">
+        If you forgot your password, don't worry! Your safety is our priority. Enter your registered phone number to receive a recovery code. Remember: Bank managers will NEVER call asking for your recovery code.
+      </p>
+      <div class="form-group-senior" style="margin: 16px 0;">
+        <label for="recoveryPhoneInput" class="form-label-senior" data-i18n="login_username_label">
+          Mobile Number:
+        </label>
+        <input type="tel" id="recoveryPhoneInput" class="form-input-senior" placeholder="Enter your 10-digit mobile number" />
+      </div>
+      <div id="forgotStatusMsg" style="margin-bottom: 12px; font-weight: 700; color: var(--status-success);"></div>
+      <div style="display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap;">
+        <button type="button" class="btn-large btn-teal" id="btnSendRecoveryCode">
+          Send Recovery Help →
+        </button>
+        <button type="button" class="btn-large btn-secondary" id="btnCloseForgotModal" data-i18n="btn_close">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 5. REGISTER ACCOUNT MODAL                               -->
+  <!-- ======================================================== -->
+  <div class="accessible-modal-backdrop" id="registerModalBackdrop" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="regTitle">
+    <div class="accessible-modal-card">
+      <div class="modal-card-header">
+        <span style="font-size: 2rem;">📝</span>
+        <h3 id="regTitle" class="modal-card-title" data-i18n="register_title">
+          Create New SafePay Account
+        </h3>
+      </div>
+      <p class="modal-card-body-text" data-i18n="register_desc">
+        Quick, safe, and senior-friendly registration. No bank details required.
+      </p>
+
+      <form id="registerForm" novalidate style="margin-top: 14px;">
+        <div class="form-group-senior">
+          <label for="regFullName" class="form-label-senior" data-i18n="register_name_label">
+            Your Full Name:
+          </label>
+          <input type="text" id="regFullName" class="form-input-senior" data-i18n-placeholder="register_name_placeholder" placeholder="Enter your name (e.g. Ramesh Sharma)" required />
+        </div>
+
+        <div class="form-group-senior">
+          <label for="regMobile" class="form-label-senior" data-i18n="login_username_label">
+            Mobile Number:
+          </label>
+          <input type="tel" id="regMobile" class="form-input-senior" placeholder="Enter 10-digit mobile number" required />
+        </div>
+
+        <div class="form-group-senior">
+          <label for="regPassword" class="form-label-senior" data-i18n="login_password_label">
+            Create Password or PIN:
+          </label>
+          <input type="password" id="regPassword" class="form-input-senior" placeholder="Create a memorable 4 to 8 character password" required />
+        </div>
+
+        <div id="regFeedbackMsg" class="field-error-msg" style="margin-bottom: 12px;"></div>
+
+        <div style="display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap;">
+          <button type="submit" class="btn-large btn-primary" id="btnSubmitRegistration">
+            <span data-i18n="btn_submit_register">Create My Account →</span>
+          </button>
+          <button type="button" class="btn-large btn-secondary" id="btnCloseRegisterModal" data-i18n="btn_close">
+            Close
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}

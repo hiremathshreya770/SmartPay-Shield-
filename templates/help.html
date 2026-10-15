@@ -1,0 +1,320 @@
+{% extends 'base.html' %}
+
+{% block title %}Emergency Fraud Support & 1930 Helpline | EASY PAY — SAFE PAY{% endblock %}
+
+{% block content %}
+<div class="emergency-page-container" style="max-width: 960px; margin: 0 auto; padding-bottom: 40px;">
+
+  <!-- Voice Assistance Bar for Seniors -->
+  <div class="emergency-voice-bar" role="region" aria-label="Emergency Voice Guidance" style="background: #FFFFFF; border: 2px solid var(--accent-teal); border-radius: var(--radius-lg); padding: 18px 24px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: var(--shadow-sm);">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 2rem;">🗣️</span>
+      <div>
+        <strong style="font-size: 1.15rem; color: var(--primary-navy); display: block;">Senior Voice Assistant (Emergency Audio)</strong>
+        <span style="font-size: 0.95rem; color: var(--text-muted);">Listen to calm, step-by-step emergency instructions in English or Kannada.</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+      <button type="button" class="btn-action-primary" id="btnHelpReadAloud" style="padding: 10px 18px; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 8px;">
+        🔊 <span>Read Aloud</span>
+      </button>
+      <button type="button" class="btn-action-secondary" id="btnHelpStopSpeaking" style="padding: 10px 18px; font-size: 1.05rem; display: none; align-items: center; gap: 8px; background: #DC2626; color: #FFFFFF; border-color: #DC2626;">
+        ⏹️ <span>Stop Speaking</span>
+      </button>
+      <button type="button" class="btn-control-chip" id="btnHelpToggleLang" style="padding: 8px 14px; font-size: 0.95rem; font-weight: 700;">
+        🌐 ಕನ್ನಡ / English
+      </button>
+    </div>
+  </div>
+
+  <!-- Calm, Non-Blaming Emergency Banner -->
+  <section class="calm-reassurance-box" style="background: #FEF3C7; border-left: 6px solid #D97706; border-radius: var(--radius-md); padding: 20px 24px; margin-bottom: 24px;" role="alert">
+    <div style="display: flex; align-items: flex-start; gap: 14px;">
+      <span style="font-size: 2.2rem; line-height: 1;">🤝</span>
+      <div>
+        <h2 style="font-size: 1.35rem; font-weight: 800; color: #92400E; margin-bottom: 6px;">
+          Please Stay Calm — Do Not Blame Yourself
+        </h2>
+        <p style="font-size: 1.05rem; color: #78350F; line-height: 1.5; margin: 0;">
+          If you shared an OTP, clicked an unfamiliar link, or sent money by mistake, please take a deep breath. Sophisticated fraudsters use deceptive psychological pressure and fear to trap honest people of all ages. You are not at fault. What matters now is taking calm, decisive action right away.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency 24x7 Helpline Box -->
+  <section class="emergency-banner-box" aria-labelledby="emergencyHeading" style="background: linear-gradient(135deg, #991B1B 0%, #DC2626 100%); color: #FFFFFF; border-radius: var(--radius-lg); padding: 32px 24px; text-align: center; margin-bottom: 28px; box-shadow: var(--shadow-lg);">
+    <span style="font-size: 3.2rem; display: block; margin-bottom: 8px;">🚨</span>
+    <h1 id="emergencyHeading" style="font-size: 2.2rem; font-weight: 900; margin-bottom: 10px;" data-i18n="emergency_title">
+      National Cyber Crime Reporting Helpline
+    </h1>
+    <p style="font-size: 1.25rem; max-width: 720px; margin: 0 auto 20px auto; opacity: 0.95;" data-i18n="emergency_dial_desc">
+      Government of India 24x7 Toll-Free Cyber Financial Fraud Helpline
+    </p>
+
+    <div style="margin: 20px 0;">
+      <a href="tel:1930" class="emergency-dial-btn" id="btnDial1930" style="display: inline-flex; align-items: center; gap: 12px; background: #FEF08A; color: #7F1D1D; font-size: 1.8rem; font-weight: 900; padding: 18px 40px; border-radius: 999px; text-decoration: none; box-shadow: 0 8px 24px rgba(0,0,0,0.3); border: 4px solid #FFFFFF;">
+        <span>📞 Dial 1930 (Toll-Free)</span>
+      </a>
+    </div>
+
+    <div style="font-size: 1.2rem; margin-top: 18px;">
+      <span data-i18n="official_portal_label">Official National Cybercrime Reporting Portal:</span><br>
+      <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" style="color: #FEF08A; font-weight: 800; font-size: 1.3rem; text-decoration: underline; word-break: break-all;">
+        https://cybercrime.gov.in
+      </a>
+    </div>
+  </section>
+
+  <!-- Immediate 7-Step Action Plan -->
+  <section class="emergency-steps-card" aria-labelledby="panicChecklistTitle" style="background: #FFFFFF; border-radius: var(--radius-lg); padding: 28px; border: 2px solid var(--border-color); box-shadow: var(--shadow-md); margin-bottom: 28px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 22px;">
+      <span style="font-size: 2.4rem;">⚡</span>
+      <div>
+        <h2 id="panicChecklistTitle" class="section-title" style="margin-bottom: 4px; font-size: 1.6rem; color: var(--primary-navy);">
+          What to Do If You Suspect Fraud: 7 Immediate Steps
+        </h2>
+        <p class="section-subtitle" style="font-size: 1.05rem; color: var(--text-muted); margin: 0;">
+          Prioritized checklist to stop fraudsters and protect your bank account:
+        </p>
+      </div>
+    </div>
+
+    <div class="panic-steps-list" style="display: flex; flex-direction: column; gap: 16px;">
+      <!-- Step 1 -->
+      <div class="panic-step-item" style="display: flex; gap: 16px; padding: 16px; background: #F8FAFC; border-radius: var(--radius-md); border-left: 4px solid #DC2626;">
+        <div class="panic-step-num" style="min-width: 36px; height: 36px; border-radius: 50%; background: #DC2626; color: #FFFFFF; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">1</div>
+        <div>
+          <h3 class="panic-step-title" style="font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; color: var(--primary-navy);">
+            STOP All Contact Immediately
+          </h3>
+          <p style="font-size: 1.05rem; color: var(--text-main); margin: 0; line-height: 1.5;">
+            Hang up the phone immediately. Close WhatsApp calls, Telegram chats, or video calls. Do not argue, do not apologize, and do not listen to threats of "arrest" or "penalties". Disconnecting cuts off their psychological control.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="panic-step-item" style="display: flex; gap: 16px; padding: 16px; background: #F8FAFC; border-radius: var(--radius-md); border-left: 4px solid #EA580C;">
+        <div class="panic-step-num" style="min-width: 36px; height: 36px; border-radius: 50%; background: #EA580C; color: #FFFFFF; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">2</div>
+        <div>
+          <h3 class="panic-step-title" style="font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; color: var(--primary-navy);">
+            NEVER Share Additional OTPs, UPI PINs, or Passwords
+          </h3>
+          <p style="font-size: 1.05rem; color: var(--text-main); margin: 0; line-height: 1.5;">
+            Even if a caller claims they are trying to "cancel the fraud" or "reverse the transaction", NEVER share any subsequent OTP or enter your UPI PIN. Fraudsters often attempt a second larger debit pretending it is a refund.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="panic-step-item" style="display: flex; gap: 16px; padding: 16px; background: #F8FAFC; border-radius: var(--radius-md); border-left: 4px solid #0D9488;">
+        <div class="panic-step-num" style="min-width: 36px; height: 36px; border-radius: 50%; background: #0D9488; color: #FFFFFF; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">3</div>
+        <div>
+          <h3 class="panic-step-title" style="font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; color: var(--primary-navy);">
+            Contact Your Bank Immediately Through Verified Official Details
+          </h3>
+          <p style="font-size: 1.05rem; color: var(--text-main); margin: 0; line-height: 1.5;">
+            Call your bank's toll-free customer care number printed directly on the back of your physical ATM debit card or passbook. Request an urgent freeze on your bank account and debit card to prevent any further withdrawals.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="panic-step-item" style="display: flex; gap: 16px; padding: 16px; background: #F8FAFC; border-radius: var(--radius-md); border-left: 4px solid #7C3AED;">
+        <div class="panic-step-num" style="min-width: 36px; height: 36px; border-radius: 50%; background: #7C3AED; color: #FFFFFF; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">4</div>
+        <div>
+          <h3 class="panic-step-title" style="font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; color: var(--primary-navy);">
+            Call Helpline 1930 Promptly ("Golden Hour")
+          </h3>
+          <p style="font-size: 1.05rem; color: var(--text-main); margin: 0; line-height: 1.5;">
+            If money was debited from your account, dialing <strong>1930</strong> immediately allows the Indian Cyber Crime Coordination Centre (I4C) to alert bank nodal officers and freeze the stolen funds in the fraudster's wallet or recipient account before they can withdraw it.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="panic-step-item" style="display: flex; gap: 16px; padding: 16px; background: #F8FAFC; border-radius: var(--radius-md); border-left: 4px solid #2563EB;">
+        <div class="panic-step-num" style="min-width: 36px; height: 36px; border-radius: 50%; background: #2563EB; color: #FFFFFF; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">5</div>
+        <div>
+          <h3 class="panic-step-title" style="font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; color: var(--primary-navy);">
+            File an Official Complaint at cybercrime.gov.in
+          </h3>
+          <p style="font-size: 1.05rem; color: var(--text-main); margin: 0; line-height: 1.5;">
+            Submit an online complaint at the official portal: <strong>https://cybercrime.gov.in</strong>. Include your bank name, debit amount, transaction reference ID, and date. Note down your formal Acknowledgment Number for your police report.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="panic-step-item" style="display: flex; gap: 16px; padding: 16px; background: #F8FAFC; border-radius: var(--radius-md); border-left: 4px solid #059669;">
+        <div class="panic-step-num" style="min-width: 36px; height: 36px; border-radius: 50%; background: #059669; color: #FFFFFF; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">6</div>
+        <div>
+          <h3 class="panic-step-title" style="font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; color: var(--primary-navy);">
+            Preserve All Evidence Safely
+          </h3>
+          <p style="font-size: 1.05rem; color: var(--text-main); margin: 0; line-height: 1.5;">
+            Do not delete suspicious messages or call logs. Take screenshots of fraudulent SMS messages, WhatsApp chats, payment receipts, and caller phone numbers. This evidence is vital for the bank and police investigations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="panic-step-item" style="display: flex; gap: 16px; padding: 16px; background: #FFFBEB; border-radius: var(--radius-md); border-left: 4px solid #D97706;">
+        <div class="panic-step-num" style="min-width: 36px; height: 36px; border-radius: 50%; background: #D97706; color: #FFFFFF; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">7</div>
+        <div>
+          <h3 class="panic-step-title" style="font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; color: #92400E;">
+            Important Authority & Recovery Disclaimer
+          </h3>
+          <p style="font-size: 1.05rem; color: #78350F; margin: 0; line-height: 1.5;">
+            EASY PAY — SAFE PAY is an educational safety tool. We do not represent police departments, government bodies, or banks, and we cannot legally guarantee that lost money will be recovered. However, reporting quickly gives authorities the strongest chance to freeze stolen funds before they leave the banking network.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Find Genuine Bank Helpline Numbers -->
+  <section class="lesson-card" aria-labelledby="bankNumbersTitle" style="background: #FFFFFF; border-radius: var(--radius-lg); padding: 28px; border: 2px solid var(--border-color); box-shadow: var(--shadow-sm); margin-bottom: 28px;">
+    <div class="lesson-header" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+      <span class="lesson-icon" style="font-size: 2.2rem;">🏦</span>
+      <h2 id="bankNumbersTitle" class="lesson-title" style="font-size: 1.5rem; font-weight: 800; color: var(--primary-navy); margin: 0;">How to Find Genuine Bank Customer Care Numbers</h2>
+    </div>
+
+    <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 20px; line-height: 1.5;">
+      Fraudsters frequently create fake Google search ads or fake Google Maps entries with their own phone numbers pretending to be "State Bank Customer Care" or "HDFC Helpline". Always verify numbers through independent physical channels:
+    </p>
+
+    <div class="dos-donts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+      <div class="dos-column" style="background: #F0FDF4; border: 2px solid #86EFAC; border-radius: var(--radius-md); padding: 20px;">
+        <div class="column-header" style="font-weight: 800; color: #166534; font-size: 1.15rem; margin-bottom: 12px;">✔ SAFE SOURCES</div>
+        <ul class="checklist-list" style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 1.05rem; color: #14532D;">
+          <li><strong>Back of your physical ATM Debit Card:</strong> Legitimate toll-free 1800 numbers are permanently printed on the card back.</li>
+          <li><strong>Physical Bank Passbook or Chequebook:</strong> The branch phone number is printed on the first page.</li>
+          <li><strong>Visiting your local branch in person</strong> and speaking with the bank manager.</li>
+        </ul>
+      </div>
+
+      <div class="donts-column" style="background: #FEF2F2; border: 2px solid #FECACA; border-radius: var(--radius-md); padding: 20px;">
+        <div class="column-header" style="font-weight: 800; color: #991B1B; font-size: 1.15rem; margin-bottom: 12px;">✖ UNSAFE SOURCES</div>
+        <ul class="checklist-list" style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 1.05rem; color: #7F1D1D;">
+          <li>Random Google search results, Google Maps listings, or Justdial phone numbers.</li>
+          <li>Phone numbers sent to you in unsolicited SMS messages or WhatsApp forwards.</li>
+          <li>Numbers given by someone who called you first claiming to be customer service.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Optional Voice Query / Quick Help Router -->
+  <section class="lesson-card" style="background: #F8FAFC; border-radius: var(--radius-lg); padding: 24px; border: 2px dashed #94A3B8; margin-bottom: 28px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+      <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--primary-navy); margin: 0;">
+        🔍 Have a Specific Question or Doubt?
+      </h3>
+      <a href="{{ url_for('coach') }}" class="btn-action-primary" style="text-decoration: none; padding: 8px 16px; font-size: 1rem;">
+        🛡️ Open Personal Scam Assistant →
+      </a>
+    </div>
+    <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 16px;">
+      You can evaluate any suspicious message, phone call, or payment collect request interactively in our Personal Scam Assistant.
+    </p>
+  </section>
+
+  <!-- Printable Senior Safety Card Summary -->
+  <section class="rules-banner" style="background: #FFFFFF; border: 2px dashed var(--accent-teal); border-radius: var(--radius-lg); padding: 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;">
+      <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--primary-navy); margin: 0;">
+        📋 Senior Citizen Pocket Safety Summary
+      </h3>
+      <button type="button" class="btn-control-chip" onclick="window.print();" style="padding: 8px 16px; font-size: 1rem;">
+        🖨️ Print Safety Card
+      </button>
+    </div>
+    <ul class="checklist-list" style="font-size: 1.05rem; display: flex; flex-direction: column; gap: 8px; margin: 0; padding-left: 20px;">
+      <li>1. UPI PIN is only for SENDING money, never for receiving money.</li>
+      <li>2. Banks and government agencies NEVER ask for your OTP or password.</li>
+      <li>3. Never install AnyDesk, TeamViewer, or screen-sharing tools on instructions from callers.</li>
+      <li>4. Genuine police never interrogate or demand bail over WhatsApp video calls.</li>
+      <li>5. If money is lost to fraud, call <strong>1930</strong> immediately.</li>
+    </ul>
+  </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btnReadAloud = document.getElementById('btnHelpReadAloud');
+  const btnStopSpeaking = document.getElementById('btnHelpStopSpeaking');
+  const btnToggleLang = document.getElementById('btnHelpToggleLang');
+
+  let activeLang = localStorage.getItem('safepay_language') || 'en';
+  let speechSynth = window.speechSynthesis;
+  let currentUtterance = null;
+
+  function updateToggleBtnLabel() {
+    if (btnToggleLang) {
+      btnToggleLang.textContent = activeLang === 'kn' ? '🇬🇧 Switch to English' : '🇮🇳 ಕನ್ನಡಕ್ಕೆ ಬದಲಾಯಿಸಿ';
+    }
+  }
+  updateToggleBtnLabel();
+
+  if (btnToggleLang) {
+    btnToggleLang.addEventListener('click', () => {
+      activeLang = activeLang === 'kn' ? 'en' : 'kn';
+      localStorage.setItem('safepay_language', activeLang);
+      updateToggleBtnLabel();
+      if (typeof window.applyTranslations === 'function') {
+        window.applyTranslations(activeLang);
+      }
+    });
+  }
+
+  function readEmergencyInstructions() {
+    if (!speechSynth) {
+      alert(activeLang === 'kn'
+        ? "ಧ್ವನಿ ಓದುವಿಕೆ ಈ ಬ್ರೌಸರ್‌ನಲ್ಲಿ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ."
+        : "Voice audio is not supported in this browser.");
+      return;
+    }
+
+    speechSynth.cancel();
+
+    let textToSpeak = "";
+    if (activeLang === 'kn') {
+      textToSpeak = "ತುರ್ತು ಸೈಬರ್ ವಂಚನೆ ನೆರವು. ದಯವಿಟ್ಟು ಶಾಂತರಾಗಿರಿ, ನಿಮ್ಮನ್ನು ದೂಷಿಸಿಕೊಳ್ಳಬೇಡಿ. ವಂಚಕರು ಭಯ ಅಥವಾ ಆಮಿಷ ಒಡ್ಡಿ ವಂಚಿಸುತ್ತಾರೆ. ತಕ್ಷಣ ಈ ಕ್ರಮಗಳನ್ನು ಅನುಸರಿಸಿ: ಮೊದಲನೆಯದಾಗಿ, ವಂಚಕರೊಂದಿಗೆ ಎಲ್ಲಾ ಸಂಪರ್ಕವನ್ನು ತಕ್ಷಣ ನಿಲ್ಲಿಸಿ ಮತ್ತು ಕರೆ ಕಟ್ ಮಾಡಿ. ಎರಡನೆಯದಾಗಿ, ಯಾವುದೇ ಹೆಚ್ಚುವರಿ ಒಟಿಪಿ ಅಥವಾ ಯುಪಿಐ ಪಿನ್ ಹಂಚಿಕೊಳ್ಳಬೇಡಿ. ಮೂರನೆಯದಾಗಿ, ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಪಾಸ್‌ಬುಕ್‌ನಲ್ಲಿರುವ ಅಧಿಕೃತ ಗ್ರಾಹಕ ಸೇವಾ ಸಂಖ್ಯೆಗೆ ಕರೆ ಮಾಡಿ ಖಾತೆ ಮತ್ತು ಕಾರ್ಡ್ ಫ್ರೀಜ್ ಮಾಡಲು ವಿನಂತಿಸಿ. ನಾಲ್ಕನೆಯದಾಗಿ, ತಕ್ಷಣ ೧೯೩೦ ರಾಷ್ಟ್ರೀಯ ಸೈಬರ್ ಸಹಾಯವಾಣಿಗೆ ಕರೆ ಮಾಡಿ. ಐದನೆಯದಾಗಿ, ಸೈಬರ್‌ಕ್ರೈಮ್.ಗವ್.ಇನ್ ಜಾಲತಾಣದಲ್ಲಿ ದೂರು ದಾಖಲಿಸಿ. ಆರನೆಯದಾಗಿ, ಎಲ್ಲಾ ಸಂದೇಶಗಳು ಮತ್ತು ವಹಿವಾಟು ಐಡಿಗಳನ್ನು ಸಾಕ್ಷಿಯಾಗಿ ಉಳಿಸಿಕೊಳ್ಳಿ. ನೆನಪಿರಲಿ, ನಾವು ಶೈಕ್ಷಣಿಕ ಸಹಾಯಕ, ಬ್ಯಾಂಕ್ ಅಥವಾ ಪೋಲಿಸ್ ಪ್ರಾಧಿಕಾರವಲ್ಲ.";
+    } else {
+      textToSpeak = "Emergency fraud assistance. Please stay calm and do not blame yourself. Sophisticated fraudsters use deceptive psychological pressure against honest people. Follow these calm steps immediately: First, stop all contact with the suspicious person immediately. Second, never share any additional OTP, UPI PIN, or password. Third, contact your bank immediately through verified official numbers on your passbook or debit card to freeze your account. Fourth, dial National Cyber Crime Helpline 1930 immediately within the golden hour. Fifth, register a complaint online at cybercrime.gov.in. Sixth, preserve all SMS messages and transaction reference numbers as evidence. Disclaimer: EASY PAY is an educational safety tool and not police or banking authorities; prompt reporting gives the best chance to freeze stolen funds.";
+    }
+
+    currentUtterance = new SpeechSynthesisUtterance(textToSpeak);
+    currentUtterance.lang = activeLang === 'kn' ? 'kn-IN' : 'en-IN';
+    currentUtterance.rate = 0.9; // Calm, senior-friendly pace
+
+    currentUtterance.onstart = () => {
+      if (btnReadAloud) btnReadAloud.style.display = 'none';
+      if (btnStopSpeaking) btnStopSpeaking.style.display = 'inline-flex';
+    };
+
+    currentUtterance.onend = currentUtterance.onerror = () => {
+      if (btnReadAloud) btnReadAloud.style.display = 'inline-flex';
+      if (btnStopSpeaking) btnStopSpeaking.style.display = 'none';
+    };
+
+    speechSynth.speak(currentUtterance);
+  }
+
+  function stopSpeaking() {
+    if (speechSynth) {
+      speechSynth.cancel();
+    }
+    if (btnReadAloud) btnReadAloud.style.display = 'inline-flex';
+    if (btnStopSpeaking) btnStopSpeaking.style.display = 'none';
+  }
+
+  if (btnReadAloud) btnReadAloud.addEventListener('click', readEmergencyInstructions);
+  if (btnStopSpeaking) btnStopSpeaking.addEventListener('click', stopSpeaking);
+});
+</script>
+{% endblock %}
